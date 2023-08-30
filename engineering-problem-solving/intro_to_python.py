@@ -1,7 +1,7 @@
 import csv
 import statistics
 
-with open("vehicle_speed.csv", "r") as file_contents:
+with open("tire_rpm.csv", "r") as file_contents:
     csv_reader = csv.reader(file_contents, delimiter=",")
     for rpm_list in csv_reader:
         speed = [0.0595 * int(x) for x in rpm_list]
