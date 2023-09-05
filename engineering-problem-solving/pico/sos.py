@@ -1,7 +1,6 @@
 from machine import Pin
 import time
 
-
 # Declare the pins and the pin mode
 red_led = Pin(18, Pin.OUT)
 yellow_led = Pin(17, Pin.OUT)
@@ -22,7 +21,6 @@ def set_lights(on):
 
 # Begin looping phase
 while True:
-    # Turn on green light for 45 seconds
     for i in range(0, 3):
         set_lights(1)
         time.sleep(0.5)
@@ -42,6 +40,3 @@ while True:
         time.sleep(0.5)
     
     time.sleep(10)
-    
-
-
