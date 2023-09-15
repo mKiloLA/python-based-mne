@@ -10,6 +10,8 @@ python = "^3.10"
 control = "^0.9.4"
 ipykernel = "^6.25.2"
 pandas = "^2.1.0"
+matplotlib = "^3.8.0"
+numpy = "^1.25.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.7.0"
