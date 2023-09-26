@@ -6,6 +6,8 @@ ME 570: Control of Mechanical Systems relies heavily on MATLAB for the completio
 
 ## Proposed Changes
 
-
+# How to add markers data tips, scale (xlim ylim), address version control?
+# talk about how decision to use matlab comiiler was amde, future work remake the motorlabgui in different location
+# cover for zpk, make it look as similar to matlab as possible, FW pipe file into jupyter
 
 ## Files in the Repo

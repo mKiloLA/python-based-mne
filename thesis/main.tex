@@ -1,0 +1,70 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{
+  {\noindent\raggedright\normalfont
+   \Large\bfseries \@chapapp\space\thechapter
+   \par\nobreak
+   \vskip 5\p@
+   \Large \bfseries #1\par\nobreak}
+  \vspace{\baselineskip}
+}
+\makeatother
+
+\begin{document}
+    \input{bookends/titlepage}
+
+    \input{bookends/abstract}
+    
+    \input{bookends/acknowledgements}
+
+    \tableofcontents
+
+    \listoffigures
+
+    \listoftables
+    
+    \chapter{Introduction and Background}
+    \input{chapters/1_intro_and_back}
+    
+    \chapter{DEN 161: Engineering Problem Solving}
+    \input{chapters/2_engg_prob_solve}
+    
+    \chapter{ME 513: Thermodynamics}
+    \input{chapters/3_thermodynamics}
+
+    \chapter{NE 495: Elements of Nuclear Engineering}
+    \input{chapters/4_nuclear_engg}
+    
+    \chapter{ME 400: Computer Applications in Mechanical Engineering}
+    \input{chapters/5_comp_app_in_me}
+    
+    \chapter{ME 533: Machine Design}
+    \input{chapters/6_machine_design}
+
+    \chapter{ME 535: Measurements and Instrumentation}
+    \input{chapters/7_meas_and_instr}
+
+    \chapter{ME 570: Control of Mechanical Systems I}
+    \input{chapters/8_controls}
+
+    \chapter{ME 573: Heat Transfer}
+    \input{chapters/9_heat_transfer}
+
+    \chapter{ME 615: Applications in Mechatronics}
+    \input{chapters/10_mechatronics}
+    
+    \chapter{Conclusion and Future Work}
+    \input{chapters/11_conclusion}
+
+    \appendix
+
+    \chapter{Original Assignments}
+    \input{bookends/appendix}
+    
+\end{document}
