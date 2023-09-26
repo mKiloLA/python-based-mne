@@ -1,6 +1,9 @@
 # LaTeX build files
 thesis/out
 thesis/.vscode
+engineering-problem-solving/.vscode
+engineering-problem-solving/pico/.vscode
+engineering-problem-solving/pico/.micropico
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
