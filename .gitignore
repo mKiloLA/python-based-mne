@@ -4,6 +4,9 @@ thesis/.vscode
 engineering-problem-solving/.vscode
 engineering-problem-solving/pico/.vscode
 engineering-problem-solving/pico/.micropico
+node_modules
+*.vsix
+engineering-problem-solving/ksu-den-161-extension-pack/.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

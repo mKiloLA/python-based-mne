@@ -7,38 +7,62 @@ disciplines. While these projects serve as the students' introduction
 to different engineering disciplines, they also develop the core 
 tools needed to be a successful engineer. 
 
-\section{Project Integration}
-Following a two week introduction to Microsoft Excel, the current 
-iteration of DEN 161 spends two weeks learning the basics of Python. 
-The Python lectures and assignments focus on data calculations to 
+The current iteration of DEN 161 has three sections of interest to
+this body of work: data analysis using Microsoft Excel, data analysis
+using Python, and embedded programming using an Arduino Uno.
+
+Microsoft Excel is used to introduce the concept of data analysis
+to students. Students are tasked with manipulating data and 
+finding different statistical properties of given data. 
+This proves to be an effective point of entry given to data
+analysis since many students are familiar with Microsoft Excel or 
+Google Sheets.
+
+Python is then introduced as an alternative method of solving the same
+problems. The lectures and assignments focus on data calculations to 
 verify designs and general code inspection to understand the 
-different available options. These lectures are done using Jupyter
+how the program works. These lectures are done using Jupyter
 Notebook in Anaconda's Spyder IDE. 
 
-After Python, the class begins working on the Stoplight Activity.
+Following the introduction to Python, a Stoplight Activity is assigned. 
 This project introduces students to circuitry and microcontrollers 
 through the creation of a stoplight using 3 LEDs and an Arduino Uno.
+The Arduino Uno is programmed using C++ in the Arduino IDE.
 
+\section{Proposed Changes}
+Thanks to the solid programming core created by the instructors,
+the proposed changes are minor, and result in no changes to the
+current curriculum. Two changes are proposed: the adoption of Visual 
+Studio Code as a development environment and the migration from 
+Arduino Unos to Raspberry Pi Picos. 
 
-After lecturing on Python,
-two more weeks are spent doing a Stoplight Activity that 
-utilizes an Arduino Nano, the Arduino IDE, and C++. The primary goal 
-of the project is to give students a baseline understanding of what 
-programming and electronics make possible.
+The class currently uses an IDE by the name of Spyder. Spyder is a
+popular IDE for data science applications and has to ability to 
+seamlessly integrate with Jupyter Notebooks. However, Spyder does
+not have the ability to work with a MicroPython device, such as the
+RPi Pico. Visual Studio Code, on the other hand, has an extension 
+that integrates Pico controls directly into the interface, 
+making it a one-stop-shop for both the data analysis and embedded 
+systems development in DEN 161. Visual Studio Code also has 
+Jupyter Notebooks extensions that allow for a first class experience.
 
+The second proposed change is transitioning from the Arduino Uno
+to a Raspberry Pi Pico. The reason for this change is twofold. First,
+the Pico can run using MicroPython, a lightweight implementation of
+Python, which has the same syntax as Python. This allows students
+to focus on understanding one language, Python, rather than learning
+both Python and C++. Switching to the Pico also opens the door to
+using a single development environment. While the Arduino can
+be programmed using Visual Studio Code, the set up process
+is non-trivial, and requires a strong understanding of the
+operating and file system of the computer. 
 
+The proposed changes aim to increase student understanding
+by reducing the number of systems they are introduced to. Instead
+of two langauges and two editors, students will only need to
+learn one language in one editor. The work done by these projects
+directly correlates with student outcomes 6 and 7 and weakly
+correlates with outcomes 1 and 3 as seen in Appendix 
+\ref{appendix:appendix_abet}.
 
-To build upon the two weeks of Python, as well as maintaining a 
-consistent development environment, the stoplight activity will be 
-redesign to utilize a Raspberry Pi Pico as the primary microcontroller. The IDE will be Visual Studio Code, which requires an extension to easily work on the Pico. The Pico will be flashed with MicroPython, a light-weight variant of Python.
-
-\section{Project Description and Deliverables}
-Description of new assignment?
-
-Pictures of circuit?
-
-Code blocks?
-
-Lab Assignment and solution Guide?
-
-I wish it would listen to my changes
+\section{Project Deliverables}
