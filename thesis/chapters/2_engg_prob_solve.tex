@@ -66,3 +66,130 @@ correlates with outcomes 1 and 3 as seen in Appendix
 \ref{appendix:appendix_abet}.
 
 \section{Project Deliverables}
+The repository contains in-class examples, assignments, and 
+solutions for data analysis in Excel, data analysis in Python, 
+and programming the Raspberry Pi Pico. It also contains an 
+installation guide, source code for the custom extension pack, 
+and videos walking through the setup and completition of the 
+different assignments. Included below is an instructors guide
+that walks through the assigments and files in the repository.
+
+\subsection{Instructors Guide}
+\begin{enumerate}
+    \item \textbf{Data Analysis with Excel}
+        \begin{itemize}
+            \item \textbf{In-Class Example:} Using the data in 
+            tire\_rpm\_excel.csv, find the maximum, minimum, 
+            mean, median, and mode speed of the vehicle. Assume 
+            a tire diameter of 20 inches. Graph the speed of 
+            the vehicle at any given time.
+            \item \textbf{Homework:} Have students repeat the 
+            process using the data from tire\_rpm\_homework.csv 
+            and 18" wheels. Graph the speed of the vehicle at 
+            any given time. This should be a 1-to-1 copy of what 
+            was done in class, just with different numbers.
+        \end{itemize}
+    \item \textbf{Data Analysis with Python}
+        \begin{itemize}
+            \item \textbf{In-Class Example:} Using the data from 
+            tire\_rpm\_example.csv and the Jupyter Notebook 
+            intro\_to\_python\_example.ipynb, find the maximum, 
+            minimum, mean, median, and mode speed of the vehicle. 
+            Assume a tire diameter of 20 inches. Graph the speed 
+            of the vehicle at any given time. This should give 
+            identical results to the Excel example problem.
+            \item \textbf{Homework:} Have students create a .py 
+            file that finds the maximum, minimum, mean, median, 
+            and mode speed of the vehicle using 
+            tire\_rpm\_homework.csv. Assume a tire diameter of 
+            18 inches. Graph the speed of the vehicle at any 
+            given time.
+                \begin{itemize}
+                    \item \textbf{Extra Credit:} How long did 
+                    it take this car with 22" wheels to go 0-60 
+                    if the sensor data was taken at 300Hz?
+                \end{itemize}
+        \end{itemize}
+    \item \textbf{Programming the Raspberry Pi Pico}
+        \begin{itemize}
+            \item \textbf{In-Class Example:} Walk through the code 
+            in example.py to show students how to blink the LEDs. 
+            \item \textbf{Homework:} Task students with altering 
+            the code provided in class to make the LEDs function 
+            as a stoplight. A potential solution is provided in 
+            stoplight.py.
+            \begin{itemize}
+                \item \textbf{Extra Credit:} Make the LEDs spell 
+                your name in morse code. An example of looping morse
+                code is shown in sos.py.
+            \end{itemize}
+        \end{itemize}
+\end{enumerate}
+
+\subsection{Description of Files in the Repository}
+See Appendix \ref{appendix:appendix_github} for full source code
+and documentation. Videos have been removed from the repository
+due to file size limitations.
+\begin{enumerate}
+    \item \textbf{installation\_guides}
+        \begin{itemize}
+            \item \textbf{Installation\_Guide.pdf:} a guide 
+            that walks through downloading Anaconda, Visual 
+            Studio Code, and the KSU Extensions in Visual 
+            Studio Code.
+        \end{itemize}
+    \item \textbf{intro\_to\_excel}
+        \begin{itemize}
+            \item \textbf{tire\_rpm\_example.csv:} a data file 
+            that contains RPM data for a car wheel. Use this 
+            data for the example questions.
+            \item \textbf{tire\_rpm\_homework.csv:} a data file 
+            that contains RPM data for a car wheel. Use this 
+            data for the homework questions.
+            \item \textbf{tire\_rpm\_example\_solution.xlsx:} a 
+            potential solution to the in-class problem posed in 
+            Step 1.
+            \item \textbf{tire\_rpm\_homework\_solution.xlsx:} a 
+            potential solution to the homework problem posed in 
+            Step 1.
+        \end{itemize}
+    \item \textbf{intro\_to\_python}
+        \begin{itemize}
+            \item \textbf{tire\_rpm\_example.csv:} a data file 
+            that contains RPM data for a car wheel. Use this 
+            data for the example questions.
+            \item \textbf{tire\_rpm\_homework.csv:} a data file 
+            that contains RPM data for a car wheel. Use this 
+            data for the homework questions.
+            \item \textbf{intro\_to\_python\_example.ipynb:} a 
+            Jupyter Notebook file that walks through solving the 
+            in-class example problem. This file is intended to 
+            bridge the gap between Excel and Python.
+            \item \textbf{intro\_to\_python\_homework\_solution.py:} 
+            a Python script for solving the homework question from 
+            Step 2. This could also be done in a Jupyter Notebook, 
+            but using a .py file was used to showcase standard
+            Python usage. This also contains the solution to the 
+            extra credit question.
+        \end{itemize}
+    \item \textbf{intro\_to\_pico}
+        \begin{itemize}
+            \item \textbf{example.py:} LED flashing program for the 
+            RPi Pico. This file is intended to be used as the in-class 
+            example in Step 3 and the base code provided for the homework.
+            \item \textbf{stoplight.py:} this is a potential solution 
+            to the Stoplight Activity. Many different variations of 
+            this file could exist.
+            \item \textbf{sos.py:} this is an example of using 
+            morse code with the Pico. The solution utilizes looping
+            and a function to reduce repeated code.
+        \end{itemize}
+    \item \textbf{ksu\_den\_161\_extension\_pack}
+        \begin{itemize}
+            \item \textbf{package.json:} this file contains the code 
+            used to create the Extension Package in the Microsoft 
+            Marketplace. As it stands, this file (and folder) can be 
+            ignored. In the future, an instructor will need to make 
+            sure the extension pack stays up to date.
+        \end{itemize}
+\end{enumerate}
