@@ -1,5 +1,6 @@
 # LaTeX build files
-thesis/out
+thesis/out/*
+!thesis/out/main.pdf
 .vscode
 engineering-problem-solving/intro_to_pico/.micropico
 node_modules
