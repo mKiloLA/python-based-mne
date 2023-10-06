@@ -5,6 +5,7 @@ thesis/out/*
 engineering-problem-solving/intro_to_pico/.micropico
 node_modules
 *.vsix
+.micropico
 
 
 # Byte-compiled / optimized / DLL files
