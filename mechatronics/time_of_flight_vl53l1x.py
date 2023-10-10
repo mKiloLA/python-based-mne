@@ -1,5 +1,5 @@
 from machine import I2C, Pin
-from vl53l1x import VL53L1X
+from drivers.vl53l1x import VL53L1X
 import time
 print("Making i2c object . . .")
 i2c = I2C(0, sda=Pin(4), scl=Pin(5))

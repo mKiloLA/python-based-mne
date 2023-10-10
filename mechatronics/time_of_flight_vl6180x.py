@@ -1,5 +1,5 @@
 from machine import I2C, Pin
-from vl6180x import VL6180X
+from drivers.vl6180x import VL6180X
 import time
 
 print("Making i2c object . . .")

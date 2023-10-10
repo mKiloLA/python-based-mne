@@ -59,11 +59,11 @@ while True:
     if RUN:
         l_dir_pin.value(LEFT_FORWARD)
         l_pwm_pin.freq(5000)
-        l_pwm_pin.duty_u16(MAX_PWM // 6)
+        l_pwm_pin.duty_u16(MAX_PWM // 2)
 
         r_dir_pin.value(RIGHT_FORWARD)
         r_pwm_pin.freq(5000)
-        r_pwm_pin.duty_u16(MAX_PWM // 6)
+        r_pwm_pin.duty_u16(MAX_PWM // 2)
     else:
         l_pwm_pin.duty_u16(0)
         r_pwm_pin.duty_u16(0)

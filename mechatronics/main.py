@@ -1,5 +1,7 @@
 from machine import Pin, PWM, I2C
-from vl53l1x import VL53L1X
+from drivers.vl53l1x import VL53L1X
+from drivers.hcsr04 import HCSR04
+import time
 """
 Enumeration variables that do not change.
 """
@@ -56,6 +58,12 @@ Initialize Time of Flight Sensor
 i2c = I2C(0, sda=Pin(4), scl=Pin(5))
 time_of_flight = VL53L1X(i2c)
 tof_distance = time_of_flight.getDistance()
+
+"""
+Initialize Ultrasonic Sensor
+"""
+sensor = HCSR04(trigger_pin=16, echo_pin=17)
+distance = sensor.distance_cm()
 
 """
 Driving Commands and Variables
@@ -138,8 +146,10 @@ def constrain():
 Main loop of program.
 """
 while True:
-    if RUN:
+    distance = sensor.distance_cm()
+    if distance > 8:
         drive(left=True)
     else:
+        print(distance)
         l_pwm_pin.duty_u16(0)
         r_pwm_pin.duty_u16(0)
