@@ -17,13 +17,12 @@ import statistics
 from matplotlib import pyplot
 
 # COMMENT
-with open("tire_rpm_homework.csv", "r", encoding="utf-8") as file_contents:
+with open("tire_rpm_example copy.csv", "r", encoding="utf-8") as file_contents:
     csv_reader = csv.reader(file_contents, delimiter=",")
     rpm = []
-    for rpm_row in csv_reader:
-        for rpm_value in rpm_row:
-            # COMMENT
-            rpm.append(int(rpm_value))
+    for rpm_value in next(csv_reader):
+        # COMMENT
+        rpm.append(int(rpm_value))
 
 # COMMENT
 tire_diameter = 20
