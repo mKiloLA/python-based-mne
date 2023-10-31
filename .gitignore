@@ -2,6 +2,7 @@
 thesis/out/*
 !thesis/out/main.pdf
 .vscode
+!thesis/.vscode
 engineering-problem-solving/intro_to_pico/.micropico
 node_modules
 *.vsix
