@@ -6,7 +6,8 @@ engineering-problem-solving/intro_to_pico/.micropico
 node_modules
 *.vsix
 .micropico
-
+thermodynamics/references
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
