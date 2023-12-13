@@ -1,0 +1,106 @@
+\section{Curriculum Proposal}
+
+For the purposes of cohesive programming curriculum in the Mechanical and Nucelar Engineering Department 
+at KSU, proposes the use of Python in conjunction with library created for the MNE department, 
+
+\section{Python}
+
+Python is a multipurpose, interpreted programming langauge that emphasises code readability. The langauge is
+was originally introduced by Guido van Rossum in 1991 and has gone through three major versions,
+the most recent being the aptly named Python 3. Using Python, particularly for first time programmers,
+comes with the following benefits:
+
+\begin{itemize}
+    \item Python is an interpreted language; therefore, users do not need to install and configure
+    a compiler. The setup process for a compiler can often be confusing and a major barrier to entry
+    for new users. Since Python does not have a compiler, the only download that is necessary to run 
+    a .py file is Python itself. The lack of a compiler does come with some downsides, namely speed,
+    but these will be addressed later on.
+    \item Python is designed to be human readable. This means that the syntax of the language closely
+    matches the structure of the plain English. This emphasis on readability greatly reduces the
+    burden on new users and bolsters code comprehension, even in more experienced coders. Consider 
+    a program that prints the phrase "Hello world!"  to the terminal. In C++, this would be done with 
+    the following code:
+
+    \begin{lstlisting}[language=C++]
+    #include <iostream>
+
+    int main() {
+        std::cout << "Hello world!" << std::endl;
+        return 0;
+    }
+    \end{lstlisting}
+
+    Not only is this code not human readable, but it requires the use of imports, functions, return
+    values, namespaces, and non-obvious syntax. In Python, however, only one line of code is needed:
+
+    \begin{lstlisting}[language=Python]
+    print("Hello world!")
+    \end{lstlisting}
+    \item Python is a multipurpose, general-use language. The language is adept at everything from
+    data science to building a webiste to powering a microcontroller (using MicroPython). With such 
+    a wide breadth of use cases, learning the language opens the door to countless different applications 
+    and projects.
+    \item Python is open-source and currently one of the most used languages. Thanks to its popularity,
+    many tools exist to make programming with Python easier, more powerful, and more accessible such
+    as integrations with Jupyter Notebooks and Visual Studio Code. However, this can potentially be 
+    two edged sword, as will be discussed later.
+\end{itemize}
+
+Python provides a solid starting point for new programmers while also being fully capable of high-level,
+advanced programming making it a good language for users of all skill levels. However, it does not come 
+without concerns of its own, most noteably version controlling. This will be addressed at
+length in a future chapter.
+
+\section{MicroPython}
+
+MicroPython is a slimmed version of Python that is designed to run on microcontrollers, such as the
+Raspberry Pi Pico or ESP32. This Python derivative removes some high level features in exchange for
+a smaller interpreter and a machine library dedicated to interacting with the hardware of the 
+microcontroller, which Python would normally not interact with.
+
+While MicroPython comes with all the benefits of Python, it also comes with one of the drawbacks
+of Python: speed. Unlike traditional low level languages like C/C++, MicroPython is not compiled,
+making it significantly slower than comparable languages. In some applications, the difference in
+speed has no affect on the application. Others, like a control system, heavily depend on fast loop
+times and are greatly impacted by speed.
+
+\section{Raspberry Pi Pico}
+
+The Raspberry Pi Pico is a small-but-powerful microcontroller made by Raspberry Pi. A microcontroller
+is an electronic input-output device capable of running uploaded code. It is differentiated
+from a microprocessor, such as a Raspberry Pi 5 or a desktop computer, by the fact that it does not run 
+an operating system. 
+
+The using a Pico, as a newer competitor in the saturated microcontroller market, begs the question of 
+``why not use the Arduino Uno or ESP32?'' While all three devices support ADC, SPI, I2C, and have 
+around 40 GPIO pins, only the ESP32 and Pico support MicroPython, as well as built in wireless and 
+Bluetooth connectivity.
+
+A case could be made for using the ESP32 over the Pico, given its rise in popularity in the home
+automation space. However, the ESP32 comes with greater restrictions in GPIO usage and the majority
+of its documentation and drivers are for C++ programs rather than MicroPython, giving the Pico an
+edge in user friendlinesss.
+
+As was the case with Python and MicroPython, the Pico does not come without drawbacks. Almost all 
+sensors come with drivers written in C++ for the Arduino Uno or ESP32. This is not the case for 
+the Pico. Some sensors made specifically to work with the Pico come with drivers, and others may 
+be found on GitHub thanks to the work of another tinkering user, but many pieces of hardware do 
+not have driver support for the Pico. This could end up being a limiting factor for students trying 
+to do unguided projects.
+
+\section{Visual Studio Code}
+
+Visual Studio Code is a cross-platform, highly customizeable development environment created by
+Microsoft. It is one of the most used and most accessible development environments available, 
+and supports use with any language. VSCode can almost be thought of as a Word processor where 
+spell check looks for syntax errors and keywords instead of grammatical mistakes. By installing
+extensions, which can be done from inside VSCode, developers can write code for nearly any 
+microcontroller or processor and in nearly any language.
+
+For the purposes of the Mechanical Engineering Department, extensions for Python, MicroPython and
+the Pico, and Jupyter Notebooks (a type of interactive programming environment that will be utilized
+later) will be used. The extensions are both easy to use and install, but share a downside with
+Python: version control. Since these extensions are always in active development and get updated
+to work with the newest version of Python and Visual Studio Code, which may not always be desireable.
+This issue will be discussed in greater detail in a later chapter.

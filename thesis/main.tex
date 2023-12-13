@@ -1,5 +1,9 @@
 \documentclass[12pt]{report}
-
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{listings}
+\lstset{upquote=true}
+\lstset{showstringspaces=false}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
@@ -31,36 +35,39 @@
     
     \chapter{Introduction and Background}
     \input{chapters/1_intro_and_back}
+
+    \chapter{A Cohesive Programming Curriculum}
+    \input{chapters/2_curriculum}
     
     \chapter{DEN 161: Engineering Problem Solving}
-    \input{chapters/2_engg_prob_solve}
+    \input{chapters/3_engg_prob_solve}
     
     \chapter{ME 513: Thermodynamics}
-    \input{chapters/3_thermodynamics}
+    \input{chapters/4_thermodynamics}
 
     \chapter{NE 495: Elements of Nuclear Engineering}
-    \input{chapters/4_nuclear_engg}
+    \input{chapters/5_nuclear_engg}
     
     \chapter{ME 400: Computer Applications in Mechanical Engineering}
-    \input{chapters/5_comp_app_in_me}
+    \input{chapters/6_comp_app_in_me}
     
     \chapter{ME 533: Machine Design}
-    \input{chapters/6_machine_design}
+    \input{chapters/7_machine_design}
 
     \chapter{ME 535: Measurements and Instrumentation}
-    \input{chapters/7_meas_and_instr}
+    \input{chapters/8_meas_and_instr}
 
     \chapter{ME 570: Control of Mechanical Systems I}
-    \input{chapters/8_controls}
+    \input{chapters/9_controls}
 
     \chapter{ME 573: Heat Transfer}
-    \input{chapters/9_heat_transfer}
+    \input{chapters/10_heat_transfer}
 
     \chapter{ME 615: Applications in Mechatronics}
-    \input{chapters/10_mechatronics}
+    \input{chapters/11_mechatronics}
     
     \chapter{Conclusion and Future Work}
-    \input{chapters/11_conclusion}
+    \input{chapters/12_conclusion}
 
     \appendix
     \chapter{Project Repository}
