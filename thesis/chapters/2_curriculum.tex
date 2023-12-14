@@ -1,7 +1,37 @@
 \section{Curriculum Proposal}
 
-For the purposes of cohesive programming curriculum in the Mechanical and Nucelar Engineering Department 
-at KSU, proposes the use of Python in conjunction with library created for the MNE department, 
+The primary concerns addressed in Chapter 1 are as follows:
+
+\begin{enumerate}
+    \item Students lack a solid foundation in the fundamentals of programming.
+    \item Programming is under utilized as a method of problem solving.
+\end{enumerate}
+To address the first issue, this paper would like to make two proposals: the adoption of a single programming 
+language and the restructuring of electronics classes in the department. First, the goal of adopting a single 
+programming language is to give students a more thorough understanding in a single language rather than 
+a shallow understanding of four languages. The language chosen in this project is Python. In conjunction with 
+Python, a consistent environemnt should be used as well. A consistent environment will prevent unnecessary 
+confusions from IDE specific features and setup requirements. The choosen environment for this project is 
+Visual Studio Code. To replace the work done on the Arduino Uno and ESP32, a Raspberry Pi Pico will used 
+thanks to its seemless integration with both Python and Visual Studio Code. For more details regarding these 
+choices, see Sections 2.2-2.5.
+
+Second, the goal of restructuring electronics classes is to give students a dedicated ``fundamentals of 
+programming'' class rather than a microcontroller class that teaches programming out of necessity. This
+change, however, will not be addressed for the bulk of this work. Significant changes to the courses
+required in the curriculum are difficult to pass, and always come with trade-offs. As such, discussion of 
+this topic will be saved for reflection in the conclusion of this paper.
+
+To address the second primary concern, the under-utilization of programming in the curriculum, two more
+changes are being proposed: the addition of assignments or projects that make use of programming software
+and the creation of a MNE library for use in most, if not all, MNE classes. The majority of this paper, as
+well as the supporting repository, is dedicated to creating assignments that utilize programming for classes
+that do not have one, translating assignments from other languages in classes that do utilize programming,
+and creating a functional, though incomplete, Python package that could be used throughout the department.
+The goal of these changes is twofold: teaching students how to use modern problem solving techniques to find 
+solutions and giving students a chance to reinforce the programming skills they were taught. By giving
+students a more consistent approach to programming, as well as more use cases for the value of programming,
+students will become more confident and more capable as problem solvers and engineers.
 
 \section{Python}
 
@@ -45,6 +75,9 @@ comes with the following benefits:
     many tools exist to make programming with Python easier, more powerful, and more accessible such
     as integrations with Jupyter Notebooks and Visual Studio Code. However, this can potentially be 
     two edged sword, as will be discussed later.
+    \item Python has an easy to use package manager called pip, which is a recursize acronym for pip
+    installs packages. This package manager makes it incredibly easy to both install and use non-standard
+    libraries in Python.
 \end{itemize}
 
 Python provides a solid starting point for new programmers while also being fully capable of high-level,
