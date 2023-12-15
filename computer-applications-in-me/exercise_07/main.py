@@ -23,9 +23,12 @@ button_pins = [red_button, yellow_button, green_button, blue_button]
 ir_remote = IRRemote(Pin(15, Pin.IN))
 
 # Create Piezo Buzzer
-buzzer = Pin(9, Pin.OUT)
+# https://www.tomshardware.com/how-to/buzzer-music-raspberry-pi-pico
+buzzer = PWM(Pin(9))
 
 # Initialize display
+# https://github.com/rdagger/micropython-ili9341
+# https://www.youtube.com/watch?v=suCTwxlYgnM
 # spi_connection = SPI(
 #     0, 
 #     baudrate=10000000, 
@@ -97,10 +100,13 @@ def generate_random_sequence():
 def check_win():
     global sequence_count
     global current_index
+    global led_pins
 
-    if current_index == 8:
+    if current_index == 20:
         print("You won! Congratulations!")
-        while(interrupt_button.value()): pass
+        while(interrupt_button.value()):
+            for pin in led_pins:
+                blink_led(pin, 100)
     elif current_index == sequence_count:
         sequence_count += 2
         current_index = 0
@@ -161,5 +167,4 @@ if __name__ == "__main__":
                 else:
                     print("You lose. Loser.")
                     while(interrupt_button.value()): pass
-                user_action = -1
-            
+                user_action = -1     
