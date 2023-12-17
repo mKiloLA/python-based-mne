@@ -2,8 +2,9 @@ import time
 from random import randrange
 from machine import Pin, PWM, SPI
 
-from ir_remote import IRRemote
-from ili9341 import Display, color565
+from ir_remote_driver import IRRemote
+from lcd_display_driver import Display, color565, XglcdFont
+
 
 # Declare LED pins
 red_led = Pin(22, Pin.OUT, value=0)
@@ -44,6 +45,8 @@ spi = SPI(
 display = Display(spi, dc=Pin(20), cs=Pin(17), rst=Pin(21))
 display.clear()
 
+espresso_dolce = XglcdFont('fonts/EspressoDolce18x24.c', 18, 24)
+
 # Create lists for displaying rectangles
 x = 240
 y = 320
@@ -71,12 +74,6 @@ interrupt_button.irq(trigger=Pin.IRQ_FALLING, handler=interrupt_callback)
 
 
 def process_move(quadrant):
-    global led_pins
-    global buzzer_tones
-    global display
-    global x, y, m, w, h
-    global x_coordinates, y_coordinates
-
     display.fill_rectangle(x_coordinates[quadrant], y_coordinates[quadrant], w, h, colors_display[quadrant])
     playtone(buzzer_tones[quadrant], 1000)
     blink_led(led_pins[quadrant], 400)
@@ -86,8 +83,8 @@ def process_move(quadrant):
 
 
 def process_user_selections(action):
-    global sequences
     global current_index
+
     if action == sequences[current_index]:
         current_index+=1
         return True
@@ -97,9 +94,16 @@ def process_user_selections(action):
 
 def show_display(screen, option_state, keypressed):
     if screen == "MAIN":
-        print("Welcome to Simon Says")
+        display.draw_text(80, 80, 'Welcome', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+        display.draw_text(110, 100, 'to', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+        display.draw_text(60, 120, 'Simon Says', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
     elif screen == "NEW_GAME":
-        print("New Game!")
+        clear_display()
+        display.draw_text(70, 100, 'New Game', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+
+
+def clear_display():
+    display.fill_rectangle(0, 0, x, y, color565(255, 0, 255))
 
 
 def blink_led(pin, time_ms):
@@ -109,7 +113,6 @@ def blink_led(pin, time_ms):
 
 
 def generate_random_sequence():
-    global sequence_count
     global sequences
     for i in range(sequence_count):
         sequences[i] = randrange(0, 4)
@@ -119,17 +122,20 @@ def generate_random_sequence():
 def check_win():
     global sequence_count
     global current_index
-    global led_pins
 
-    if current_index == 4:
-        print("You won! Congratulations!")
+    if current_index == 20:
+        display.draw_text(70, 100, 'You won!', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
         while(interrupt_button.value()):
             for pin in led_pins:
                 blink_led(pin, 100)
     elif current_index == sequence_count:
         sequence_count += 2
         current_index = 0
-        time.sleep(1)
+        display.draw_text(70, 90, 'Next Round!', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+        display.draw_text(70, 110, "There are: ", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+        display.draw_text(70, 130, f"{sequence_count} actions", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+        time.sleep(2)
+        clear_display()
         generate_random_sequence()
 
 
@@ -188,10 +194,10 @@ if __name__ == "__main__":
             if user_action > -1:
                 # See if the current key pressed is the correct key
                 if process_user_selections(user_action):
-                    print(current_index)
                     # Check to see if a new sequence needs to be made
                     check_win()
                 else:
-                    print("You lose. Loser.")
+                    display.draw_text(75, 100, "You lose.", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+                    display.draw_text(70, 120, "Play again?", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
                     while(interrupt_button.value()): pass
-                user_action = -1     
+                user_action = -1
