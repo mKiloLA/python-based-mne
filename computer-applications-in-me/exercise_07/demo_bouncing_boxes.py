@@ -90,7 +90,7 @@ def test():
             mosi=Pin(19),
             miso=Pin(16)
         )
-        display = Display(spi, dc=Pin(15), cs=Pin(17), rst=Pin(14))
+        display = Display(spi, dc=Pin(20), cs=Pin(17), rst=Pin(21))
         display.clear()
 
         colors = [color565(255, 0, 0),

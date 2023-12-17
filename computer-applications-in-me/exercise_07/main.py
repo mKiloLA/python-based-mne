@@ -3,7 +3,7 @@ from random import randrange
 from machine import Pin, PWM, SPI
 
 from ir_remote import IRRemote
-# from ili9341 import Display, color565
+from ili9341 import Display, color565
 
 # Declare LED pins
 red_led = Pin(22, Pin.OUT, value=0)
@@ -25,23 +25,35 @@ ir_remote = IRRemote(Pin(15, Pin.IN))
 # Create Piezo Buzzer
 # https://www.tomshardware.com/how-to/buzzer-music-raspberry-pi-pico
 buzzer = PWM(Pin(9))
+buzzer_tones = [131, 165, 196, 262]
 
 # Initialize display
 # https://github.com/rdagger/micropython-ili9341
 # https://www.youtube.com/watch?v=suCTwxlYgnM
-# spi_connection = SPI(
-#     0, 
-#     baudrate=10000000, 
-#     polarity=1,
-#     phase=1,
-#     bits=8,
-#     firstbit=SPI.MSB,
-#     sck=Pin(18), 
-#     mosi=Pin(19),
-#     miso=Pin(16)
-# )
-# display = Display(spi_connection, dc=Pin(20), cs=Pin(17), rst=Pin(21))
-# display.clear()
+spi = SPI(
+    0, 
+    baudrate=10000000, 
+    polarity=1,
+    phase=1,
+    bits=8,
+    firstbit=SPI.MSB,
+    sck=Pin(18), 
+    mosi=Pin(19),
+    miso=Pin(16)
+)
+display = Display(spi, dc=Pin(20), cs=Pin(17), rst=Pin(21))
+display.clear()
+
+# Create lists for displaying rectangles
+x = 240
+y = 320
+m = 8
+w = (x-3*m) // 2
+h = (y-3*m) // 2
+colors_display = [color565(255, 0, 0),color565(255, 255, 0),color565(0, 255, 0),color565(0, 0, 255)]
+x_coordinates = [(x+m)//2, (x+m)//2, m, m]
+y_coordinates =[m, (y+m)//2, (y+m)//2, m]
+display.fill_rectangle(0, 0, x, y, color565(255, 0, 255))
 
 # Variable declarations
 sequence_count = 0
@@ -60,10 +72,17 @@ interrupt_button.irq(trigger=Pin.IRQ_FALLING, handler=interrupt_callback)
 
 def process_move(quadrant):
     global led_pins
-    colors = ["red", "yellow", "green", "blue"]
-    blink_led(led_pins[quadrant], 200)
-    print(colors[quadrant])
-    time.sleep(.500)
+    global buzzer_tones
+    global display
+    global x, y, m, w, h
+    global x_coordinates, y_coordinates
+
+    display.fill_rectangle(x_coordinates[quadrant], y_coordinates[quadrant], w, h, colors_display[quadrant])
+    playtone(buzzer_tones[quadrant], 1000)
+    blink_led(led_pins[quadrant], 400)
+    time.sleep(.200)
+    display.fill_rectangle(0, 0, x, y, color565(255, 0, 255))
+    playtone(buzzer_tones[quadrant], 0)
 
 
 def process_user_selections(action):
@@ -102,7 +121,7 @@ def check_win():
     global current_index
     global led_pins
 
-    if current_index == 20:
+    if current_index == 4:
         print("You won! Congratulations!")
         while(interrupt_button.value()):
             for pin in led_pins:
@@ -110,7 +129,14 @@ def check_win():
     elif current_index == sequence_count:
         sequence_count += 2
         current_index = 0
+        time.sleep(1)
         generate_random_sequence()
+
+
+def playtone(frequency, volume):
+    buzzer.duty_u16(volume)
+    buzzer.freq(frequency)
+
 
 # Only run main loop if this file is directly called
 if __name__ == "__main__":
@@ -132,6 +158,7 @@ if __name__ == "__main__":
             # Display New Game screen
             show_display("NEW_GAME", "", "")
             time.sleep(1)
+            display.fill_rectangle(0, 0, x, y, color565(255, 0, 255))
 
             # Set the current number of sequences
             sequence_count = 4
