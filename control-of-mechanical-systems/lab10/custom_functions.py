@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 from matplotlib.backend_bases import MouseButton
-from matplotlib.widgets import Button
 
 notes = []
 
@@ -67,21 +66,3 @@ def scalar_times_list(scalar=1, data_list=[]) -> list:
         list[nubmer]: original list scaled by the scalar factor
     """
     return [scalar * x for x in data_list]
-
-def zpk(G):
-    """Custom function to imitate the function of Matlab."""
-    
-
-def plot_depr(*args, scalex=True, scaley=True, data=None, **kwargs):
-    fig, ax = plt.subplots()
-    line = ax.plot(
-        *args, scalex=scalex, scaley=scaley,
-        **({"data": data} if data is not None else {}), **kwargs)
-    def onclick(event):
-        # print('%s click: button=%d, x=%d, y=%d, xdata=%f, ydata=%f' %
-        #     ('double' if event.dblclick else 'single', event.button,
-        #     event.x, event.y, event.xdata, event.ydata))
-        # plt.plot()
-        plt.text(event.xdata, event.ydata, "({:.2f}, {:.2f})".format(event.xdata, event.ydata), transform=ax.transData)
-    cid = fig.canvas.mpl_connect('button_press_event', onclick)
-    return line
