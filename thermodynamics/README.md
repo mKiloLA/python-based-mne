@@ -4,12 +4,12 @@ This repository contains two problems that could be given as assignments in Ther
 
 ## Files in the Repository
 
-* `Problem_8_23`
-  * [Thermo_Project_Skeleton_(8_23).ipynb](Problem_8_23/Thermo_Project_Skeleton_(8_23).ipynb): Starting file to be given as an assignment description to students.
-  * [Thermo_Project_Solution_(8_23).ipynb](Problem_8_23/Thermo_Project_Solution_(8_23).ipynb): One possible solution for Problem 8.23.
-* `Problem_8_33`
-  * [Thermo_Project_Skeleton_(8_33).ipynb](Problem_8_23/Thermo_Project_Skeleton_(8_23).ipynb): Starting file to be given as an assignment description to students.
-  * [Thermo_Project_Solution_(8_33).ipynb](Problem_8_23/Thermo_Project_Solution_(8_23).ipynb): One possible solution for Problem 8.33.
+* [Problem_8_23](../thermodynamics/Problem_8_23/)
+  * [Thermo_Project_Skeleton_(8_23).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Skeleton_(8_23).ipynb): Starting file to be given as an assignment description to students.
+  * [Thermo_Project_Solution_(8_23).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Solution_(8_23).ipynb): One possible solution for Problem 8.23.
+* [Problem_8_33](../thermodynamics/Problem_8_33/)
+  * [Thermo_Project_Skeleton_(8_33).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Skeleton_(8_23).ipynb): Starting file to be given as an assignment description to students.
+  * [Thermo_Project_Solution_(8_33).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Solution_(8_23).ipynb): One possible solution for Problem 8.33.
 
 ## Software Requirements
 

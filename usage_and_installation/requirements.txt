@@ -1,0 +1,8 @@
+numpy
+scipy
+ipympl
+ipykernel
+matplotlib
+pandas
+pyromat
+control
