@@ -48,8 +48,3 @@ This repository contains in-class examples, assignments, and solutions for data 
   * [example.py](intro_to_pico/example.py): LED flashing program for the RPi Pico. This file is intended to be used as the in-class example in Step 3 and the base code provided for the homework.
   * [stoplight.py](intro_to_pico/stoplight.py): this is a potential solution to the Stoplight Activity. Many different variations of this file could exist.
   * [sos.py](intro_to_pico/sos.py): this is an example of using morse code with the Pico. It is not a particularly good solution to the problem, but it does work.
-
-* `ksu_den_161_extension_pack`
-  * [package.json](ksu_den_161_extension_pack/package.json): this file contains the code used to create the Extension Package in the Microsoft Marketplace. As it stands, this file (and folder) can be ignored. In the future, an instructor will need to make sure the extension pack stays up to date.
-
-Changes to add input for tire diameter. Give them a py file and add comments, still make the two changes. Do not give students the ipynb just the code in a py file and make them change the file and tire size and then add comments about the functionality. In class quiz questions

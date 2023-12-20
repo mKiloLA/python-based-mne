@@ -1,18 +1,18 @@
 {
-  "name": "ksu-den-161-extension-pack",
-  "displayName": "KSU DEN 161 Extension Pack",
-  "description": "All extensions needed to complete DEN 161 at KSU.",
+  "name": "ksu-mechanical-engineering-extension-pack",
+  "displayName": "KSU Mechanical Engineering Extension Pack",
+  "description": "Extension pack for use across the Mechanical Engineering department at Kansas State University.",
   "publisher": "ZakaryOster",
   "icon": "images.png",
   "version": "0.1.0",
   "engines": {
-    "vscode": "^1.81.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "Extension Packs"
   ],
   "extensionPack": [ 
-    "DavidAnson.vscode-markdownlint",
+    "tomoki1207.pdf",
     "GrapeCity.gc-excelviewer",  
     "ms-python.python", 
     "ms-python.vscode-pylance", 
@@ -22,7 +22,6 @@
     "ms-toolsai.vscode-jupyter-cell-tags", 
     "ms-toolsai.vscode-jupyter-slideshow", 
     "paulober.pico-w-go", 
-    "ritwickdey.LiveServer", 
     "VisualStudioExptTeam.intellicode-api-usage-examples", 
     "VisualStudioExptTeam.vscodeintellicode"
   ]
