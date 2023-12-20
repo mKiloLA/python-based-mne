@@ -24,4 +24,4 @@ Since the motorlabs are only used in lab, the following software would need to b
   * MATLAB Runtime
   * motorlabGUI.exe
 
-Once the motorlabGUI has been installed, add file location to the PATH of your operating system. For instructions on adding locations to the PATH, see [add_to_path_windows.pdf](..\usage_and_installation\add_to_path_windows.pdf).
+Once the motorlabGUI has been installed, add file location to the PATH of your operating system. For instructions on adding locations to the PATH, see [add_to_path_windows.pdf](../add_to_path_windows.pdf).
