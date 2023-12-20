@@ -22,11 +22,11 @@ Since this assignment would be completed by students, the following software wou
   * pyromat
   * matplotlib
 * Visual Studio Code Extensions
-  * Python 
-  * Pylance 
-  * Jupyter 
-  * Jupyter Keymap 
-  * Jupyter Notebook Renderers 
+  * Python
+  * Pylance
+  * Jupyter
+  * Jupyter Keymap
+  * Jupyter Notebook Renderers
   * Jupyter Cell Tags
   * Jupyter Slide Show
   * IntelliCode
