@@ -1,4 +1,4 @@
-# Controls
+# ME 570: Control of Mechanical Systems
 
 This folder contains three lab assignments that could be used to replace current lab assignments of the same name. The lab assignments themselves have not been changed, only the implementation and skeletons have changed. Thanks to the control package and a few custom functions, the Python implementation mimics the equivalent MATLAB implementation very closely. The three chosen labs represent different key features of MATLAB that need to be replicated: transfer functions, plotting, root locus plots, bode plots, and the motorlab.
 

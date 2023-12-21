@@ -1,4 +1,4 @@
-# ME 533: Machine Design
+# ME 571: Fluid Mechanics
 
 
 

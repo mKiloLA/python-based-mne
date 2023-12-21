@@ -1,5 +1,5 @@
 import time
-from random import randrange
+from random import randrange, seed
 from machine import Pin, PWM, SPI
 
 from ir_remote_driver import IRRemote
@@ -59,10 +59,12 @@ y_coordinates =[m, (y+m)//2, (y+m)//2, m]
 display.fill_rectangle(0, 0, x, y, color565(255, 0, 255))
 
 # Variable declarations
+seed()
 sequence_count = 0
-sequences = [-1] * 20
+sequences = []
 current_index = 0
 new_game = False
+next_round = False
 
 # Set up interrupt button
 def interrupt_callback(_):
@@ -92,7 +94,7 @@ def process_user_selections(action):
         return False
 
 
-def show_display(screen, option_state, keypressed):
+def show_display(screen):
     if screen == "MAIN":
         display.draw_text(80, 80, 'Welcome', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
         display.draw_text(110, 100, 'to', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
@@ -112,32 +114,20 @@ def blink_led(pin, time_ms):
     pin.low()
 
 
-def generate_random_sequence():
-    global sequences
-    for i in range(sequence_count):
-        sequences[i] = randrange(0, 4)
-        process_move(sequences[i])
-
-
-def check_win():
+def check_state():
     global sequence_count
     global current_index
+    global next_round
 
     if current_index == 20:
+        clear_display()
         display.draw_text(70, 100, 'You won!', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
         while(interrupt_button.value()):
             for pin in led_pins:
                 blink_led(pin, 100)
     elif current_index == sequence_count:
-        sequence_count += 2
-        current_index = 0
-        display.draw_text(70, 90, 'Next Round!', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
-        display.draw_text(70, 110, "There are: ", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
-        display.draw_text(70, 130, f"{sequence_count} actions", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
-        time.sleep(2)
-        clear_display()
-        generate_random_sequence()
-
+        next_round = True
+        
 
 def playtone(frequency, volume):
     buzzer.duty_u16(volume)
@@ -147,7 +137,7 @@ def playtone(frequency, volume):
 # Only run main loop if this file is directly called
 if __name__ == "__main__":
     # Begin main loop
-    show_display("MAIN", "", "")
+    show_display("MAIN")
     while True:
         # Reset the user action
         user_action = -1
@@ -157,25 +147,36 @@ if __name__ == "__main__":
 
         # Return to main menu when MENU key is pressed
         if last_key_processed == "MENU":
-            show_display("MAIN", "", "")
+            show_display("MAIN")
         
         # Restart game if new game interrupt is hit
         if new_game:
             # Display New Game screen
-            show_display("NEW_GAME", "", "")
+            show_display("NEW_GAME")
             time.sleep(1)
             display.fill_rectangle(0, 0, x, y, color565(255, 0, 255))
 
-            # Set the current number of sequences
-            sequence_count = 4
-
             # Randomly select the initial sequences
             sequence_count = 4
-            generate_random_sequence()
+            for i in range(sequence_count):
+                sequences.append(randrange(0, 4))
+                process_move(sequences[i])
             
             # Disable new game mode and reset current index
             new_game = False
             current_index = 0
+        elif next_round:
+            sequence_count += 1
+            current_index = 0
+            display.draw_text(70, 90, 'Next Round!', espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+            display.draw_text(70, 110, "There are ", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+            display.draw_text(70, 130, f"{sequence_count} actions", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+            time.sleep(2)
+            clear_display()
+            sequences.append(randrange(0, 4))
+            for i in range(sequence_count):
+                process_move(sequences[i])
+            next_round = False
         else:
             if not button_pins[0].value():
                 process_move(0)
@@ -194,10 +195,18 @@ if __name__ == "__main__":
             if user_action > -1:
                 # See if the current key pressed is the correct key
                 if process_user_selections(user_action):
+                    # Display the current sequence count to the end user
+                    display.draw_text(115, 130, str(current_index), espresso_dolce, 
+                                      color565(255, 255, 255), color565(255, 0, 255))
                     # Check to see if a new sequence needs to be made
-                    check_win()
+                    check_state()
                 else:
-                    display.draw_text(75, 100, "You lose.", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
-                    display.draw_text(70, 120, "Play again?", espresso_dolce, color565(255, 255, 255), color565(255, 0, 255))
+                    display.draw_text(75, 100, "You lose.", espresso_dolce, 
+                                      color565(255, 255, 255), color565(255, 0, 255))
+                    display.draw_text(70, 120, "Play again?", espresso_dolce, 
+                                      color565(255, 255, 255), color565(255, 0, 255))
+                    playtone(50, 1000)
+                    time.sleep(1)
+                    playtone(50, 0)
                     while(interrupt_button.value()): pass
                 user_action = -1
