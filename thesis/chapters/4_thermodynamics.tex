@@ -1,9 +1,56 @@
-\section{Current Implementation}
-No projects currently exist. Currently any assignments require 
-looking through tables in back of book endlessly. Interpolation is 
-done by hand.
+\section{Course Overview}
 
-\section{Project Redesign}
-Create new homework assignments (or a semester project?) that requires iteration of a property that would typically be overly tedious without software help. Could potentially utilize curve fitting for better interpolation than straight linear interpolation.
+ME 513: Thermodynamics is a lecture based class that focuses on the interplay of heat, work, and energy in both
+open and closed loop systems. While there is no lab portion to the class, significant lecture time is spent
+solving problems and working examples, and a new homework is assigned every lecture to give students a chance
+to apply the new concepts taught that day.
 
-\section{Redesigned Project Deliverable}
+Most problems in thermodynamics follow a similar solution path. First, students must recognize the different
+states in the system. Once the different states are identified, the values for temperature, power, energy,
+entropy, etc. must be found for each state. The exact values needed, and retrievable, vary depending on the
+given system. This process is known as setting the state. Once the state has been set, known laws of
+thermodynamics can be applied and the question can be solved.
+
+For most questions, the majority of time is spent setting the state. This involves using known properties, 
+usually given in the problem statement, to look up values in property tables in a thermodynamics textbook. 
+This often proves to be a very time consuming process, especially when interpolation is required to get 
+property values. And once iteration is introduced, such as in a design problem, manually searching through
+tables becomes impractical, if not impossible.
+
+This is where the use of a programming language would become highly beneficial. As it currently stands, the 
+class makes no use of programming or any computer software for solving problems in thermodynamics. 
+
+\section{New Assignments}
+
+Since no assignments currently make use of programming, two new asssignments have been created to demonstrate
+how programming could be beneficial to the course. Both assignments will make use of a Python library called
+PYroMat. This is a free, open source library dedicated to making thermodynamic properties readily available.
+They will also both make use of Jupyter Notebooks for cleanly presenting questions, commentaries, and code
+while solving the question.
+
+The first assignment, Question 8.23, is a five state system that does not require iteration or plotting. It 
+follows the structure of a typical question in thermodynamics well. The student must identify the states, list
+the known properties for each state, and then either search for additional values in a table or calculate them 
+with known values. After this, the laws of thermodynamics are applied, equations are balanced, and the question
+is solved.
+
+The second assignment, Question 8.33, better showcases the benefits of programming. This question uses both
+iteration and plotting to show the changes in quality and thermal efficiency as the pressure increases. If 
+done by hand, this would be a difficult and tedious task. But when programming, it only requires a few extra
+lines of code.
+
+Using programming in this manner gives students a better idea of how real problems are solved by introducing
+them to a more efficient and powerful solution method. These questions would also directly correlate to Abet 
+Student Outcomes 1, 6, and 7 and weakly correlate to Outcome 3, as seen in Appendix \ref{appendix:appendix_abet}.
+
+\section{Project Deliverables}
+
+In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
+the folder titled "thermodynamics" contains both the problem statements and solution guides for the two questions
+introduced in the previous section. The folder also contains a README that details what is in each file and 
+what software is needed to complete the assignments. 
+
+For these projects to be added to the class, the instructor would simply need to give the skeleton files to 
+students as a problem statement. It may be beneficial to use question 8.23 as an in-class example both to serve 
+as a reminder of how to use Python with Jupyter Notebooks as well as a demonstration of how to use PYroMat to 
+access material properties and change property units.

@@ -1,209 +1,97 @@
 \section{Course Overview}
-Dean of Engineering 161: Engineering Problem Solving is a lab-style
-course that complements the lecture-oriented DEN 160: Engineering
-Orientation. The class focuses on providing hands-on, problem
-solving experiences through projects from multiple engineering 
-disciplines. While these projects serve as the students' introduction
-to different engineering disciplines, they also develop the core 
-tools needed to be a successful engineer. 
 
-The current iteration of DEN 161 has three sections of interest to
-this body of work: data analysis using Microsoft Excel, data analysis
-using Python, and embedded programming using an Arduino Uno.
+DEN 161: Engineering Problem Solving is a lab-style course that complements the lecture-oriented DEN 160: 
+Engineering Orientation. The class focuses on providing hands-on, problem solving experiences through projects 
+from multiple engineering disciplines. While these projects serve as the students' introduction to different 
+engineering disciplines, they also develop the core tools needed to be a successful engineer. 
 
-Microsoft Excel is used to introduce the concept of data analysis
-to students. Students are tasked with manipulating data and 
-finding different statistical properties of given data. 
-This proves to be an effective point of entry given to data
-analysis since many students are familiar with Microsoft Excel or 
-Google Sheets.
+The current iteration of DEN 161 has three sections of interest to this body of work: data analysis using 
+Microsoft Excel, data analysis using Python, and embedded programming using an Arduino Uno.
 
-Python is then introduced as an alternative method of solving the same
-problems. The lectures and assignments focus on data calculations to 
-verify designs and general code inspection to understand the 
-how the program works. These lectures are done using Jupyter
-Notebook in Anaconda's Spyder IDE. 
+Microsoft Excel is used to introduce the concept of data analysis to students. Students are tasked with 
+manipulating data and finding different statistical properties of given data. This proves to be an effective 
+point of entry given to data analysis since many students are familiar with Microsoft Excel or Google Sheets.
 
-Following the introduction to Python, a Stoplight Activity is assigned. 
-This project introduces students to circuitry and microcontrollers 
-through the creation of a stoplight using 3 LEDs and an Arduino Uno.
-The Arduino Uno is programmed using C++ in the Arduino IDE.
+Python is then introduced as an alternative method of solving the same problems. The lectures and assignments 
+focus on data calculations to verify designs and general code inspection to understand the how the program works. 
+These lectures are done using Jupyter Notebook in Anaconda's Spyder IDE. 
 
-\section{Proposed Changes}
-Thanks to the solid programming core created by the instructors,
-the proposed changes are minor, and result in no changes to the
-current curriculum. Two changes are proposed: the adoption of Visual 
-Studio Code as a development environment and the migration from 
-Arduino Unos to Raspberry Pi Picos. 
+Following the introduction to Python, a Stoplight Activity is assigned. This project introduces students to 
+circuitry and microcontrollers through the creation of a stoplight using 3 LEDs and an Arduino Uno. The Arduino 
+Uno is programmed using C++ in the Arduino IDE.
 
-The class currently uses an IDE by the name of Spyder. Spyder is a
-popular IDE for data science applications and has to ability to 
-seamlessly integrate with Jupyter Notebooks. However, Spyder does
-not have the ability to work with a MicroPython device, such as the
-RPi Pico. Visual Studio Code, on the other hand, has an extension 
-that integrates Pico controls directly into the interface, 
-making it a one-stop-shop for both the data analysis and embedded 
-systems development in DEN 161. Visual Studio Code also has 
-Jupyter Notebooks extensions that allow for a first class experience.
+\section{Project Redesign}
 
-The second proposed change is transitioning from the Arduino Uno
-to a Raspberry Pi Pico. The reason for this change is twofold. First,
-the Pico can run using MicroPython, a lightweight implementation of
-Python, which has the same syntax as Python. This allows students
-to focus on understanding one language, Python, rather than learning
-both Python and C++. Switching to the Pico also opens the door to
-using a single development environment. While the Arduino can
-be programmed using Visual Studio Code, the set up process
-is non-trivial, and requires a strong understanding of the
-operating and file system of the computer. 
+Thanks to the solid programming core created by the instructors, the proposed changes are minor, and result in 
+no changes to the current curriculum. Two changes are proposed: the adoption of Visual Studio Code as a 
+development environment and the migration from Arduino Unos to Raspberry Pi Picos. 
 
-The proposed changes aim to increase student understanding
-by reducing the number of systems they are introduced to. Instead
-of two langauges and two editors, students will only need to
-learn one language in one editor. The work done by these projects
-directly correlates with student outcomes 6 and 7 and weakly
-correlates with outcomes 1 and 3 as seen in Appendix 
-\ref{appendix:appendix_abet}.
+The class currently uses an IDE by the name of Spyder. Spyder is a popular IDE for data science applications and 
+has to ability to seamlessly integrate with Jupyter Notebooks. However, Spyder does not have the ability to work 
+with a MicroPython device, such as the RPi Pico. Visual Studio Code, on the other hand, has an extension that 
+integrates Pico controls directly into the interface, making it a one-stop-shop for both the data analysis and 
+embedded systems development in DEN 161. Visual Studio Code also has Jupyter Notebook extensions that allow for 
+a first class experience.
+
+The second proposed change is transitioning from the Arduino Uno to a Raspberry Pi Pico. The reason for this 
+change is twofold. First, the Pico can run using MicroPython, a lightweight implementation of Python, which has 
+the same syntax as Python. This allows students to focus on understanding one language, Python, rather than 
+learning both Python and C++. Switching to the Pico also opens the door to using a single development environment. 
+While the Arduino can be programmed using Visual Studio Code, the set up process is non-trivial, and requires a 
+strong understanding of the operating and file system of the computer. 
+
+The proposed changes aim to increase student understanding by reducing the number of systems they are introduced 
+to. Instead of two langauges and two editors, students will only need to learn one language in one editor. The 
+work done by these projects directly correlates with Abet Student Outcomes 6 and 7 and weakly correlates with 
+Outcomes 1 and 3, as seen in Appendix \ref{appendix:appendix_abet}.
+
+\section{Project Redesign Assessment}
+
+The project proposal for DEN 161 is unique from the other classes in this work because the proposed changes were
+implemented into the standard class curriculum. The second week of Python was replaced with the tire RPM problem
+and the Arduino Uno was replaced by the Raspberry Pi Pico in the stoplight project. The adoption was largely 
+successful, and the instructors felt that it was a step in the correct direction. That is not to say that there
+were no pain points.
+
+The biggest hinderance encountered in the Fall 2023 was general file system comprehension. Many students did not 
+know where downloaded files go or how the file system (both File Explorer and Finder) were structured. This proved 
+to be an issue for both the tire RPM question and the stoplight example. For Python to locate the .csv file 
+with the RPM data, either the full path to the file needs to be provided, relative to the current working directory,
+or the file needed to be in the same folder as the script. To get the MicroPico extension to work correctly in
+Visual Studio Code, a working directory needs to be set. 
+
+Both of these issues can likely be solved with the same two methods. First, time will be spent in a previous lecture
+to talk about the file system. This is basic information that is required to effectively use a computer. Second,
+files for assignments will be distributed in zip files. This will nearly guarantee that files have the correct
+relative location. This will introduce a new issue of trying to link and edit files in a zip folder, but hopefully
+it is an easier fix than trying to hunt down files on student's laptops.
+
+The Fall 2023 semester also found that using Visual Studio Code for both the data analysis and Pico portions of the
+class is better for students than using Spyder for the data analysis and VSCode for the Pico. 
+
+An additional pre-class assignment will also be created that will require students to verify that they have
+done the necessary installations before coming to class. Though this is not an issue directly caused by the changes
+made, it did directly inhibit student learning.
+
+Lastly, and most concerningly, this semester showed that the MicroPico extension can be unreliable when not used
+exactly as intended. While no connection issues ever occurred during testing, a non-trivial number of students
+experienced issues with the MicroPico extension. Since no issues have been encountered by the instructors at this
+point, it is hard to pinpoint the exact cause. Fixes for different issues can be found in the 
+"usage\_and\_installation" folder in the GitHub Repository.
 
 \section{Project Deliverables}
-The repository contains in-class examples, assignments, and 
-solutions for data analysis in Excel, data analysis in Python, 
-and programming the Raspberry Pi Pico. It also contains an 
-installation guide, source code for the custom extension pack, 
-and videos walking through the setup and completition of the 
-different assignments. Included below is an instructors guide
-that walks through the assigments and files in the repository.
 
-\subsection{Instructors Guide}
-Change the order to start with basic Python, which teachers
-already have, then the excel problem and the python version of
-the csv file. Then move to using the pico and ciruit building
+In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
+the folder titled "engineering-problem-solving," there are several folders containing different problems and 
+examples. The folder also contains a README that details what is in each file and what software is needed to 
+complete the assignments. 
 
-\begin{enumerate}
-    \item \textbf{Introduction to Excel}
-        \begin{itemize}
-            \item The content for the introduction to Excel
-            already exists and does not need to be updated.
-        \end{itemize}
-    \item \textbf{Introduction to Python}
-        \begin{itemize}
-            \item The content for the introduction to Python
-            already exists and does not need to be updated.
-        \end{itemize}
-    \item \textbf{Data Analysis with Excel}
-        \begin{itemize}
-            \item \textbf{In-Class Example:} Using the data in 
-            tire\_rpm\_excel.csv, find the maximum, minimum, 
-            mean, median, and mode speed of the vehicle. Assume 
-            a tire diameter of 20 inches. Graph the speed of 
-            the vehicle at any given time.
-            \item \textbf{Homework:} Have students repeat the 
-            process using the data from tire\_rpm\_homework.csv 
-            and 18" wheels. Graph the speed of the vehicle at 
-            any given time. This should be a 1-to-1 copy of what 
-            was done in class, just with different numbers.
-        \end{itemize}
-    \item \textbf{Data Analysis with Python}
-        \begin{itemize}
-            \item \textbf{In-Class Example:} Using the data from 
-            tire\_rpm\_example.csv and the Jupyter Notebook 
-            intro\_to\_python\_example.ipynb, find the maximum, 
-            minimum, mean, median, and mode speed of the vehicle. 
-            Assume a tire diameter of 20 inches. Graph the speed 
-            of the vehicle at any given time. This should give 
-            identical results to the Excel example problem.
-            \item \textbf{Homework:} Have students create a .py 
-            file that finds the maximum, minimum, mean, median, 
-            and mode speed of the vehicle using 
-            tire\_rpm\_homework.csv. Assume a tire diameter of 
-            18 inches. Graph the speed of the vehicle at any 
-            given time.
-                \begin{itemize}
-                    \item \textbf{Extra Credit:} How long did 
-                    it take a car with 22" wheels to go 0-60 
-                    if the sensor data was taken at 300Hz?
-                \end{itemize}
-        \end{itemize}
-    \item \textbf{Programming the Raspberry Pi Pico}
-        \begin{itemize}
-            \item \textbf{In-Class Example:} Walk through the code 
-            in example.py to show students how to blink the LEDs. 
-            \item \textbf{Homework:} Task students with altering 
-            the code provided in class to make the LEDs function 
-            as a stoplight. A potential solution is provided in 
-            stoplight.py.
-            \begin{itemize}
-                \item \textbf{Extra Credit:} Make the LEDs spell 
-                your name in morse code. An example of looping morse
-                code is shown in sos.py.
-            \end{itemize}
-        \end{itemize}
-\end{enumerate}
+The first folder is a tire RPM example problem that is to be completed in class, after having completed the Excel
+lectures and the introduction to Python lectures. This will show students some of the benefits of using a
+language like Python over Excel. To go along with the example problem is a similar tire RPM homework assignment.
+The code needed to complete the assignment is all provided to students, with a handful of tasks left up to them,
+as detailed in the homework file. 
 
-\subsection{Description of Files in the Repository}
-See Appendix \ref{appendix:appendix_github} for full source code
-and documentation. Videos have been removed from the repository
-due to file size limitations.
-\begin{enumerate}
-    \item \textbf{installation\_guides}
-        \begin{itemize}
-            \item \textbf{Installation\_Guide.pdf:} a guide 
-            that walks through downloading Anaconda, Visual 
-            Studio Code, and the KSU Extensions in Visual 
-            Studio Code.
-        \end{itemize}
-    \item \textbf{intro\_to\_excel}
-        \begin{itemize}
-            \item \textbf{tire\_rpm\_example.csv:} a data file 
-            that contains RPM data for a car wheel. Use this 
-            data for the example questions.
-            \item \textbf{tire\_rpm\_homework.csv:} a data file 
-            that contains RPM data for a car wheel. Use this 
-            data for the homework questions.
-            \item \textbf{tire\_rpm\_example\_solution.xlsx:} a 
-            potential solution to the in-class problem posed in 
-            Step 1.
-            \item \textbf{tire\_rpm\_homework\_solution.xlsx:} a 
-            potential solution to the homework problem posed in 
-            Step 1.
-        \end{itemize}
-    \item \textbf{intro\_to\_python}
-        \begin{itemize}
-            \item \textbf{tire\_rpm\_example.csv:} a data file 
-            that contains RPM data for a car wheel. Use this 
-            data for the example questions.
-            \item \textbf{tire\_rpm\_homework.csv:} a data file 
-            that contains RPM data for a car wheel. Use this 
-            data for the homework questions.
-            \item \textbf{intro\_to\_python\_example.ipynb:} a 
-            Jupyter Notebook file that walks through solving the 
-            in-class example problem. This file is intended to 
-            bridge the gap between Excel and Python.
-            \item \textbf{intro\_to\_python\_homework\_solution.py:} 
-            a Python script for solving the homework question from 
-            Step 2. This could also be done in a Jupyter Notebook, 
-            but using a .py file was used to showcase standard
-            Python usage. This also contains the solution to the 
-            extra credit question.
-        \end{itemize}
-    \item \textbf{intro\_to\_pico}
-        \begin{itemize}
-            \item \textbf{example.py:} LED flashing program for the 
-            RPi Pico. This file is intended to be used as the in-class 
-            example in Step 3 and the base code provided for the homework.
-            \item \textbf{stoplight.py:} this is a potential solution 
-            to the Stoplight Activity. Many different variations of 
-            this file could exist.
-            \item \textbf{sos.py:} this is an example of using 
-            morse code with the Pico. The solution utilizes looping
-            and a function to reduce repeated code.
-        \end{itemize}
-    \item \textbf{ksu\_den\_161\_extension\_pack}
-        \begin{itemize}
-            \item \textbf{package.json:} this file contains the code 
-            used to create the Extension Package in the Microsoft 
-            Marketplace. As it stands, this file (and folder) can be 
-            ignored. In the future, an instructor will need to make 
-            sure the extension pack stays up to date.
-        \end{itemize}
-\end{enumerate}
+Finally, the stoplight folder contains the starter code to give students for the stoplight assignment, a solution
+key, and a file demonstrating morse code on the Pico. Installation instructions for the using the Pico can be found
+in the "usage\_and\_installation" folder in the repository.
