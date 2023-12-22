@@ -1,13 +1,62 @@
-\section{Current Implementation}
+\section{Course Overview}
 
-ME 570: Control of Mechanical Systems relies heavily on MATLAB for the completion of Labs and Homeworks. 
-All work is done using .mlx files through a licensed copy of MATLAB for a more interactive working 
-environment. To access the controls related commands, a package called the Controls Toolbox has to be 
-purchased from MATLAB. For Labs, a special piece of equiment called the MotorLab is used to collect motor 
-data. This device has a GUI that runs through MATLAB, as well as some built in functions made for MATLAB.
+ME 570: Control of Mechanical Systems is a mixed class with two lectures and one lab every week. The lectures focus on teaching
+the principles and theory of controls while the lab focuses on designing and testing control systems. Most labs are dedicated to
+using and designing PID controllers using different methods, such as frequency analysis or pole anaylsis.
 
-\section{Project Redesign}
-Change a homework assignment that needs matlab and use python for it. 
-Change a lab that needs the motorlab and use python instead of matlab
+To complete the labs, the class makes use of a custom motor rig called the motorlab. To go along with the motorlab, a graphical 
+user interface for controlling the motorlab was also created by Dale Schinstock. This GUI runs as an appliation through MATLAB 
+and allows the students to both send commands to the motor as well as collect runtime data from the motor.
 
-\section{Redesigned Project Deliverable}
+Controls also relies heavily on MATLAB for the completion of labs and homeworks. All work is done using .mlx files through a 
+licensed copy of MATLAB for a more interactive working environment. To access the controls related commands, a package called 
+the Controls Toolbox has to be purchased from MATLAB. 
+
+While Controls uses programming more than any class besides ME 400, little to no instruction is provided on how to program in MATLAB.
+The first lab is dedicated to taking the MATLAB Onramp starter course, which takes about 1 to 2 hours to complete. However, the 
+Onramp does not address most of the work done in Controls, such as plotting and transfer functions. The Onramp does teach students
+the basics of MATLAB syntax, but most students come out of the Onramp just as confused by MATLAB as they were going in.
+
+This disconnect between students and MATLAB becomes a barrier that prevents students from understanding controls. Many students
+spend more time trying to understand MATLAB than they do learning controls. 
+
+\section{Lab Assignment Redesigns}
+
+Since ME 570 already fully utlilizes programming in the course, no new assignments are being created. Instead, three pre-existing
+labs have been translated from MATLAB to Python. While MATLAB is the industry standard when it comes to control systems, the
+license is expensive, students do not have a solid understanding of it, and we do not make use of its most powerful feature,
+Simulink. In addition to this, Python has a library, aptly named "control," which has a MATLAB module that imitates the Control
+Toolbox, both in form and functionality, from MATLAB. In combination with Jupyter Notebooks and a few custom plotting modifications,
+using Python will give a very similar expereince to MATLAB, and will give students that pursue the field of controls any easy
+transition to MATLAB. 
+
+All three translated labs make use of the motorlab, which has had its GUI turned into an application, courtesy of the MATLAB
+Compiler. This allows the application to be run from an app icon or from the terminal. These labs also make use of a custom plot
+command. The plot command highjacks the standard matplotlib plot command and adds the ability to create data tips. The
+direction of the datatip changes based on which mouse click is used, and a double click in the plot window will remove all datatips.
+More custom functions could be added later to imitate MATLAB functionality as needed, but this was the only one required for
+completing these labs.
+
+The first translated lab, Lab 4, is a standard assignment that makes use of the motorlab, reading from the csv file output from the
+motorlab, and then plotting the results. The second lab, Lab 10, builds on Lab 4 by adding root locus plots and sisotool. While the
+sisotool command in MATLAB is not as powerful as the full designer in MATLAB, it does allow for interactive plots where poles can
+be moved and the graphs automatically update. The third lab, Lab 13, focuses on frequency response design methods by making use
+of Bode plots.
+
+The labs chosen aim to showcase how the major features used in MATLAB can be emulated in Python. Some features, like Simulink, have
+no direct correlation. However, Simulink is only used in one lab, and students only need to make two small changes. Python also
+requires more library imports, but these can all be handled by the skeleton and do not pose much concern.
+
+Since no new assignments are being added to the class, the learning objectives 
+
+\section{Project Deliverables}
+
+In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
+the folder titled ``control-of-mechanical-systems'' contains both the lab assignments, code skeletons, and solutions for the three
+lab assignments explained above. The folder also contains a README that details what is in each file and what software is needed 
+to complete the assignments. 
+
+The act of integrating these labs into the class would not be as simple as the integrations for other classes. Since every lab 
+uses MATLAB, the other 11 labs would also need to be translated. In addition to this, every computer in the lab would need to 
+get the correct applications, extensions, and motorlabGUI executable installed. Instructions for installing everything needed 
+can be found in the ``usage-and-installation'' folder in the GitHub repository.

@@ -2,7 +2,7 @@
 
 This folder contains three lab assignments that could be used to replace current lab assignments of the same name. The lab assignments themselves have not been changed, only the implementation and skeletons have changed. Thanks to the control package and a few custom functions, the Python implementation mimics the equivalent MATLAB implementation very closely. The three chosen labs represent different key features of MATLAB that need to be replicated: transfer functions, plotting, root locus plots, bode plots, and the motorlab.
 
-All three labs make use of the motorlab. While the motorlab originally ran through MATLAB, it has since been turned into a standalone executable which can be found in the [motorlabGUI](../usage_and_installation/motorlabGUI) folder.
+All three labs make use of the motorlab. While the motorlab originally ran through MATLAB, it has since been turned into a standalone executable which can be found in the [motorlabGUI](../usage-and-installation/motorlabGUI) folder.
 
 ## Files in the Repository
 
@@ -56,4 +56,4 @@ Since ME 570 labs are completed in-person, the following software would need to 
   * IntelliCode API Usage Examples
   * vscode-pdf
 
-For more information about the installation of any of these packages, see [Usage and Installation](../usage_and_installation/).
+For more information about the installation of any of these packages, see [Usage and Installation](../usage-and-installation/).

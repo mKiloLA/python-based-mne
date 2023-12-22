@@ -27,4 +27,4 @@ Since this assignment would be completed by students, the following software wou
   * IntelliCode API Usage Examples
   * vscode-pdf
 
-For more information about the installation of any of these packages, see [Usage and Installation](../usage_and_installation/).
+For more information about the installation of any of these packages, see [Usage and Installation](../usage-and-installation/).
