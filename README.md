@@ -1,2 +1,7 @@
-# python-based-mne
-Home repository for reimagined MNE projects in Python
+# Implementing a Cohesive Programming Ecosystem in Mechanical Engineering
+
+
+## Folders in the Repository
+
+
+## Usage and Installation

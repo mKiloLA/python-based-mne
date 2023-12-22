@@ -1,0 +1,12 @@
+numpy
+scipy
+ipympl
+ipykernel
+matplotlib
+pandas
+pyromat
+control
+ht
+fluids
+mendeleev
+physdata

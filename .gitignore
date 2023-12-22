@@ -1,3 +1,17 @@
+# LaTeX build files
+thesis/out/*
+!thesis/out/main.pdf
+.vscode
+!thesis/.vscode
+engineering-problem-solving/intro_to_pico/.micropico
+node_modules
+*.vsix
+.micropico
+thermodynamics/references
+.DS_Store
+mechatronics/
+*.docx
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
