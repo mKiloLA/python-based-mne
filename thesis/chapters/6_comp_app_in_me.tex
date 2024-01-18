@@ -1,11 +1,71 @@
-\section{Current Implementation}
-Waiting on projects from Dr. Brockhoff still. Uses mostly C++ and 
-Arduino Megas / ESP32s for projects. Minimal python to end the 
-semester. 
+\section{Course Overview}
+
+ME 400: Computer Applications in Mechanical Engineering is a lecture based class with
+one lab per week. The lectures initially emphasis learning the basic tools of
+programming, looping, functions, classes, etc., while the remainder of the class
+focuses on embedded programming and microcontroller hardware, which is the primary
+objective of the class.
+
+To complete labs, students use an ESP32, a powerful microcontroller made popular by
+the home automation community, programmed with C++, an industry standard in embedded
+applications. Since the class does not have any circuit prerequisits and does not 
+teach, nor have the time to teach, circuit theory, the class instructors have created
+PCBs that are plug-and-play for students to use. These custom PCBs are designed to have
+the ESP32 as well as several other electronic components plug directly into it to
+give them the ability to work together. Additional componenets include a small LCD 
+touchscreen, buttons, LEDs, and buzzers. 
+
+The labs in ME 400 take an iterative approach where subsequent labs will add features
+and functionality on top of the previous week's lab assignment. This gives students
+the experience of completing a relatively complex project without overwhelming them 
+from the start. 
+
+ME 400 serves as the primary introduction to programming in the mechanical department.
+It is also the only class that spends significant teaching about programming and the
+only class that gives instructions on microcontrollers. Unfortunately, the class comes
+late in the curriculum, after many classes that would benefit from using programming,
+and focuses the majority of its time on embedded programming, often to the detriment
+of a fundamental understanding of programming. This is a topic of much debate, and
+will be addressed in the concluding chapters.
+
 
 \section{Project Redesign}
-Change the class to use only python, increase the learning period 
-at the beginning. Pick one project (maybe the buzzer one because it 
-would be fun) and replicate it using pico and micropython.
 
-\section{Redesigned Project Deliverable}
+Since ME 400 is a programming course, no new assignments are being created for this
+project. Instead, a pre-existing lab has been translated from C++ on the ESP32 to
+MicroPython on the Raspberry Pi Pico. The translated lab exercise is the concluding
+assignment in a string of lab exercises dedicated to programming the game "Simon Says."
+
+The goal of the exercise is to create a replayable, memory-based game that imitates the
+children's game Simon Says. TO do this, students have to use the LCD screen, five 
+buttons, four LEDs, a buzzer, and an IR remote. The lab exercise chosen aims to 
+demonstrate how the Pico and MicroPython can handle the same projects and electronics 
+that the ESP32 and C++ can. 
+
+To use the LCD screen and the IR remote, drivers needed to be created for the Pico. 
+The drivers provided in the repository are modified versions of
+existing drivers from https://github.com/rdagger/micropython-ili9341 and 
+https://github.com/peterhinch/micropython\_ir. The modified drivers would be given to 
+students and no modifications would need to be made to the drivers. 
+
+As previously mentioned, the class uses several custom PCBs to facilitate the use
+of different circuit componenets. However, no circuit board was designed for this 
+project, so the wirings were all done by hand. Only small changes to hole locations
+and traces would be needed to adapt the current PCBs into a useable form for the Pico.
+
+Since no new assignments are being added to the class, the learning objectives for the 
+class do not change.
+
+\section{Project Deliverables}
+
+In the GitHub repository associated with this paper, which cna be found in Appendix
+\ref{appendix:appendix_github}, the folder titled ``computer-applications-in-me'' 
+contains the rewritten lab assignment, code skeleton, and solution for the exercise
+mentioned above. The folder also contains a README that details what is in each file
+and what software is needed to complete the assignments. Installation instructions can
+be found in the ``usage-and-installation'' folder in the GitHub repository.
+
+The integration of these curriculum changes would not be a simple task. Since the 
+entire class is structured around C++ and the ESP32, every lecture, assignment, quiz,
+and test would have to be translated. In addition to this, new PCBs would need to be 
+designed for use with the Pico. 
