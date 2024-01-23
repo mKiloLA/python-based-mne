@@ -1,13 +1,17 @@
 # NE 495: Intro to Nuclear Engineering
 
-* Exam 1 question 9: use mendeleev, a python module to get elemental and isotopic properties
-* Lecture 20 q1,2: use physdata to get attenuation coefficients
+This repository contains three problems, two homework questions and one exam question, that could be given as assignments in Intro to Nuclear Engineering. A skeleton to be given to students as well as a solution for instructors is provided. The skeleton contains the problem statement and the necessary imports for generating a solution.
+
+These questions make use of three different libraries for constants, attenuation coefficients, and elemental properties. While the current use of these libraries are not consistant, the proposed solution would wrap around these packages and create functions that have consistant usage. The solution to [homework_20](../intro-to-nuclear-engineering/homework_20/homework_20_solution.ipynb) has a function `get_attenuation_co` that demonstrates how a wrapper library might make for easy use of different tables.
 
 ## Files in the Repository
 
-* jupyter notebook for e1q9
-* jupyter notebook for l20q1
-* jupyter notebook for l20q2
+* [homework_20](../intro-to-nuclear-engineering/homework_20/)
+  * [homework_20_skeleton.ipynb](../intro-to-nuclear-engineering/homework_20/homework_20_skeleton.ipynb): Starting file to be given as an assignment description to students.
+  * [homework_20_solution.ipynb](../intro-to-nuclear-engineering/homework_20/homework_20_solution.ipynb): One possible solution for Homework 20 questions 1 and 2.
+* [exam_1](../intro-to-nuclear-engineering/exam_1/)
+  * [exam_1_skeleton.ipynb](../intro-to-nuclear-engineering/exam_1/exam_1_skeleton.ipynb): Starting file to be given as an assignment description to students, or in this case, as part of an exam.
+  * [exam_1_solution.ipynb](../intro-to-nuclear-engineering/exam_1/exam_1_solution.ipynb): One possible solution Exam 1 question 9.
 
 ## Software Requirements
 
@@ -17,8 +21,10 @@ Since this assignment would be completed by students, the following software wou
   * Python 3
   * Visual Studio Code
 * Python Packages
-  * pyromat
-  * matplotlib
+  * scipy
+  * numpy
+  * mendeleev
+  * physdata
 * Visual Studio Code Extensions
   * Python
   * Pylance
