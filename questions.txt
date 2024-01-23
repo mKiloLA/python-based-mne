@@ -1,7 +1,24 @@
 - when do I need to apply for graduation?
 - when do I need to defend thesis?
     - what is the thesis defense? Is it a presentation followed by questions?
-    - how long should it be?
-- when do I need to set date for thesis defense?
-- when does final draft of thesis need to be finished?
-- when does rough draft of thesis need to be finished?
+    - how long should it be? -
+- when do I need to set date for thesis defense? -
+- when does final draft of thesis need to be finished? -
+- when does rough draft of thesis need to be finished? -
+
+- help on 495 question
+- should there be pictures of the physical components for den 161, me 400, me 535, me 571
+
+Answers:
+For me 535, try to do something with ADC to read a voltage or something.
+Hard to really set it apart - might not be worth adding?
+Might make more sense to look into the labview connection and just prove that it could be used
+with the labview. Students have to write some code for the pico to read the ports?
+https://forums.ni.com/t5/Example-Code/Raspberry-Pi-Pico-Python-and-LabVIEW-Drivers/ta-p/4285852
+
+Things to complete by April 12:
+https://www.k-state.edu/grad/student-success/graduation/docs/Spring-Graduation-Commencement-Deadlines.pdf
+
+Defense needs to be no later than April 7th
+March 20th the thesis needs to be done and sent out with the permission to defend
+Then make changes by April 12th and send of to the Graduate Committee of school (not my committee)
