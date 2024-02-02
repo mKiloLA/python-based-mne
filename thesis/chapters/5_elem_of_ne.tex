@@ -1,0 +1,61 @@
+\section{Course Overview}
+
+NE 495: Elements of Nuclear Engineering is a lecture based class that focuses on introducing
+the fundamental concepts of chemistry and physics that form the field of nuclear engineering 
+to mechanical engineering students. The class also serves as the sole entry point into the nuclear
+program at K-State. 
+
+As class with no lab section, homework assignments and tests make up the majority of the grade
+for the class. Currently, the class also has one project where students use a geiger counter 
+developed for the class to measure ionizing radiation. 
+
+As is the case with ME 513: Thermodynamics, this class comes before ME 400 and, therefore, does
+not utilize programming for any homework assignments or projects. With the changes to DEN 161,
+and especially should changes come to other classes, such as ME 513, students should be able 
+to solve these problems.
+
+\section{New Assignments}
+
+While no assignments currently make use of programming, many questions lend themselves nicely
+to being solved with programming. This is thanks to the heavy reliance on tables and
+constants used in solving NE problems. To demonstrate, three questions, one from an exam
+and two from a homework, have been solved using Python with the help of a few open source
+libraries: mendeleev, physdata, and scipy.
+
+Unfortunately, no single library contains the full collection of properties to solve the range
+of questions presented in NE 495. While inconvenient, this issue serves to highlight the 
+importance of creating a package for the MNE department that consolidates and standardizes the
+information and structure of property data. 
+
+The first question, taken from the first exam in the class, is a Q-value question that uses 
+the mendeleev library to pull element properties. The library contains information on the elements
+and their isotopes that, once familiar, provide quick access to the mass and abundance values
+needed to solve Q-value problems. Unfortunately, the library outputs a list of isotopes and 
+has no method for retrieving a specific mass number. Because of this, a wrapper function was
+written to allow for easy access to individual isotopes. This function mimics the work that
+would be done in an MNE library.
+
+The second and third questions are both taken from homework 20 and deal with photon interactions. 
+These questions make use of the physdata library to get attenuation coefficients for different
+molecules (water, in this example). Similar to mendeleev, this library does not have an easy, 
+built-in method for getting this coefficient values at non-standard energy values. Once again, a
+wrapper function was written to allow for easy access to interpolated values.
+
+Using programming in this manner gives students a better idea of how real problems are solved by
+introducingthem to a more efficient and powerful solution method. These questions would also 
+directly correlate to Abet Student Outcomes 1, 6, and 7, as seen in Appendix 
+\ref{appendix:appendix_abet}. With the addition of a question that utilizes basic plotting, a 
+weak correlation to Outcome 3 could also be added.
+
+\section{Project Deliverables}
+
+In the GitHub repository associated with this paper, which can be found in 
+Appendix \ref{appendix:appendix_github}, the folder titled ``elements-of-nuclear-engineering''
+contains both the problem statements and solution guides for the three questions introduced in 
+the previous section. The folder also contains a README that details what is in each file and 
+what software is needed to complete the assignments. 
+
+For these projects to be added to the class, the instructor would simply need to give the 
+skeleton files to students as a problem statement. It may be beneficial to use one of the questions 
+as an in-class example both to serve as a reminder of how to use Python with Jupyter Notebooks 
+as well as a demonstration of how to use the data libraries to access material properties.
