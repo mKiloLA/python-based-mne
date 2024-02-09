@@ -10,6 +10,7 @@ node_modules
 thermodynamics/references
 .DS_Store
 mechatronics/
+measurements-and-instrumentation
 *.docx
 
 # Byte-compiled / optimized / DLL files

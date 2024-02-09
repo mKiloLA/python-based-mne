@@ -1,3 +1,5 @@
+from math import pi
+
 class PropertyNotImplemented(Exception):
     pass
 
@@ -30,3 +32,6 @@ def oil_properties(x, prop):
     else:
         raise PropertyNotImplemented("Property not implemented for oil.")
     return (a*x**4+b*x**3+c*x**2+d*x+e)
+
+def reynolds_num(flow_rate, diameter, viscosity, tubes=1):
+    return ((4*flow_rate) / (tubes*pi*diameter*viscosity))
