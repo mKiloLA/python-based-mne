@@ -1,6 +1,6 @@
 # ME 573: Heat Transfer
 
-The repository contains one assignment to be given as a design project to students. Both a skeleton and a solution are provided. The skeleton contains the problem statements and the recommended structure for the results. 
+The repository contains one assignment to be given as a design project to students. Both a skeleton and a solution are provided. The skeleton contains the problem statements and the recommended structure for the results.
 
 Rather than utilizing open source libraries, this project uses a custom `MNE` library that replicates the contains a small example of what a full MNE module would contain. This question can be solved without the library using table data from a textbook (which is the source of the property information in the MNE module) or using multiple other libraries, such as `ht`, `fluids`, and `pyromat`.
 
