@@ -1,10 +1,46 @@
-\section{Current Implementation}
-Project for designing heatsink exists. Can be solved in any language, 
-python is a solid contender. Every assignment requires looking through 
-the back of a book for table values
+\section{Course Overview}
 
-\section{Project Redesign}
-No change to project needed, can be solved with python as is. Show 
-how tables can be made in a library
+ME 573: Heat Transfer is lecture based class that focuses on analzing systems using
+the three modes of heat transfer: conduction, convection, and radiation. The study of
+heat transfer is dense with equations, analysis methods, and tables, most of which
+provide oppurtunities for programming to be used for solving problems, whether that
+be Excel calculators or Python. Of these, perhaps the most practical application 
+is the design of heat exchangers. Accordingly, the only project in the class is an 
+iterative heat exchanger design problem, which requires the use of Excel or Python.
 
-\section{Redesigned Project Deliverable}
+\section{Project Modifications}
+
+Since a project that makes use of programming already exists for Heat Transfer, no
+changes have been made to the assignment. The problem statement can be found unchanged
+in the heat-transfer repository as well as a solution made using Python in a Jupyter
+Notebook.
+
+In lieu of changing the project itself, additional resource were made to mimic the 
+functionality of an MNE Python library. The library contains methods for getting 
+the properties of water and oil needed to complete the project. Rather than saving
+large tables of data, fourth order polynomials were fit to the data using 
+`scipy.optimize.curze\_fit' to allow for a smaller package size. The purpose-built
+library also has a function for the Reynolds number. 
+
+While this library currently contains exactly what is needed to complete the project,
+the end-of-the-line goal is a library that contains every property and equation that
+could be needed.
+
+It is also worth noting that several open source heat transfer related libraries 
+already exist, such as `ht', `fluids', and `PYroMat'. While all three have valid
+uses, none of them covered the range of property values needed for this project.
+
+Since no new assignments or requirements are being added, the learning objectives
+for the class do not change. 
+
+\section{Project Deliverables}
+
+In the GitHub repository associated with this paper, which can be found in 
+Appendix \ref{appendix:appendix_github}, the folder titled ``heat-trasnfer''
+contains both the problem statement and solution guide for the project introduced in 
+the previous section. The folder also contains a README that details what is in each file and 
+what software is needed to complete the assignments. 
+
+For these projects to be added to the class, the instructor would simply need to give the 
+skeleton files to students as a problem statement. It may be beneficial to give students 
+an example of how to use the look-up methods in the MNE library. 
