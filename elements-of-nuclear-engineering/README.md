@@ -1,4 +1,4 @@
-# NE 495: Intro to Nuclear Engineering
+# NE 495: Elements of Nuclear Engineering
 
 This repository contains three problems, two homework questions and one exam question, that could be given as assignments in Intro to Nuclear Engineering. A skeleton to be given to students as well as a solution for instructors is provided. The skeleton contains the problem statement and the necessary imports for generating a solution.
 
