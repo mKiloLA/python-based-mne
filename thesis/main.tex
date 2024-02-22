@@ -1,38 +1,55 @@
 \documentclass[12pt]{report}
+
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
+\usepackage{pythonhighlight}
+\AtBeginEnvironment{pythonhighlight}{\huge}
+
 \usepackage{listings}
 \lstset{upquote=true}
 \lstset{showstringspaces=false}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+\usepackage{tikzcodeblocks}
+\usepackage[many]{tcolorbox}
+\AtBeginEnvironment{tcolorbox}{\footnotesize}
 
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
 
-\makeatletter
-\renewcommand{\@makechapterhead}[1]{
-  {\noindent\raggedright\normalfont
-   \Large\bfseries \@chapapp\space\thechapter
-   \par\nobreak
-   \vskip 5\p@
-   \Large \bfseries #1\par\nobreak}
-  \vspace{\baselineskip}
+\usepackage[english]{babel}
+\hypersetup{colorlinks=false}
+
+\newcommand{\listassignmentname}{List of Assignments}
+\newlistof[chapter]{assignments}{assign}{\listassignmentname}
+
+% Reset section numbering between unnumbered chapters
+% https://tex.stackexchange.com/questions/71162/reset-section-numbering-between
+\newcommand{\assignments}[1]
+{%
+    \refstepcounter{assignments}
+    \addcontentsline{assign}{assignments}{\protect\numberline{\theassignments}#1}\par
 }
-\makeatother
+
 
 \begin{document}
+
     \input{bookends/titlepage}
 
     \input{bookends/abstract}
     
     \input{bookends/acknowledgements}
 
+    \clearpage
     \tableofcontents
-
+    \clearpage
     \listoffigures
+    % \clearpage
+    % \listoftables
+    \clearpage
+    \listofassignments
 
-    \listoftables
-    
     \chapter{Introduction and Background}
     \input{chapters/1_intro_and_back}
 

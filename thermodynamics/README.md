@@ -1,15 +1,15 @@
 # ME 513: Thermodynamics
 
-This repository contains two problems that could be given as assignments in Thermodynamics. A skeleton to be given to students as well as a solution for instructors is provided. The skeleton contains the problem statement and a recommended structure for the solution. While both questions can see benefits from using Python, Problem 8.33 makes use of iteration and plotting, giving a better perspective on the benefits of programming.
+This repository contains two problems that could be given as assignments in Thermodynamics. A skeleton to be given to students as well as a solution for instructors is provided. The skeleton contains the problem statement and a recommended structure for the solution. While both questions can see benefits from using Python, assignment_2 makes use of iteration and plotting, giving a better perspective on the benefits of programming.
 
 ## Files in the Repository
 
-* [Problem_8_23](../thermodynamics/Problem_8_23/)
-  * [Thermo_Project_Skeleton_(8_23).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Skeleton_(8_23).ipynb): Starting file to be given as an assignment description to students.
-  * [Thermo_Project_Solution_(8_23).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Solution_(8_23).ipynb): One possible solution for Problem 8.23.
-* [Problem_8_33](../thermodynamics/Problem_8_33/)
-  * [Thermo_Project_Skeleton_(8_33).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Skeleton_(8_23).ipynb): Starting file to be given as an assignment description to students.
-  * [Thermo_Project_Solution_(8_33).ipynb](../thermodynamics/Problem_8_23/Thermo_Project_Solution_(8_23).ipynb): One possible solution for Problem 8.33.
+* [assignment_1](../thermodynamics/assignment_1/)
+  * [Thermo_Project_Skeleton_(8_23).ipynb](../thermodynamics/assignment_1/assignment_1_skeleton.ipynb): Starting file to be given as an assignment description to students.
+  * [Thermo_Project_Solution_(8_23).ipynb](../thermodynamics/assignment_1/assignment_1_solution.ipynb): One possible solution for assignment 1.
+* [assignment_2](../thermodynamics/assignment_2/)
+  * [Thermo_Project_Skeleton_(8_33).ipynb](../thermodynamics/assignment_2/assignment_2_skeleton.ipynb): Starting file to be given as an assignment description to students.
+  * [Thermo_Project_Solution_(8_33).ipynb](../thermodynamics/assignment_2/assignment_2_solution.ipynb): One possible solution for assignment 2.
 
 ## Software Requirements
 
