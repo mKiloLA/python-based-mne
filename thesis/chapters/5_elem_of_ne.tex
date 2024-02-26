@@ -6,12 +6,12 @@ to mechanical engineering students. The class also serves as the sole entry poin
 program at K-State. 
 
 As class with no lab section, homework assignments and tests make up the majority of the grade
-for the class. Currently, the class also has one project where students use a geiger counter 
+for the class. Currently, the class also has one project where students use a Geiger counter 
 developed for the class to measure ionizing radiation. 
 
 As is the case with ME 513: Thermodynamics, this class comes before ME 400 and, therefore, does
 not utilize programming for any homework assignments or projects. With the changes to DEN 161,
-and especially should changes come to other classes, such as ME 513, students should be able 
+and with the addition of programming to other classes, such as ME 513, students should be able 
 to solve these problems.
 
 \section{New Assignments}
@@ -23,23 +23,116 @@ and two from a homework, have been solved using Python with the help of a few op
 libraries: mendeleev, physdata, and scipy.
 
 Unfortunately, no single library contains the full collection of properties to solve the range
-of questions presented in NE 495. While inconvenient, this issue serves to highlight the 
-importance of creating a package for the MNE department that consolidates and standardizes the
-information and structure of property data. 
+of questions presented in NE 495. While inconvenient, this issue serves to highlight the
+benefits of making an MNE library that can wraps around the necessary packages
 
-The first question, taken from the first exam in the class, is a Q-value question that uses 
+The first assignment, Assignment \ref{nuclear_assignment_1}, taken from the first exam in the class, 
+is a Q-value question that uses 
 the mendeleev library to pull element properties. The library contains information on the elements
 and their isotopes that, once familiar, provide quick access to the mass and abundance values
 needed to solve Q-value problems. Unfortunately, the library outputs a list of isotopes and 
-has no method for retrieving a specific mass number. Because of this, a wrapper function was
-written to allow for easy access to individual isotopes. This function mimics the work that
-would be done in an MNE library.
+has no direct method for retrieving a specific mass number.
 
-The second and third questions are both taken from homework 20 and deal with photon interactions. 
+\assignments{NE 495: Assignment 1}
+\label{nuclear_assignment_1}
+
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=NE 495: Assignment \ref{nuclear_assignment_1}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+
+    It has been proposed to extract uranium from seawater to produce nuclear reactor fuel. 
+    Assume that the total volume of the oceans is 1.3x10\textsuperscript{9} km\textsuperscript{3}, the uranium 
+    concentration in the ocean is 3 parts per billion water molecules, and the total annual 
+    electricity consumption in the U.S. is 4,095 Billion kWh (1 kWh = 3.6x10\textsuperscript{6} J). Assume further 
+    that every single 235U nucleus fissions according to the reaction n + 235U → 139Ba + 95Kr + 2 n 
+    and that 30\% of all the energy can be recovered for electrical production. How many years could the oceanic 
+    uranium power the U.S.?
+
+    Be sure to specify all assumptions, provide commentary on the numbers being calculated, and comment on the 
+    functionality of the code. The necessary imports are included below.
+
+    \tcblower
+    \textbf{Problem Solution}
+
+    For the full solution, see Appendix \ref{appendix:appendix_github}. Below is an example of 
+    importing and using the mendeleev library to get atomic weights.
+
+\begin{python}
+import mendeleev as md
+
+H = md.element("Hydrogen")
+O = md.element("Oxygen")
+
+water_molecule_mass = 2*H.atomic_weight+O.atomic_weight
+\end{python}
+
+Other physical constants can be found in scipy's constants library.
+
+\begin{python}
+from scipy.constants import physical_constants
+
+# 931.5 MeV / amu
+c_2 = physical_constants[
+    "atomic mass constant energy equivalent in MeV"][0]
+
+# 1.008 amu
+neutron_mass=physical_constants["neutron mass in u"][0]
+\end{python}
+
+\end{tcolorbox}
+
+The second and third questions, both in Assignment \ref{nuclear_assignment_2}, are taken 
+from Homework 20 and deal with photon interactions. 
 These questions make use of the physdata library to get attenuation coefficients for different
 molecules (water, in this example). Similar to mendeleev, this library does not have an easy, 
-built-in method for getting this coefficient values at non-standard energy values. Once again, a
-wrapper function was written to allow for easy access to interpolated values.
+built-in method for getting this coefficient values at non-standard energy values. To get around
+this, students are encouraged to use numpy.interp to find the desired value.
+
+\assignments{NE 495: Assignment 2}
+\label{nuclear_assignment_2}
+
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=NE 495: Assignment \ref{nuclear_assignment_2}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+    What fraction (not percent) of 2.5 MeV photons interact within 1 foot of water? What fraction 
+    (not percent) of 2.5 MeV photons are absorbed by 1 foot of water?
+
+    \tcblower
+    \textbf{Problem Solution}
+
+    For the full solution, see Appendix \ref{appendix:appendix_github}. Below is a walkthrough
+    of the solution to the first question.
+
+    First, get the table of attenuation coefficients using physdata. The list is converted to 
+    a numpy array for easier handling in the next step.
+
+\begin{python}
+# cm-1
+water_table = np.array(
+    xray.fetch_coefficients("water", 1))
+\end{python}
+
+Next, interpolate using `numpy`'s `interp` function to get the correct coefficient. Here column 
+0 is the energy levels and column 1 is the interaction coefficient.
+
+\begin{python}
+mew = np.interp(2.5, water_table[:,0], water_table[:,1])
+\end{python}
+
+Using the equation $ \frac{I}{I_0} = exp(-\mu x) $, we can get the ratio that does not 
+interact with the water. To get the ratio that does interact with the water, take 
+$ 1 - l_{ratio} $.
+
+\begin{python}
+x = 12 * 2.54 # 12 inches * 2.54 cm/inch
+I_ratio = np.exp(-mew * x)
+interact_ratio = 1 - I_ratio
+print(f"I/I0 = {interact_ratio:.3f}")
+\end{python}
+
+\end{tcolorbox}
 
 Using programming in this manner gives students a better idea of how real problems are solved by
 introducing them to a more efficient and powerful solution method. These questions would also 

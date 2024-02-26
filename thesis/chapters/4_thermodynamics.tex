@@ -13,7 +13,7 @@ thermodynamics can be applied and the question can be solved.
 
 For most questions, the majority of time is spent setting the state. This involves using known properties, 
 usually given in the problem statement, to look up values in property tables in a thermodynamics textbook. 
-This often proves to be a very time consuming process, especially when interpolation is required to get 
+This often proves to be a very time-consuming process, especially when interpolation is required to get 
 property values. And once iteration is introduced, such as in a design problem, manually searching through
 tables becomes impractical, if not impossible. This is where the use of a programming language would become 
 highly beneficial.
@@ -26,7 +26,7 @@ project or assignment.
 
 \section{New Assignments}
 
-Since no assignments currently make use of programming, two new asssignments have been created to demonstrate
+Since no assignments currently make use of programming, two new assignments have been created to demonstrate
 how programming could be beneficial to the course. Both assignments will make use of a Python library called
 PYroMat, a free, open source library dedicated to making thermodynamic properties readily available.
 They will also both make use of Jupyter Notebooks for cleanly presenting questions, commentaries, and code
@@ -36,13 +36,13 @@ The first assignment, Assignment \ref{thermo_assignment_1}, is a five state syst
 iteration or plotting. It follows the structure of a typical question in thermodynamics well. The student 
 must identify the states, list the known properties for each state, and then either search for additional 
 values in a table or calculate them with known values. After this, the laws of thermodynamics are applied, 
-equations are balanced, and the questionis solved.
+equations are balanced, and the questions solved.
 
 \assignments{ME 513: Assignment 1}
 \label{thermo_assignment_1}
 
 \begin{tcolorbox}[breakable, enhanced jigsaw, title=ME 513: Assignment \ref{thermo_assignment_1}, 
-    colframe=blue!70!white, colback=gray!20]
+    colframe=ksu-purple, colback=ksu-gray]
 
     \textbf{Problem Statement}
 
@@ -73,29 +73,29 @@ equations are balanced, and the questionis solved.
     \textbf{Problem Solution}
 
     For the full solution, see Appendix \ref{appendix:appendix_github}. Below is an example of 
-    importing PYroMat, setting the correct units, and accessing property data.
+    importing PYroMat, setting the correct units, and creating an object for a specific
+    substance.
 
-    \begin{python}
-    import pyromat
+\begin{python}
+import pyromat
 
-    pyromat.config["unit_energy"] = "BTU"
-    pyromat.config["unit_force"] = "lbf"
-    pyromat.config["unit_length"] = "in"
-    pyromat.config["unit_mass"] = "lb"
-    pyromat.config["unit_matter"] = "lb"
-    pyromat.config["unit_molar"] = "lbmol"
-    pyromat.config["unit_pressure"] = "psi"
-    pyromat.config["unit_temperature"] = "F"
-    pyromat.config["unit_volume"] = "ft3"
-    H2O = pyromat.get("mp.H2O")
+pyromat.config["unit_energy"] = "BTU"
+pyromat.config["unit_force"] = "lbf"
+pyromat.config["unit_mass"] = "lb"
+pyromat.config["unit_temperature"] = "F"
+H2O = pyromat.get("mp.H2O")
+\end{python}
 
-    # State 1
-    p1 = 1400 # lbf/in^2
-    T1 = 1000 # deg F
-    n1 = 0.85 # dimensionless
-    h1 = H2O.h(T=T1, p=p1) # Btu/lb
-    s1 = H2O.s(T=T1, p=p1) # Btu/(lb*F)
-    \end{python}
+To find specific property data, such as enthalpy and entropy, call the appropriate method
+on the substance object, H2O in this case, and pass the temperature and pressure.
+
+\begin{python}
+# State 1
+p1 = 1400 # lbf/in^2
+T1 = 1000 # deg F
+h1 = H2O.h(T=T1, p=p1) # Btu/lb
+s1 = H2O.s(T=T1, p=p1) # Btu/(lb*F)
+\end{python}
 \end{tcolorbox}
 
 The second assignment, Assignment \ref{thermo_assignment_2}, better showcases the benefits of 
@@ -107,7 +107,7 @@ and tedious task. But when programming, it only requires a few extra lines of co
 \label{thermo_assignment_2}
 
 \begin{tcolorbox}[breakable, enhanced jigsaw, title=ME 513: Assignment \ref{thermo_assignment_2}, 
-    colframe=blue!70!white, colback=gray!20]
+    colframe=ksu-purple, colback=ksu-gray]
 
     \textbf{Problem Statement}
 
@@ -129,46 +129,52 @@ and tedious task. But when programming, it only requires a few extra lines of co
     \textbf{Problem Solution}
 
     For the full solution, see Appendix \ref{appendix:appendix_github}. Below is an example of 
-    iterating through varying pressure values and plotting the result
+    iterating through varying pressure values to create a list of quality values.
 
-    \begin{python}
-    p_list = [x * 10**(-3) for x in range(4, 71)]
-    x_list = []
-    n_list = []
+\begin{python}
+p_list = [x * 10**(-3) for x in range(4, 71)]
+x_list = []
+n_list = []
 
-    for p in p_list:
-        # State 4
-        p4 = p # MPa
-        x4s = H2O.T(s=s3, p=p4, quality=True)[1]
-        h4s = H2O.h(p=p4, x=x4s)
-        h4 = h3 - nt2 * (h3 - h4s)
+for p in p_list:
+    # State 4
+    p4 = p # MPa
+    x4s = H2O.T(s=s3, p=p4, quality=True)[1]
+    h4s = H2O.h(p=p4, x=x4s)
+    h4 = h3 - nt2 * (h3 - h4s)
 
-        # State 5
-        p5 = p # MPa
-        h5 = H2O.h(p=p5, x=0)
-        v5 = H2O.v(p=p5, x=0)
+    # State 5
+    p5 = p # MPa
+    h5 = H2O.h(p=p5, x=0)
+    v5 = H2O.v(p=p5, x=0)
 
-        # State 6
-        h6 = h5 + 1000 * v5 * (p6 - p5) / (np1)
+    # State 6
+    h6 = h5 + 1000 * v5 * (p6 - p5) / (np1)
 
-        # Find the quality of the steam
-        hf4 = H2O.h(p=p4, x=0)
-        hfg4 = H2O.h(p=p4, x=1) - H2O.h(p=p4, x=0)
-        x4 = (h4 - hf4) / hfg4
-        x_list.append(x4)
+    # Find the quality of the steam
+    hf4 = H2O.h(p=p4, x=0)
+    hfg4 = H2O.h(p=p4, x=1) - H2O.h(p=p4, x=0)
+    x4 = (h4 - hf4) / hfg4
+    x_list.append(x4)
 
-        # Find the thermal efficiency of the cycle
-        n = ((h1-h2)+(h3-h4)-(h6-h5))/((h1-h6)+(h3-h2))
-        n_list.append(n)
+    # Find the thermal efficiency of the cycle
+    n = ((h1-h2)+(h3-h4)-(h6-h5))/((h1-h6)+(h3-h2))
+    n_list.append(n)
+\end{python}
 
-    plt.figure()
-    plt.plot(p_list, x_list)
-    plt.title("Quality vs Condenser Pressure")
-    plt.xlabel("Pressure (MPa)")
-    plt.ylabel("Quality (unitless)")
-    plt.show()
-    \end{python}
-    \includegraphics[width=\textwidth]{thermo_assignment_2.png}
+    With the quality and pressures in hand, a graph can be generated with matplotlib.
+
+\begin{python}
+from matplotlib import pyplot as plt
+
+plt.figure()
+plt.plot(p_list, x_list)
+plt.title("Quality vs Condenser Pressure")
+plt.xlabel("Pressure (MPa)")
+plt.ylabel("Quality (unitless)")
+plt.show()
+\end{python}
+\includegraphics[width=\textwidth]{thermo_assignment_2.png}
 \end{tcolorbox}
 
 Using programming in this manner gives students a better idea of how real problems are solved by introducing
@@ -178,11 +184,11 @@ Student Outcomes 1, 6, and 7 and weakly correlate to Outcome 3, as seen in Appen
 \section{Project Deliverables}
 
 In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
-the folder titled ``thermodynamics'' contains both the problem statements and solution guides for the two questions
+the folder titled ``4-thermodynamics'' contains both the problem statements and solution guides for the two questions
 introduced in the previous section. The folder also contains a README that details what is in each file and 
 what software is needed to complete the assignments. 
 
 For these projects to be added to the class, the instructor would simply need to give the skeleton files to 
-students as a problem statement. It may be beneficial to use question 8.23 as an in-class example both to serve 
+students as a problem statement. It may be beneficial to use Assignment 4.1 as an in-class example both to serve 
 as a reminder of how to use Python with Jupyter Notebooks as well as a demonstration of how to use PYroMat to 
 access material properties and change property units.

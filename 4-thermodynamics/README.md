@@ -4,12 +4,12 @@ This repository contains two problems that could be given as assignments in Ther
 
 ## Files in the Repository
 
-* [assignment_1](../thermodynamics/assignment_1/)
-  * [Thermo_Project_Skeleton_(8_23).ipynb](../thermodynamics/assignment_1/assignment_1_skeleton.ipynb): Starting file to be given as an assignment description to students.
-  * [Thermo_Project_Solution_(8_23).ipynb](../thermodynamics/assignment_1/assignment_1_solution.ipynb): One possible solution for assignment 1.
-* [assignment_2](../thermodynamics/assignment_2/)
-  * [Thermo_Project_Skeleton_(8_33).ipynb](../thermodynamics/assignment_2/assignment_2_skeleton.ipynb): Starting file to be given as an assignment description to students.
-  * [Thermo_Project_Solution_(8_33).ipynb](../thermodynamics/assignment_2/assignment_2_solution.ipynb): One possible solution for assignment 2.
+* [assignment_1](../thermodynamics/assignment-1/)
+  * [thermo_project_1_skeleton.ipynb](../thermodynamics/assignment-1/assignment_1_skeleton.ipynb): Starting file to be given as an assignment description to students.
+  * [thermo_project_1_solution.ipynb](../thermodynamics/assignment-1/assignment_1_solution.ipynb): One possible solution for assignment 1.
+* [assignment_2](../thermodynamics/assignment-2/)
+  * [thermo_project_2_skeleton.ipynb](../thermodynamics/assignment-2/assignment_2_skeleton.ipynb): Starting file to be given as an assignment description to students.
+  * [thermo_project_2_solution.ipynb](../thermodynamics/assignment-2/assignment_2_solution.ipynb): One possible solution for assignment 2.
 
 ## Software Requirements
 

@@ -4,16 +4,16 @@ The primary concerns addressed in Chapter 1 are as follows:
 
 \begin{enumerate}
     \item Students lack a solid foundation in the fundamentals of programming.
-    \item Programming is under utilized as a method of problem solving.
+    \item Programming is an under utilized problem-solving technique.
 \end{enumerate}
 To address the first issue, this paper would like to make two proposals: the adoption of a single programming 
 language and the restructuring of electronics classes in the department. First, the goal of adopting a single 
 programming language is to give students a more thorough understanding in a single language rather than 
 a shallow understanding of four languages. The language chosen in this project is Python. In conjunction with 
-Python, a consistent environemnt should be used as well. A consistent environment will prevent unnecessary 
-confusions from IDE specific features and setup requirements. The choosen environment for this project is 
-Visual Studio Code. To replace the work done on the Arduino Uno and ESP32, a Raspberry Pi Pico will used 
-thanks to its seemless integration with both Python and Visual Studio Code. For more details regarding these 
+Python, a consistent environment should be used as well. A consistent environment will prevent unnecessary 
+confusions from IDE specific features and setup requirements. The chosen environment for this project is 
+Visual Studio Code. To replace the work done on the Arduino Uno and ESP32, a Raspberry Pi Pico will be used 
+thanks to its seamless integration with both Python and Visual Studio Code. For more details regarding these 
 choices, see Sections 2.2-2.5.
 
 Second, the goal of restructuring electronics classes is to give students a dedicated ``fundamentals of 
@@ -28,15 +28,15 @@ and the creation of a MNE library for use in most, if not all, MNE classes. The 
 well as the supporting repository, is dedicated to creating assignments that utilize programming for classes
 that do not have one, translating assignments from other languages in classes that do utilize programming,
 and creating a functional, though incomplete, Python package that could be used throughout the department.
-The goal of these changes is twofold: teaching students how to use modern problem solving techniques to find 
+The goal of these changes is twofold: teaching students how to use modern problem-solving techniques to find 
 solutions and giving students a chance to reinforce the programming skills they were taught. By giving
 students a more consistent approach to programming, as well as more use cases for the value of programming,
 students will become more confident and more capable as problem solvers and engineers.
 
-Through the course of this project, many different Python packages and Visual Studio Code extensions will
+Through the course of this project, many Python packages and Visual Studio Code extensions will
 be utilized. Thankfully, the installation and usage steps are simple, and can be combined into a single 
 step in both cases. The Visual Studio Code extensions can all by downloaded at once using an
-extension pack called KSU Mechancial Engineering Extension Pack. The necessary Python packages can also
+extension pack called KSU Mechanical Engineering Extension Pack. The necessary Python packages can also
 all be installed at once from a requirements file. In some cases, it may be preferable to use Anaconda,
 a Python distribution that comes many standard packages, to prevent the need for students to install
 packages on their own. To see a full list of the applications, packages, and extensions and their versions, 
@@ -45,7 +45,7 @@ Appendix \ref{appendix:appendix_github}.
 
 \section{Python}
 
-Python is a multipurpose, interpreted programming langauge that emphasises code readability. The langauge is
+Python is a multipurpose, interpreted programming language that places emphasis on code readability. The language
 was originally introduced by Guido van Rossum in 1991 and has gone through three major versions,
 the most recent being the aptly named Python 3. Using Python, particularly for first time programmers,
 comes with the following benefits:
@@ -56,7 +56,7 @@ comes with the following benefits:
     for new users. Since Python does not have a compiler, the only download that is necessary to run 
     a .py file is Python itself. The lack of a compiler does come with some downsides, namely speed,
     but these will be addressed later on.
-    \item Python is designed to be human readable. This means that the syntax of the language closely
+    \item Python is designed to be human-readable. This means that the syntax of the language closely
     matches the structure of the plain English. This emphasis on readability greatly reduces the
     burden on new users and bolsters code comprehension, even in more experienced coders. Consider 
     a program that prints the phrase "Hello world!"  to the terminal. In C++, this would be done with 
@@ -71,28 +71,27 @@ comes with the following benefits:
     }
     \end{lstlisting}
 
-    Not only is this code not human readable, but it requires the use of imports, functions, return
+    Not only is this code not human-readable, but it requires the use of imports, functions, return
     values, namespaces, and non-obvious syntax. In Python, however, only one line of code is needed:
 
-    \begin{lstlisting}[language=Python]
-    print("Hello world!")
-    \end{lstlisting}
+    \-\hspace{1cm} \pyth{print("Hello world!")}
+
     \item Python is a multipurpose, general-use language. The language is adept at everything from
-    data science to building a webiste to powering a microcontroller (using MicroPython). With such 
+    data science to building a website to powering a microcontroller (using MicroPython). With such 
     a wide breadth of use cases, learning the language opens the door to countless different applications 
     and projects.
     \item Python is open-source and currently one of the most used languages. Thanks to its popularity,
     many tools exist to make programming with Python easier, more powerful, and more accessible such
     as integrations with Jupyter Notebooks and Visual Studio Code. However, this can potentially be 
-    two edged sword, as will be discussed later.
-    \item Python has an easy to use package manager called pip, which is a recursize acronym for pip
+    two-edged sword, as will be discussed later.
+    \item Python has an easy to use package manager called pip, which is a recursive acronym for pip
     installs packages. This package manager makes it incredibly easy to both install and use non-standard
     libraries in Python.
 \end{itemize}
 
 Python provides a solid starting point for new programmers while also being fully capable of high-level,
 advanced programming making it a good language for users of all skill levels. However, it does not come 
-without concerns of its own, most noteably version controlling. This will be addressed at
+without concerns of its own, most notably version controlling. This will be addressed at
 length in a future chapter.
 
 \section{MicroPython}
@@ -105,7 +104,7 @@ microcontroller, which Python would normally not interact with.
 While MicroPython comes with all the benefits of Python, it also comes with one of the drawbacks
 of Python: speed. Unlike traditional low level languages like C/C++, MicroPython is not compiled,
 making it significantly slower than comparable languages. In some applications, the difference in
-speed has no affect on the application. Others, like a control system, heavily depend on fast loop
+speed has no effect on the application. Others, like a control system, heavily depend on fast loop
 times and are greatly impacted by speed.
 
 \section{Raspberry Pi Pico}
@@ -123,7 +122,7 @@ Bluetooth connectivity.
 A case could be made for using the ESP32 over the Pico, given its rise in popularity in the home
 automation space. However, the ESP32 comes with greater restrictions in GPIO usage and the majority
 of its documentation and drivers are for C++ programs rather than MicroPython, giving the Pico an
-edge in user friendlinesss.
+edge in user-friendliness.
 
 As was the case with Python and MicroPython, the Pico does not come without drawbacks. Almost all 
 sensors come with drivers written in C++ for the Arduino Uno or ESP32. This is not the case for 
@@ -134,7 +133,7 @@ to do unguided projects.
 
 \section{Visual Studio Code}
 
-Visual Studio Code is a cross-platform, highly customizeable development environment created by
+Visual Studio Code is a cross-platform, highly customizable development environment created by
 Microsoft. It is one of the most used and most accessible development environments available, 
 and supports use with any language. VSCode can almost be thought of as a Word processor where 
 spell check looks for syntax errors and keywords instead of grammatical mistakes. By installing
@@ -145,5 +144,25 @@ For the purposes of the Mechanical Engineering Department, extensions for Python
 the Pico, and Jupyter Notebooks (a type of interactive programming environment that will be utilized
 later) will be used. The extensions are both easy to use and install, but share a downside with
 Python: version control. Since these extensions are always in active development and get updated
-to work with the newest version of Python and Visual Studio Code, which may not always be desireable.
+to work with the newest version of Python and Visual Studio Code, which may not always be desirable.
 This issue will be discussed in greater detail in a later chapter.
+
+\subsection{Jupyter Notebooks}
+
+Jupyter is an open-source interactive programming environment that allows text and code to 
+seamlessly integrate. With more than 40 supported languages, Jupyter gives educators the ability
+to place formatted text (through the use of markdown) next to linted code. For an example
+of a Jupyter Notebook in VSCode, see Figure \ref{fig:jupyter_example}.
+
+\begin{figure}[h]
+    \includegraphics[width=\textwidth]{jupyter-example.png}
+    \centering
+    \caption{Example of a Jupyter Notebook in VSCode}
+    \centering
+    \label{fig:jupyter_example}
+\end{figure}
+
+The flow provided by Jupyter Notebooks works well, both for giving assignments and
+doing in class examples. Jupyter Notebooks also have slideshow capabilities, which allows 
+interactive code to fit directly into a lecture presentation without needing to switch between
+monitors or tabs.

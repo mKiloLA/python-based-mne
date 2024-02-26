@@ -17,7 +17,7 @@ import statistics
 from matplotlib import pyplot
 
 # COMMENT
-with open("tire_rpm_example copy.csv", "r", encoding="utf-8") as file_contents:
+with open("tire_rpm_example.csv", "r", encoding="utf-8") as file_contents:
     csv_reader = csv.reader(file_contents, delimiter=",")
     rpm = []
     for rpm_value in next(csv_reader):

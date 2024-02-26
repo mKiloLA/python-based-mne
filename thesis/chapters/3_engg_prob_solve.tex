@@ -1,7 +1,7 @@
 \section{Course Overview}
 
 DEN 161: Engineering Problem Solving is a lab-style course that complements the lecture-oriented DEN 160: 
-Engineering Orientation. The class focuses on providing hands-on, problem solving experiences through projects 
+Engineering Orientation. The class focuses on providing hands-on, problem-solving experiences through projects 
 from multiple engineering disciplines. While these projects serve as the students' introduction to different 
 engineering disciplines, they also develop the core tools needed to be a successful engineer. 
 
@@ -13,7 +13,7 @@ manipulating data and finding different statistical properties of given data. Th
 point of entry given to data analysis since many students are familiar with Microsoft Excel or Google Sheets.
 
 Python is then introduced as an alternative method of solving the same problems. The lectures and assignments 
-focus on data calculations to verify designs and general code inspection to understand the how the program works. 
+focus on data calculations to verify designs and general code inspection to understand how the program works. 
 These lectures are done using Jupyter Notebook in Anaconda's Spyder IDE. 
 
 Following the introduction to Python, a Stoplight Activity is assigned. This project introduces students to 
@@ -23,11 +23,11 @@ Uno is programmed using C++ in the Arduino IDE.
 \section{Project Redesign}
 
 Thanks to the solid programming core created by the instructors, the proposed changes are minor, and result in 
-no changes to the current curriculum. Two changes are proposed: the adoption of Visual Studio Code as a 
+minor changes to the current curriculum. Two changes are proposed: the adoption of Visual Studio Code as a 
 development environment and the migration from Arduino Unos to Raspberry Pi Picos. 
 
 The class currently uses an IDE by the name of Spyder. Spyder is a popular IDE for data science applications and 
-has to ability to seamlessly integrate with Jupyter Notebooks. However, Spyder does not have the ability to work 
+has the to ability to seamlessly integrate with Jupyter Notebooks. However, Spyder does not have the ability to work 
 with a MicroPython device, such as the RPi Pico. Visual Studio Code, on the other hand, has an extension that 
 integrates Pico controls directly into the interface, making it a one-stop-shop for both the data analysis and 
 embedded systems development in DEN 161. Visual Studio Code also has Jupyter Notebook extensions that allow for 
@@ -37,11 +37,170 @@ The second proposed change is transitioning from the Arduino Uno to a Raspberry 
 change is twofold. First, the Pico can run using MicroPython, a lightweight implementation of Python, which has 
 the same syntax as Python. This allows students to focus on understanding one language, Python, rather than 
 learning both Python and C++. Switching to the Pico also opens the door to using a single development environment. 
-While the Arduino can be programmed using Visual Studio Code, the set up process is non-trivial, and requires a 
+While the Arduino can be programmed using Visual Studio Code, the setup process is non-trivial, and requires a 
 strong understanding of the operating and file system of the computer. 
 
+With these changes in mind, the first two assignments created serve as a segue from using Excel for data analysis to 
+using Python. The first of the two, Assignment \ref{engg_prob_solve_assignment_1}, requires students to convert 
+tire rpm data to speed data, find several statistical properties of the data, and then plot it. The assignment
+is done in class both in Excel and Python to showcase the differences.
+
+\assignments{DEN 161: Assignment 1}
+\label{engg_prob_solve_assignment_1}
+
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=DEN 161: Assignment \ref{engg_prob_solve_assignment_1}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+
+    You are given data for the tire rotations per minute in a file called `tire\_rpm.csv` and are tasked with 
+    finding the max, min, mean, mode, and median speed of the vehicle. Bonus points for a graph!
+
+    \tcblower
+    \textbf{Problem Solution}
+
+    For the full solution, see Appendix \ref{appendix:appendix_github}. The following shows the process
+    of reading information from a .csv file.
+    
+    To solve this problem, let's split itinto steps and solve each issue one a time.
+
+    \begin{enumerate}
+        \item Read and parse the data from the .csv file
+        \item Convert the RPM data into vehicle speed 
+        \item Find the max, min, mean, mode, and median
+    \end{enumerate}
+    
+    \textbf{Step 1: Read and parse the data}
+    
+    To begin, we will import the built-in csv library. This Python package makes it easy to parse data from csv 
+    files, and takes away the burden of writing code to split the data. We will also import the math library.
+
+\begin{python}
+import csv
+import math
+\end{python}
+
+    We will start by creating an empty list for our rpm values to be stored in. Next we will open the .csv 
+    file and read it.
+
+\begin{python}
+with open("tire_rpm_example.csv", "r") as file_contents:
+csv_reader = csv.reader(file_contents,delimiter=",")
+rpm = []
+for rpm_row in csv_reader:
+    for rpm_value in rpm_row:
+        rpm.append(int(rpm_value))
+print(f"Tire RPM: {rpm}")
+\end{python}
+\end{tcolorbox}
+
+After completing the in-class example, a similar assignment is given for homework, as shown in Assignment
+\ref{engg_prob_solve_assignment_2}. Rather than writing the code from scratch, students must make several 
+changes and add comments to the file.
+
+\assignments{DEN 161: Assignment 2}
+\label{engg_prob_solve_assignment_2}
+
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=DEN 161: Assignment \ref{engg_prob_solve_assignment_2}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+
+    Make the following changes to the given Python file:
+
+    \begin{enumerate}
+        \item Change the input file to the homework data set.
+        \item Change the tire diameter to utilize user input.
+        \item Change the print statements to have 0 decimal places.
+        \item Anywhere there is a \#COMMENT, leave a comment explaining what the following lines of code do.
+    \end{enumerate}
+               
+    Optionally, complete the bonus assignment question at the bottom of the file.
+    
+
+    \tcblower
+    \textbf{Problem Solution}
+
+    For the full solution, see Appendix \ref{appendix:appendix_github}. The following shows the changed file
+    name, user input, and descriptive comments.
+
+\begin{python}
+# Import statements to make library methods 
+# available in this file
+import csv
+import math
+import statistics
+from matplotlib import pyplot
+
+# Open and read data from a csv file into Python
+with open("tire_rpm_homework.csv","r", 
+          encoding="utf-8") as file_contents:
+    csv_reader = csv.reader(file_contents,delimiter=",")
+    rpm = []
+    for rpm_value in next(csv_reader):
+        # Turn the rpm_value (which would be a string) 
+        # into an integer and add it to a list of rpms
+        rpm.append(int(rpm_value))
+
+# Ask the user to input the tire diameter
+tire_diameter = input("What is the tire diameter?")
+\end{python}
+\end{tcolorbox}
+
+The third assignment, shown in Assignment \ref{engg_prob_solve_assignment_3} was translated from the 
+current Stoplight project used in the class. An example file
+demonstrating how to operate the LEDs serves as the starting point for the project. To complete the
+assignment, students need to rearrange the \pyth{pin.high()} calls and change the sleep timings.
+
+\assignments{DEN 161: Assignment 3}
+\label{engg_prob_solve_assignment_3}
+
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=DEN 161: Assignment \ref{engg_prob_solve_assignment_3}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+
+    Using the Raspberry Pi Pico and three LEDs given out in class, write a program that will operate
+    the LEDs like a stoplight. For bonus assignment credit, write a program that will blink SOS in Morse code.
+    
+    \tcblower
+    \textbf{Problem Solution}
+
+    For the full bonus assignment solution and the example file, see Appendix \ref{appendix:appendix_github}. 
+    The following shows the entire solution to the stoplight portion of the assignment.
+
+\begin{python}
+from machine import Pin
+import time
+
+# Declare the pins and the pin mode
+red_led = Pin(18, Pin.OUT)
+yellow_led = Pin(17, Pin.OUT)
+green_led = Pin(16, Pin.OUT)
+
+# Begin looping phase
+while True:
+    # Turn on the red led for 5 seconds
+    green_led.low()
+    yellow_led.low()
+    red_led.high()
+    time.sleep(5)
+
+    # Turn green led on and red led off for 5 seconds
+    green_led.high()
+    red_led.low()
+    time.sleep(5)
+
+    # Turn yellow led on and green led off for 2 seconds
+    yellow_led.high()
+    green_led.low()
+    time.sleep(2)
+    \end{python}
+\end{tcolorbox}
+
+
 The proposed changes aim to increase student understanding by reducing the number of systems they are introduced 
-to. Instead of two langauges and two editors, students will only need to learn one language in one editor. The 
+to. Instead of two languages and two editors, students will only need to learn one language in one editor. The 
 work done by these projects directly correlates with Abet Student Outcomes 6 and 7 and weakly correlates with 
 Outcomes 1 and 3, as seen in Appendix \ref{appendix:appendix_abet}.
 
@@ -53,7 +212,7 @@ and the Arduino Uno was replaced by the Raspberry Pi Pico in the stoplight proje
 successful, and the instructors felt that it was a step in the correct direction. That is not to say that there
 were no pain points.
 
-The biggest hinderance encountered in the Fall 2023 was general file system comprehension. Many students did not 
+The biggest hindrance encountered in the Fall 2023 was general file system comprehension. Many students did not 
 know where downloaded files go or how the file system (both File Explorer and Finder) were structured. This proved 
 to be an issue for both the tire RPM question and the stoplight example. For Python to locate the .csv file 
 with the RPM data, either the full path to the file needs to be provided, relative to the current working directory,
@@ -73,7 +232,7 @@ An additional pre-class assignment will also be created that will require studen
 done the necessary installations before coming to class. Though this is not an issue directly caused by the changes
 made, it did directly inhibit student learning.
 
-Lastly, and most concerningly, this semester showed that the MicroPico extension can be unreliable when not used
+The final issue, and perhaps the most concerning, is the unreliability of the MicroPico extension when not used 
 exactly as intended. While no connection issues ever occurred during testing, a non-trivial number of students
 experienced issues with the MicroPico extension. Since no issues have been encountered by the instructors at this
 point, it is hard to pinpoint the exact cause. Fixes for different issues can be found in the 
@@ -82,16 +241,16 @@ point, it is hard to pinpoint the exact cause. Fixes for different issues can be
 \section{Project Deliverables}
 
 In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
-the folder titled ``engineering-problem-solving,'' there are several folders containing different problems and 
+the folder titled ``3-engineering-problem-solving,'' there are several folders containing different problems and 
 examples. The folder also contains a README that details what is in each file and what software is needed to 
 complete the assignments. 
 
 The first folder is a tire RPM example problem that is to be completed in class, after having completed the Excel
-lectures and the introduction to Python lectures. This will show students some of the benefits of using a
+lectures and the introduction to Python lectures. This will show students the benefits of using a
 language like Python over Excel. To go along with the example problem is a similar tire RPM homework assignment.
 The code needed to complete the assignment is all provided to students, with a handful of tasks left up to them,
 as detailed in the homework file. 
 
 Finally, the stoplight folder contains the starter code to give students for the stoplight assignment, a solution
-key, and a file demonstrating morse code on the Pico. Installation instructions for the using the Pico can be found
+key, and a file demonstrating Morse code on the Pico. Installation instructions for the using the Pico can be found
 in the ``usage-and-installation'' folder in the repository.

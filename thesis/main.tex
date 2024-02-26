@@ -14,6 +14,8 @@
 \usepackage{tikzcodeblocks}
 \usepackage[many]{tcolorbox}
 \AtBeginEnvironment{tcolorbox}{\footnotesize}
+\definecolor{ksu-purple}{HTML}{512888}
+\definecolor{ksu-gray}{HTML}{D1D1D1}
 
 \usepackage{tocloft}
 \usepackage[hidelinks]{hyperref}
@@ -41,53 +43,82 @@
     
     \input{bookends/acknowledgements}
 
+    \pagenumbering{roman}
+
     \clearpage
+    \setcounter{page}{1}
     \tableofcontents
+
     \clearpage
     \listoffigures
+
     % \clearpage
     % \listoftables
+
     \clearpage
     \listofassignments
 
+    \clearpage
+    \chapter*{List of Symbols}
+    \input{bookends/list_of_symbols.tex}
+
+    \clearpage
+    \chapter*{List of Abbreviations}
+    \input{bookends/list_of_abbreviations.tex}
+    
+    \clearpage
+    \setcounter{page}{1}
+    \pagenumbering{arabic}
     \chapter{Introduction and Background}
     \input{chapters/1_intro_and_back}
 
+    \clearpage
     \chapter{A Cohesive Programming Curriculum}
     \input{chapters/2_curriculum}
     
+    \clearpage
     \chapter{DEN 161: Engineering Problem Solving}
     \input{chapters/3_engg_prob_solve}
 
+    \clearpage
     \chapter{ME 513: Thermodynamics}
     \input{chapters/4_thermodynamics}
 
+    \clearpage
     \chapter{NE 495: Elements of Nuclear Engineering}
     \input{chapters/5_elem_of_ne}
     
+    \clearpage
     \chapter{ME 400: Computer Applications in Mechanical Engineering}
     \input{chapters/6_comp_app_in_me}
     
+    \clearpage
     \chapter{ME 571: Fluid Mechanics}
     \input{chapters/7_fluid_mechanics}
 
+    \clearpage
     \chapter{ME 533: Machine Design}
     \input{chapters/8_machine_design}
 
+    \clearpage
     \chapter{ME 570: Control of Mechanical Systems I}
     \input{chapters/9_controls}
 
+    \clearpage
     \chapter{ME 573: Heat Transfer}
     \input{chapters/10_heat_transfer}
     
+    \clearpage
     \chapter{Conclusion and Future Work}
     \input{chapters/11_conclusion}
 
+    \clearpage
     \appendix
     \chapter{Project Repository}
     \label{appendix:appendix_github}
     \input{bookends/appendix_github}
 
+    \clearpage
     \chapter{Software Versions}
     \label{appendix:appendix_versions}
     \input{bookends/appendix_versions}
@@ -97,5 +128,4 @@
     \input{bookends/appendix_abet}
 
 
-    
 \end{document}
