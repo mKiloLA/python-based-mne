@@ -1,9 +1,9 @@
 \section{Course Overview}
 
-ME 573: Heat Transfer is lecture based class that focuses on analzing systems using
+ME 573: Heat Transfer is lecture based class that focuses on analyzing systems using
 the three modes of heat transfer: conduction, convection, and radiation. The study of
 heat transfer is dense with equations, analysis methods, and tables, most of which
-provide oppurtunities for programming to be used for solving problems, whether that
+provide opportunities for programming to be used for solving problems, whether that
 be Excel calculators or Python. Of these, perhaps the most practical application 
 is the design of heat exchangers. Accordingly, the only project in the class is an 
 iterative heat exchanger design problem, which requires the use of Excel or Python.
@@ -19,16 +19,12 @@ In lieu of changing the project itself, additional resource were made to mimic t
 functionality of an MNE Python library. The library contains methods for getting 
 the properties of water and oil needed to complete the project. Rather than saving
 large tables of data, fourth order polynomials were fit to the data using 
-`scipy.optimize.curze\_fit' to allow for a smaller package size. The purpose-built
+`scipy.optimize.curve\_fit' to allow for a smaller package size. The purpose-built
 library also has a function for the Reynolds number. 
 
 While this library currently contains exactly what is needed to complete the project,
 the end-of-the-line goal is a library that contains every property and equation that
 could be needed.
-
-It is also worth noting that several open source heat transfer related libraries 
-already exist, such as `ht', `fluids', and `PYroMat'. While all three have valid
-uses, none of them covered the range of property values needed for this project.
 
 Since no new assignments or requirements are being added, the learning objectives
 for the class do not change. 
@@ -36,7 +32,7 @@ for the class do not change.
 \section{Project Deliverables}
 
 In the GitHub repository associated with this paper, which can be found in 
-Appendix \ref{appendix:appendix_github}, the folder titled ``heat-trasnfer''
+Appendix \ref{appendix:appendix_github}, the folder titled ``10-heat-trasnfer''
 contains both the problem statement and solution guide for the project introduced in 
 the previous section. The folder also contains a README that details what is in each file and 
 what software is needed to complete the assignments. 

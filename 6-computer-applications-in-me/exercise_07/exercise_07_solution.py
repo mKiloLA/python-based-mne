@@ -24,7 +24,6 @@ button_pins = [red_button, yellow_button, green_button, blue_button]
 ir_remote = IRRemote(Pin(15, Pin.IN))
 
 # Create Piezo Buzzer
-# https://www.tomshardware.com/how-to/buzzer-music-raspberry-pi-pico
 buzzer = PWM(Pin(9))
 buzzer_tones = [131, 165, 196, 262]
 

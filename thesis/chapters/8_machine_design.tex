@@ -6,35 +6,66 @@ the material is a continuation of topics covered in two required civil engineeri
 and CE 533: Mechanics of Materials.
 
 As a higher level course that relies on well established theories and analysis methods, machine design
-presents several oppurtunities for programmatic solutions to problems, though Excel calculators may
+presents several opportunities for programmatic solutions to problems, though Excel calculators may
 be more appropriate in some cases. Despite this, machine design does not require programming for 
-assignments or projects, those this fact has varied depending on the current instructor. 
+assignments or projects, though this fact has varied depending on the current instructor. 
 
-Homeworks typically involve resolving loads on various members, analyzing the internal stresses, and 
+Homework assignments typically involve resolving loads on various members, analyzing the internal stresses, and 
 determining the safety of a design using the appropriate failure theories. When appropriate, deformation
 plots are drawn to highlight points of failure. The class finishes with discussions on spring and fastener
 design, which involves heavy iteration.
 
 \section{New Tool for Solving Assignments}
 
-Since no assignments currently make use of programming, two homework questions have been solved to demonstrate
-potential uses for programming in the course. Rather than writing a Python script to solve iterative design or
-strictly numerical probems (see chapters on Thermodynamics, Fluid Mechanics, or Heat Transfer for examples of
-this), both questions focus on finding and plotting beam deflection using singularity functions. 
+Since no assignments currently make use of programming, a new assignment with two questions have been solved 
+to demonstrate potential uses for programming in the course. Rather than writing a Python script to solve 
+iterative design or strictly numerical problems (see chapters on Thermodynamics, Fluid Mechanics, or 
+Heat Transfer for examples of this), Assignment \ref{mach_des_assignment_1} focuses on finding and plotting 
+beam deflection using singularity functions. 
 
-The most simple adoption of programming into singularity function assignments would be requiring computer
-generated plots. Students would first solve for reaction forces, create a singularity equation, integrate
-several times, and then create a plot using the deformation equation. The solution presented here takes a 
-higher level approach by accepting the loading forces on the bar and then creating and integrating the 
-singularity equation automatically. This is done through a graphical user interface developed and executed
-in Python.
+\assignments{ME 533: Assignment 1}
+\label{mach_des_assignment_1}
 
-The GUI can be launched in Python (with the code provided in the associated GitHub repository) or through
-the terminal as a Python module. Once launched, the application will open in a new window, which is shown
-in Figure \ref{fig:singularity-gui}. The home page contains instructions for using the solver, so the details 
-here will be sparing. The second page is dedicated to beam configuration, including legnth, cross section, 
-material, and boundary conditions. The next page presents various forms of loading to add
-to the beam. The last page allows custom materials to be added to the list of materials.
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=ME 533: Assignment \ref{mach_des_assignment_1}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+    \parindent15pt
+
+    The following beam is subjected to the load shown. Determine the equation for deformation. 
+    The beam is made of aluminum and has an I = 156 in\textsuperscript{4}. Assume EI is constant. Graph 
+    the shear, moment, slope, and deflection.
+
+    \begin{center}
+        \includegraphics[width=\textwidth]{mach-des-assingment1.png}
+    \end{center}
+
+    \tcblower
+    \textbf{Problem Solution}
+    \parindent15pt
+
+    For the full solution, see Appendix \ref{appendix:appendix_github}. The following code shows how to
+    launch the Singularity Solver from a Jupyter Notebook.
+
+\begin{python}
+import subprocess
+
+output = subprocess.run(
+    ["python", "-m", "singularity"], 
+    shell=True, 
+    capture_output=True,
+    cwd="./MNE/machine_design"
+)
+print(output.stdout.decode("ascii"))
+\end{python}
+
+After inputting the beam attributes, loading state, and boundary conditions, the following graph
+is produced.
+
+\begin{center}
+    \includegraphics[width=\textwidth]{mach-des-graph.png}
+\end{center}
+\end{tcolorbox}
 
 \begin{figure}[h]
     \includegraphics[width=\textwidth]{singularity-gui.png}
@@ -44,13 +75,27 @@ to the beam. The last page allows custom materials to be added to the list of ma
     \label{fig:singularity-gui}
 \end{figure}
 
+The most simple adoption of programming into singularity function assignments would be requiring computer
+generated plots. Students would first solve for reaction forces, create a singularity equation, integrate
+several times, and then create a plot using the deformation equation. The solution presented here takes a 
+higher level approach by accepting the loading forces on the bar and then creating and integrating the 
+singularity equation automatically. This is done through a graphical user interface developed and executed
+in Python.
+
+The GUI can be launched in Python (Assignment \ref{mach_des_assignment_1}) or through
+the terminal as a Python module. Once launched, the application will open in a new window, which is shown
+in Figure \ref{fig:singularity-gui}. The home page contains instructions for using the solver, so the details 
+here will be sparing. The second page is dedicated to beam configuration, including length, cross-section, 
+material, and boundary conditions. The next page presents various forms of loading to add
+to the beam. The last page allows custom materials to be added to the list of materials.
+
 While the GUI currently automates significant portions of singularity problems, several features should be
-added at a later date, including non-rectangular cross sections (though a work around is presented) and
+added at a later date, including non-rectangular cross-sections (though a workaround is presented) and
 the ability to add supports to the beam. This would give the program the ability to calculate the reaction
-forces and deterine boundary conditions without relying on the user to correctly find and input them.
+forces and determine boundary conditions without relying on the user to correctly find and input them.
 
 Since this application takes most of the work out of the hands of the students, it would not be a good tool
-for teaching singularity functions. Rather, the application would be best utilized in when finding the shear,
+for teaching singularity functions. Rather, the application would be best utilized when finding the shear,
 moment, slope, or deformation of a beam is one part in the context of a larger problem. Additionally, 
 it would serve as a realistic look at how most analysis is done in industry - by a computer.
 
@@ -62,11 +107,11 @@ directly correlate to Abet Student Outcomes 1, 6, and 7, as seen in Appendix
 \section{Project Deliverables}
 
 In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
-the folder titled ``machine-design'' contains both the problem statements and solution guides for the two questions
+the folder titled ``8-machine-design'' contains both the problem statements and solution guides for the two questions
 introduced in the previous section. The folder also contains a README that details what is in each file and 
 what software is needed to complete the assignments. 
 
 For these projects to be added to the class, the instructor would  need to give the skeleton files to 
 students as a problem statement and the MNE folder as Python library. Using one of the two questions as an in-class
-example would serve as a good oppurtunity to remind students how to use Python with Jupyter Notebooks and to 
+example would serve as a good opportunity to remind students how to use Python with Jupyter Notebooks and to 
 demonstrate how to open and use the singularity function GUI.

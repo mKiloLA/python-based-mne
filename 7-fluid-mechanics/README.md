@@ -4,7 +4,7 @@ This repository contains one problem that could be given as an assignment in Flu
 
 The solution to problem 4.31 has two different solutions. The first solution only utilizes Python to numerically solve the question at the final step. To do this, three different libraries are used:
 
-* matplotlib: used for plotting to get an intial estimate
+* matplotlib: used for plotting to get an initial estimate
 * numpy: used for access to the constant e and linsapce for plotting
 * scipy: used to numerically solve the problem
 
@@ -14,10 +14,10 @@ As with previous assignments, these libraries could be incorporated into an MNE 
 
 ## Files in the Repository
 
-* [problem_4_31](../fluid-mechanics/problem_4_31/)
-  * [problem_4_31_skeleton.ipynb](../fluid-mechanics/problem_4_31/problem_4_31_skeleton.ipynb): Starting file to be given as an assignment description to students.
-  * [problem_4_31_solution.ipynb](../fluid-mechanics/problem_4_31/problem_4_31_solution.ipynb): Two possible solutions to problem 4.31 for instructor use.
-  * [fig_p4_31.png](../fluid-mechanics/problem_4_31/fig_p4_31.png): Figure used for the problem description in problem 4.31.
+* [assignment-1](../7-fluid-mechanics/assignment-1/)
+  * [problem_4_31_skeleton.ipynb](../7-fluid-mechanics/assignment-1/problem_4_31_skeleton.ipynb): Starting file to be given as an assignment description to students.
+  * [problem_4_31_solution.ipynb](../7-fluid-mechanics/assignment-1/problem_4_31_solution.ipynb): Two possible solutions to problem 4.31 for instructor use.
+  * [fig_p4_31.png](../7-fluid-mechanics/assignment-1/fig_p4_31.png): Figure used for the problem description in problem 4.31.
 
 ## Software Requirements
 
@@ -42,4 +42,4 @@ Since this assignment would be completed by students, the following software wou
   * IntelliCode
   * IntelliCode API Usage Examples
 
-For more information about the installation of any of these packages, see [Usage and Installation](../usage-and-installation/).
+For more information about the installation of these packages, see [Usage and Installation](../usage-and-installation/).

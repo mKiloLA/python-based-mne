@@ -6,27 +6,27 @@ All three labs make use of the motorlab. While the motorlab originally ran throu
 
 ## Files in the Repository
 
-* [lab4](../control-of-mechanical-systems/lab4/)
-  * [Lab4Assign.pdf](../control-of-mechanical-systems/lab4/Lab4Assign.pdf): Assignment description for Lab 4 as given in ME 570. No changes have been made.
-  * [Lab_4_skeleton.ipynb](../control-of-mechanical-systems/lab4/Lab_4_skeleton.ipynb): Skeleton code to be given to students with the Lab 4 assignment. The provided information is identical to the original skeleton.
-  * [Lab_4.ipynb](../control-of-mechanical-systems/lab4/Lab_4.ipynb): Solution to the Lab 4 assignment. 
-  * [stepdata.csv](../control-of-mechanical-systems/lab4/stepdata.csv): Data taken from the motorlab using the motorlabGUI.exe application.
-  * [custom_functions.py](../control-of-mechanical-systems/lab4/custom_functions.py): Custom functions that allow Python to be used more similarly to how MATLAB is used. It currently contains a plotting function that highjacks matplotlib's `plot` and adds data tips.
-  * [fig_4.png](../control-of-mechanical-systems/lab4/fig_4.png): Image showing the datatip customizations on a result from Lab 4.
+* [assignment-1](../9-control-of-mechanical-systems/assignment-1/): Lab 4
+  * [Lab4Assign.pdf](../9-control-of-mechanical-systems/assignment-1/Lab4Assign.pdf): Assignment description for Lab 4 as given in ME 570. No changes have been made.
+  * [Lab_4_skeleton.ipynb](../9-control-of-mechanical-systems/assignment-1/Lab_4_skeleton.ipynb): Skeleton code to be given to students with the Lab 4 assignment. The provided information is identical to the original skeleton.
+  * [Lab_4.ipynb](../9-control-of-mechanical-systems/assignment-1/Lab_4.ipynb): Solution to the Lab 4 assignment.
+  * [stepdata.csv](../9-control-of-mechanical-systems/assignment-1/stepdata.csv): Data taken from the motorlab using the motorlabGUI.exe application.
+  * [custom_functions.py](../9-control-of-mechanical-systems/assignment-1/custom_functions.py): Custom functions that allow Python to be used more similarly to how MATLAB is used. It currently contains a plotting function that hijacks matplotlib's `plot` and adds data tips.
+  * [fig_4.png](../9-control-of-mechanical-systems/assignment-1/fig_4.png): Image showing the data tip customizations on a result from Lab 4.
 
-* [lab10](../control-of-mechanical-systems/lab10/)
-  * [Lab10Assign.pdf](../control-of-mechanical-systems/lab10/Lab10Assign.pdf): Assignment description for Lab 10 as given in ME 570. No changes have been made.
-  * [Lab_10_skeleton.ipynb](../control-of-mechanical-systems/lab10/Lab_10_skeleton.ipynb): Skeleton code to be given to students with the Lab 10 assignment. The provided information is identical to the original skeleton.
-  * [Lab_10.ipynb](../control-of-mechanical-systems/lab10/Lab_10.ipynb): Solution to the Lab 10 assignment. 
-  * [data1.csv](../control-of-mechanical-systems/lab10/data1.csv): Data taken from the motorlab using the motorlabGUI.exe application.
-  * [data2.csv](../control-of-mechanical-systems/lab10/data2.csv): Data taken from the motorlab using the motorlabGUI.exe application.
-  * [data3.csv](../control-of-mechanical-systems/lab10/data3.csv): Data taken from the motorlab using the motorlabGUI.exe application.
-  * [custom_functions.py](../control-of-mechanical-systems/lab10/custom_functions.py): Custom functions that allow Python to be used more similarly to how MATLAB is used. It currently contains a plotting function that highjacks matplotlib's `plot` and adds data tips.
+* [assignment-2](../9-control-of-mechanical-systems/assignment-2/): Lab 10
+  * [Lab10Assign.pdf](../9-control-of-mechanical-systems/assignment-2/Lab10Assign.pdf): Assignment description for Lab 10 as given in ME 570. No changes have been made.
+  * [Lab_10_skeleton.ipynb](../9-control-of-mechanical-systems/assignment-2/Lab_10_skeleton.ipynb): Skeleton code to be given to students with the Lab 10 assignment. The provided information is identical to the original skeleton.
+  * [Lab_10.ipynb](../9-control-of-mechanical-systems/assignment-2/Lab_10.ipynb): Solution to the Lab 10 assignment.
+  * [data1.csv](../9-control-of-mechanical-systems/assignment-2/data1.csv): Data taken from the motorlab using the motorlabGUI.exe application.
+  * [data2.csv](../9-control-of-mechanical-systems/assignment-2/data2.csv): Data taken from the motorlab using the motorlabGUI.exe application.
+  * [data3.csv](../9-control-of-mechanical-systems/assignment-2/data3.csv): Data taken from the motorlab using the motorlabGUI.exe application.
+  * [custom_functions.py](../9-control-of-mechanical-systems/assignment-2/custom_functions.py): Custom functions that allow Python to be used more similarly to how MATLAB is used. It currently contains a plotting function that hijacks matplotlib's `plot` and adds data tips.
 
-* [lab13](../control-of-mechanical-systems/lab13/)
-  * [Lab13Assign.pdf](../control-of-mechanical-systems/lab13/Lab13Assign.pdf): Assignment description for Lab 13 as given in ME 570. No changes have been made.
-  * [Lab_13_skeleton.ipynb](../control-of-mechanical-systems/lab13/Lab_13_skeleton.ipynb): Skeleton code to be given to students with the Lab 13 assignment. The provided information is identical to the original skeleton.
-  * [Lab_13.ipynb](../control-of-mechanical-systems/lab13/Lab_13.ipynb): Solution to the Lab 13 assignment.
+* [assignment-3](../9-control-of-mechanical-systems/assignment-3/): Lab 13
+  * [Lab13Assign.pdf](../9-control-of-mechanical-systems/assignment-3/Lab13Assign.pdf): Assignment description for Lab 13 as given in ME 570. No changes have been made.
+  * [Lab_13_skeleton.ipynb](../9-control-of-mechanical-systems/assignment-3/Lab_13_skeleton.ipynb): Skeleton code to be given to students with the Lab 13 assignment. The provided information is identical to the original skeleton.
+  * [Lab_13.ipynb](../9-control-of-mechanical-systems/assignment-3/Lab_13.ipynb): Solution to the Lab 13 assignment.
 
 ## Software Requirements
 
@@ -56,4 +56,4 @@ Since ME 570 labs are completed in-person, the following software would need to 
   * IntelliCode API Usage Examples
   * vscode-pdf
 
-For more information about the installation of any of these packages, see [Usage and Installation](../usage-and-installation/).
+For more information about the installation of these packages, see [Usage and Installation](../usage-and-installation/).
