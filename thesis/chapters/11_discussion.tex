@@ -1,0 +1,130 @@
+\section{Issues and Concerns}
+
+While the previous chapters proved that Python can be effectively
+used to solve problems in the mechanical engineering field, it did 
+little to address the issues that would come with the adoption 
+of a unified programming ecosystem, both as it relates to the
+concept itself as well as the limitations of the proposed solution.
+
+\subsection{Version Control}
+
+While open source software is often viewed as desirable
+thanks to the no-cost price tag and active development that it 
+promotes, this comes with a downside often avoided by premium
+software: version control. Python releases a new minor version
+every year and regularly releases patches for supported versions
+of Python. On top of that, several of the libraries and extensions 
+used in this project are written and controlled by various 
+groups and individuals that make no guarantee of longevity or future
+support. This leaves a substantial burden on the department to
+moderate and maintain a locally hosted version of Python and the
+libraries required by each class, as well as Visual Studio Code
+its extensions. As the number of classes utilizing programming
+increases, so does the difficulty of validating a functioning stack.
+
+With that being said, the majority of the software being used is well
+maintained and rarely makes breaking changes. Libraries like numpy,
+matplotlib, and scipy are staples of the Python universe. Libraries
+like mendeleev or pyXSteam that rarely see updates and rely on older
+versions of more popular libraries present a larger concern.
+
+Likewise, updates to Visual Studio Code and its extensions often
+amount to bug fixes or small feature changes and pose little threat
+to the functionality of the development environment as it relates to
+the mechanical department.
+
+\subsection{Industry Standards}
+
+By adopting Python as the only language taught in core curriculum
+classes, students would lose exposure to C/C++, the standard for 
+embedded software design, and MATLAB, the standard for control system
+design. While these languages would hopefully still be taught in the
+program through electives such as ME 615: Applications in Mechatronics 
+and ME 640: Control of Mechanical Systems II, the general student body
+may never end up learning either language. 
+
+Both C/C++ and MATLAB are deeply rooted as the standard in their fields,
+and for good reason. C/C++ is a compiled language that is designed
+to access lower levels of hardware than Python (though MicroPython does
+enable low-level access, it is still an interpreted language and can
+never match the speed of compiled code), and MATLAB has decades of controls
+development in the form of Simulink, the true standard for control system 
+design.
+
+With that being said, Python is the industry standard for data analysis 
+and numerical methods thanks to the powerful libraries and 
+integration with Jupyter Notebooks, which provide a smooth workflow. 
+
+With that being said, Python is the industry standard for data analysis 
+and numerical methods, and these are the applications that many mechanical
+engineers are interested in. While plenty of mechanical engineers work 
+with embedded devices or design control systems, these jobs are 
+transitioning more towards the Electrical and Computer Engineering field.
+The typical mechanical engineers will be interested in analyzing data produced 
+by a machine or with running preliminary calculations before committing
+the time and resources to a lengthy simulation or prototype. These are 
+the applications that will see the most benefit from learning Python.
+
+\subsection{Opportunity Cost}
+
+With the addition of programming to a class, most classes would need to devote
+at least a portion of one lecture to showcasing the libraries needed to 
+solve homework problems. For classes before ME 400, an entire lecture may
+be necessary. This would fit best alongside a regular by-hand, in-class
+example that shows how the methods compare.
+
+The addition of programming would also lead to additional questions for
+instructors regarding the setup and installation of the environment. While
+the setup steps are relatively easy compared to other languages, it will
+still be unfamiliar to students and require teachers to be knowledgeable
+on the subject.
+
+\section{Recommendations}
+
+I recommend classes that make significant use of any property tables, 
+iterative design, or graphing add at least a single assignment that 
+requires the use of Python and the relevant library to complete an assignment
+typical of the subject field. As it relates to this project, that would include
+DEN 161: Engineering Problem Solving, ME 513: Thermodynamics, NE 495: Elements 
+of Nuclear Engineering, ME 571: Fluid Mechanics, ME 533: Machine Design, and 
+ME 573: Heat Transfer. The addition of programming to these classes will 
+increase students' abilities to efficiently solve problems with little downside. 
+
+Given that this paper was not afforded the time to implement these changes
+and observe the change in students, further recommendations are hinged on the
+result of the first recommendation.
+
+Should students continue to struggle with programming, especially in
+classes prior to ME 400, I recommend that a programming class either be 
+added or moved into the first four semesters of the degree, preferably 
+the first three. The nature of this change could take any of several forms. 
+
+The easiest change would involve moving ME 400 forward two semesters in the
+flowchart and moving CHE 354/355 and IMSE 250 back two semesters. Currently,
+ME 400 does not utilize information from MATH 340 and neither of the others
+are prerequisites for other classes, making this change low friction. 
+
+Another possible change is the addition of a programming class, like CIS 209: 
+Computer Programming for Engineers, into the curriculum. In addition to 
+giving students a better foundation in programming through the introduction
+of an extra class, this change would also free up time in ME 400.
+
+Finally, a more drastic change would be a redesign of the ME 400 and 
+ECE 519: Circuits and Controls/ME 519: Circuits for MNE classes. Rather
+than acting as a microcontroller class, ME 400 can transition to a dedicated
+programming class that spends time teaching the basics of programming, how
+to use external libraries, and how to solve basic problems using Jupyter
+Notebooks. Then, ECE/ME 519 could be transitioned to a circuit and 
+microcontroller class that lectures on circuit theory and the fundamentals
+of microcontrollers while utilizing labs to give practical experience building
+circuits and writing embedded code. The scope of this class would reduce
+the amount of time spent on both circuit theory and microcontrollers, which
+may not be an acceptable trade-off. With that being said, the majority
+of the information taught in ME 519 is either repeated in ME 535:
+Measurements and Instrumentation or is not used again in the curriculum.
+
+If, however, the struggling is continuing even after ME 400, I would 
+recommend converting ME 400 and ME 570 into Python-based classes to give
+students a more consistent approach to programming as well as moving 
+ME 400 earlier in the curriculum to solidify the foundations before 
+requiring its use in other mechanical classes.

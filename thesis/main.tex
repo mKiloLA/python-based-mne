@@ -19,7 +19,7 @@
 
 \usepackage{tocloft}
 \usepackage[hidelinks]{hyperref}
-
+\setcounter{tocdepth}{1}
 \usepackage[english]{babel}
 \hypersetup{colorlinks=false}
 
@@ -31,7 +31,7 @@
 \newcommand{\assignments}[1]
 {%
     \refstepcounter{assignments}
-    \addcontentsline{assign}{assignments}{\protect\numberline{\theassignments}#1}\par
+    \addcontentsline{assign}{assignments}{\protect\numberline{\theassignments}  #1}\par
 }
 
 
@@ -58,9 +58,9 @@
     \clearpage
     \listofassignments
 
-    \clearpage
-    \chapter*{List of Symbols}
-    \input{bookends/list_of_symbols.tex}
+    % \clearpage
+    % \chapter*{List of Symbols}
+    % \input{bookends/list_of_symbols.tex}
 
     \clearpage
     \chapter*{List of Abbreviations}
@@ -109,8 +109,12 @@
     \input{chapters/10_heat_transfer}
     
     \clearpage
-    \chapter{Conclusion and Future Work}
-    \input{chapters/11_conclusion}
+    \chapter{Discussion}
+    \input{chapters/11_discussion}
+
+    \clearpage
+    \chapter{Conclusion}
+    \input{chapters/12_conclusion}
 
     \clearpage
     \appendix
