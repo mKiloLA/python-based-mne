@@ -4,9 +4,37 @@ ME 570: Control of Mechanical Systems is a mixed class with two lectures and one
 the principles and theory of controls while the lab focuses on designing and testing control systems. Most labs are dedicated to
 using and designing PID controllers using different methods, such as frequency analysis or pole analysis.
 
-To complete the labs, the class makes use of a custom motor rig called the motorlab. To go along with the motorlab, a graphical 
-user interface for controlling the motorlab was also created by Dale Schinstock. This GUI runs as an application through MATLAB 
-and allows the students to both send commands to the motor and collect runtime data from the motor.
+To complete the labs, the class makes use of a custom motor rig called a motorlab, show in Figure \ref{fig:motorlab}. To go 
+along with the motorlab, a graphical user interface for controlling the motorlab was also created by Dale Schinstock, also 
+shown in Figure \ref{fig:motorlab}. This GUI runs as an application through MATLAB and allows the students to both send 
+commands to the motor and collect runtime data from the motor.
+
+% \begin{figure}[h]
+%     \begin{center}
+%         \includegraphics[width=\textwidth]{motorlab.jpg}
+%         \caption{The motorlab design by Dr. Dale Schinstock}
+%         \centering
+%         \label{fig:motorlab}
+%     \end{center}
+% \end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{motorlab.jpg}
+      \caption{The motorlab apparatus}
+      \label{fig:motorlab-device}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+      \centering
+      \includegraphics[width=0.8\linewidth]{motorlabgui.png}
+      \caption{The motorlabGUI interface}
+      \label{fig:motorlabgui}
+    \end{subfigure}
+    \caption{The motorlab system designed by Dale Schinstock}
+    \label{fig:motorlab}
+\end{figure}
 
 Controls also relies heavily on MATLAB for the completion of lab and homework assignments. All work is done using .mlx files through a 
 licensed copy of MATLAB for a more interactive working environment. To access the controls related commands, a package called 
@@ -32,13 +60,13 @@ transition to MATLAB.
 
 All three translated labs make use of the motorlab, which has had its GUI turned into an application, courtesy of the MATLAB
 Compiler. This allows the application to be run from an app icon or from the terminal. These labs also make use of a custom plot
-command. The plot command hijacks the standard matplotlib plot command and adds the ability to create data tips. The
-direction of the data tip changes based on which mouse click is used, and a double click in the plot window will remove all data tips.
-More custom functions could be added later to imitate MATLAB functionality as needed, but this was the only one required for
-completing these labs.
+command. The plot command hijacks the standard matplotlib \cite{Hunter_Matplotlib_A_2D_2007} plot command and adds the ability to 
+create data tips. The direction of the data tip changes based on which mouse click is used, and a double click in the plot window 
+will remove all data tips. More custom functions could be added later to imitate MATLAB functionality as needed, but this was the 
+only one required for completing these labs.
 
 The first translated lab, Lab 4, is a standard controls assignment that makes use of the motorlab, reading the csv output from the
-motorlab, and plotting the results. 
+motorlab, and plotting the results \cite{controls-4}. 
 
 \assignments{ME 570: Assignment 1}
 \label{control_assignment_1}
@@ -124,7 +152,7 @@ show()
 
 \end{tcolorbox}
 
-The second lab, Lab 10, builds on Lab 4 by adding root locus plots and sisotool. While the
+The second lab, Lab 10 \cite{controls-10}, builds on Lab 4 by adding root locus plots and sisotool. While the
 sisotool command in Python is not as powerful as the full designer in MATLAB, it does allow 
 for interactive plots where moving poles updates the graphs automatically. 
 
@@ -173,7 +201,7 @@ Grabbing and moving the black squares will allow the user to move the pole locat
 \end{center}
 \end{tcolorbox}
 
-The third lab, Lab 13, focuses on frequency response design methods and utilizes Bode plots.
+The third lab, Lab 13, focuses on frequency response design methods and utilizes Bode plots \cite{controls-13}.
 
 \assignments{ME 570: Assignment 3}
 \label{control_assignment_3}

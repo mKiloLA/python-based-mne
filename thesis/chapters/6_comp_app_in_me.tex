@@ -34,7 +34,8 @@ Since ME 400 is a programming course, no new assignments are being created for t
 project. Instead, a pre-existing lab has been translated from C++ on the ESP32 to
 MicroPython on the Raspberry Pi Pico. The translated lab exercise, partially shown in 
 Assignment \ref{comp_app_assignment_1}, is the concluding
-assignment in a string of lab exercises dedicated to programming the game "Simon Says."
+assignment in a string of lab exercises dedicated to programming the game "Simon Says"
+\cite{simon-says}.
 
 The goal of the exercise is to create a replayable, memory-based game that imitates the
 children's game Simon Says. To do this, students have to use the LCD screen, five 
@@ -148,8 +149,8 @@ espresso_dolce = XglcdFont(
 
 To use the LCD screen and the IR remote, drivers needed to be created for the Pico. 
 The drivers provided in the repository are modified versions of
-existing drivers from https://github.com/rdagger/micropython-ili9341 and 
-https://github.com/peterhinch/micropython\_ir. The modified drivers would be given to 
+rdagger's micropython-ili9341 library \cite{micropython-ili9341} and Peter Hinch's 
+micropython\_ir library \cite{micropython_ir2020}. The modified drivers would be given to 
 students, and they would not be expected to modify them in any way.
 
 As previously mentioned, the class uses several custom PCBs to facilitate the use
