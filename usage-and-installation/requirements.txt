@@ -1,0 +1,12 @@
+numpy
+scipy
+sympy
+ipympl
+ipykernel
+matplotlib
+pandas
+pyromat
+control
+pyXSteam
+mendeleev
+physdata
