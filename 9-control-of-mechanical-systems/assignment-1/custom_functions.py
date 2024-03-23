@@ -26,7 +26,7 @@ def plot(*args, scalex=True, scaley=True, data=None, **kwargs):
                         note.remove()
                     except:
                         pass
-            elif event.button is MouseButton.LEFT:
+            elif event.button is MouseButton.RIGHT:
                 offset = 20
                 xdisplay, ydisplay = ax.transData.transform((event.xdata, event.ydata))
                 bbox = dict(boxstyle="round", fc="0.8")
@@ -38,18 +38,18 @@ def plot(*args, scalex=True, scaley=True, data=None, **kwargs):
                             xycoords='figure pixels',
                             textcoords='offset points',
                             bbox=bbox, arrowprops=arrowprops))
-            elif event.button is MouseButton.RIGHT:
-                offset = 25
-                xdisplay, ydisplay = ax.transData.transform((event.xdata, event.ydata))
-                bbox = dict(boxstyle="round", fc="0.8")
-                arrowprops = dict(
-                    arrowstyle="->",
-                    connectionstyle="angle,angleA=0,angleB=45,rad=10")
-                notes.append(ax.annotate(f'({event.xdata:.2f}, {event.ydata:.2f})',
-                            (xdisplay, ydisplay), xytext=(-2*offset, -offset),
-                            xycoords='figure pixels',
-                            textcoords='offset points',
-                            bbox=bbox, arrowprops=arrowprops))
+            # elif event.button is MouseButton.RIGHT:
+            #     offset = 25
+            #     xdisplay, ydisplay = ax.transData.transform((event.xdata, event.ydata))
+            #     bbox = dict(boxstyle="round", fc="0.8")
+            #     arrowprops = dict(
+            #         arrowstyle="->",
+            #         connectionstyle="angle,angleA=0,angleB=45,rad=10")
+            #     notes.append(ax.annotate(f'({event.xdata:.2f}, {event.ydata:.2f})',
+            #                 (xdisplay, ydisplay), xytext=(-2*offset, -offset),
+            #                 xycoords='figure pixels',
+            #                 textcoords='offset points',
+            #                 bbox=bbox, arrowprops=arrowprops))
         except:
             pass
     fig.canvas.mpl_connect('button_press_event', mouse_click)
