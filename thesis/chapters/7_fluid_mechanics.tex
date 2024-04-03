@@ -42,13 +42,12 @@ since finding a numerical solution is difficult and time-consuming. With the add
 programming, however, finding a numerical solution becomes a trivial matter (assuming
 standard numerical methods are appropriate for the problem).
 
-Python has two libraries that excel at solving differentials, `sympy' 
+Python has two libraries that excel at solving differentials, $sympy$ 
 \cite{Meurer_SymPy_symbolic_computing_2017} for symbolic solutions 
-and `scipy' \cite{2020SciPy-NMeth} for numerical solutions. The following assignment adapted from 
+and $scipy$ \cite{2020SciPy-NMeth} for numerical solutions. The following assignment adapted from 
 \textit{Fundamentals of Fluid Mechanics, 7th Edition} \cite{fluid-mechanics}, 
-Assignment \ref{fluid_assignment_1} below, shows an example of using both sympy and scipy 
-to solve a question that requires both
-symbolic and numerical differentials. 
+Assignment \ref{fluid_assignment_1} below, shows an example of using both $sympy$ and $scipy$ 
+to solve a question that requires both symbolic and numerical differentials. 
 
 \assignments{ME 571: Assignment 1}
 \label{fluid_assignment_1}
@@ -78,7 +77,7 @@ symbolic and numerical differentials.
     \parindent15pt
 
     For the full solution, see Appendix \ref{appendix:appendix_github}. Two solutions are 
-    presented in the repository, and the entirety of solution 2 is shown below.
+    presented in the repository, and the entirety of the second solution is shown below.
 
 \begin{python}
 from sympy import symbols, lambdify, diff, exp
@@ -112,6 +111,8 @@ estimate, graph the acceleration function and observe where it crosses the x-axi
 x = linspace(0, 1)
 plt.hlines(0, 0, 1)
 plt.plot(x, acceleration(x))
+plt.xlabel("Location (ft)")
+plt.ylabel("Acceleration (ft/s^2)")
 \end{python}
 
 \begin{center}
@@ -144,7 +145,7 @@ make use of Python to solve a large system of equations. The second assignment c
 programming assignment that requires graphing, iteration, and a numerical solution to an otherwise unsolvable problem.
 
 To supplement these assignments, at least
-one lecture should be dedicated to demonstrating how to use the Python libraries sympy and scipy. In addition,
+one lecture should be dedicated to demonstrating how to use the Python libraries $sympy$ and $scipy$. In addition,
 students should be given a modified version of the documentation for these libraries that contains the information
 used by this class. These modified docs will give students a chance to learn how to read documentation without the
 intimidation of thousands of pages of information.
@@ -158,5 +159,5 @@ the previous section. The folder also contains a README that details what is in 
 what software is needed to complete the assignments. 
 
 For these projects to be added to the class, the instructor would simply need to give the 
-skeleton files to students as a problem statement. Given the use of specialized solving
+starting code to students as a problem statement. Given the use of specialized solving
 methods used in the solution, an in-class example would be all but required.

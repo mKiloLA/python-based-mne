@@ -11,7 +11,7 @@ These questions make use of four different libraries for constants, attenuation 
   * [exam_1_solution.ipynb](../5-elements-of-nuclear-engineering/assignment-1/exam_1_solution.ipynb): One possible solution Exam 1 question 9.
 * [assignment-2](../5-elements-of-nuclear-engineering/assignment-2/)
   * [homework_20_skeleton.ipynb](../5-elements-of-nuclear-engineering/assignment-2/homework_20_skeleton.ipynb): Starting file to be given as an assignment description to students.
-  * [homework_20_solution.ipynb](../5-elements-of-nuclear-engineering/assignment-2/homework_20_solution.ipynb): One possible solution for Homework 20 questions 1 and 2.
+  * [homework_20_solution.ipynb](../5-elements-of-nuclear-engineering/assignment-2/homework_20_solution.ipynb): One possible solution for Homework 20 question 1.
 
 ## Software Requirements
 

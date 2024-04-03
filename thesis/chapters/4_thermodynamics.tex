@@ -29,12 +29,12 @@ project or assignment.
 Since no assignments currently make use of programming, two new assignments have been adapted from 
 \textit{Fundamentals of Engineering Thermodynamics, 9th Edition} \cite{thermodynamics} to demonstrate
 how programming could be beneficial to the course. Both assignments will make use of a Python library called
-PYroMat \cite{chris_martin_2022_7262173}, a free, open source library dedicated to making thermodynamic properties 
+$PYroMat$ \cite{chris_martin_2022_7262173}, a free, open source library dedicated to making thermodynamic properties 
 readily available. They will also both make use of Jupyter Notebooks for cleanly presenting questions, 
 commentaries, and code while solving the question.
 
 The first assignment, Assignment \ref{thermo_assignment_1}, is a five state system that does not require 
-iteration or plotting. It follows the structure of a typical question in thermodynamics well. The student 
+iteration or plotting. This example follows the structure of a typical question in thermodynamics. The student 
 must identify the states, list the known properties for each state, and then either search for additional 
 values in a table or calculate them with known values. After this, the laws of thermodynamics are applied, 
 equations are balanced, and the questions solved.
@@ -69,14 +69,14 @@ equations are balanced, and the questions solved.
     \end{enumerate}
 
     Be sure to leave specify all assumptions and comment on the functionality of the code. 
-    To access the thermodynamic tables for water, import PYroMat using the cell below.
+    To access the thermodynamic tables for water, import $PYroMat$ using the cell below.
 
     \tcblower
     \textbf{Problem Solution}
     \parindent15pt
 
     For the full solution, see Appendix \ref{appendix:appendix_github}. Below is an example of 
-    importing PYroMat, setting the correct units, and creating an object for a specific
+    importing $PYroMat$, setting the correct units, and creating an object for a specific
     substance.
 
 \begin{python}
@@ -167,7 +167,7 @@ for p in p_list:
     n_list.append(n)
 \end{python}
 
-    With the quality and pressures in hand, a graph can be generated with matplotlib.
+    With the quality and pressures in hand, a graph can be generated with $matplotlib$.
 
 \begin{python}
 from matplotlib import pyplot as plt
@@ -214,7 +214,7 @@ the folder titled ``4-thermodynamics'' contains both the problem statements and 
 introduced in the previous section. The folder also contains a README that details what is in each file and 
 what software is needed to complete the assignments. 
 
-For these projects to be added to the class, the instructor would simply need to give the skeleton files to 
+For these projects to be added to the class, the instructor would simply need to give the starting code to 
 students as a problem statement. It may be beneficial to use Assignment 4.1 as an in-class example both to serve 
-as a reminder of how to use Python with Jupyter Notebooks as well as a demonstration of how to use PYroMat to 
+as a reminder of how to use Python with Jupyter Notebooks as well as a demonstration of how to use $PYroMat$ to 
 access material properties and change property units.

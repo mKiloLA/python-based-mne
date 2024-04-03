@@ -6,8 +6,8 @@ to mechanical engineering students. The class also serves as the sole entry poin
 program at K-State. 
 
 As class with no lab section, homework assignments and tests make up the majority of the grade
-for the class. Currently, the class also has one project where students use a Geiger counter 
-developed for the class to measure ionizing radiation. 
+for the class. Depending on the instructor, the class also has one project where students use a 
+Geiger counter developed for the class to measure ionizing radiation.
 
 As is the case with ME 513: Thermodynamics, this class comes before ME 400 and, therefore, does
 not utilize programming for any homework assignments or projects. With the changes to DEN 161,
@@ -20,16 +20,16 @@ While no assignments currently make use of programming, many questions lend them
 to being solved with programming. This is thanks to the heavy reliance on tables and
 constants used in solving NE problems. To demonstrate, three questions, one from an exam
 and two from a homework, have been solved using Python with the help of a few open source
-libraries: mendeleev \cite{Mentel_mendeleev_-_A_2021}, physdata \cite{physdata2016}, and scipy
+libraries: $mendeleev$ \cite{Mentel_mendeleev_-_A_2021}, $physdata$ \cite{physdata2016}, and $scipy$
 \cite{2020SciPy-NMeth}.
 
 Unfortunately, no single library contains the full collection of properties to solve the range
 of questions presented in NE 495. While inconvenient, this issue serves to highlight the
-benefits of making an MNE library that can wraps around the necessary packages
+benefits of making an MNE library that wraps around the necessary packages
 
 The first assignment, Assignment \ref{nuclear_assignment_1}, taken from the first exam in the class, 
 is a Q-value question that uses 
-the mendeleev library to pull element properties. The library contains information on the elements
+the $mendeleev$ library to pull element properties. The library contains information on the elements
 and their isotopes that, once familiar, provide quick access to the mass and abundance values
 needed to solve Q-value problems. Unfortunately, the library outputs a list of isotopes and 
 has no direct method for retrieving a specific mass number.
@@ -47,7 +47,7 @@ has no direct method for retrieving a specific mass number.
     Assume that the total volume of the oceans is 1.3x10\textsuperscript{9} km\textsuperscript{3}, the uranium 
     concentration in the ocean is 3 parts per billion water molecules, and the total annual 
     electricity consumption in the U.S. is 4,095 Billion kWh (1 kWh = 3.6x10\textsuperscript{6} J). Assume further 
-    that every single 235U nucleus fissions according to the reaction n + 235U → 139Ba + 95Kr + 2 n 
+    that every single ${}^{235}$U nucleus fissions according to the reaction n + ${}^{235}$U → ${}^{139}$Ba + ${}^{95}$Kr + 2n 
     and that 30\% of all the energy can be recovered for electrical production. How many years could the oceanic 
     uranium power the U.S.?
 
@@ -59,7 +59,7 @@ has no direct method for retrieving a specific mass number.
     \parindent15pt
 
     For the full solution, see Appendix \ref{appendix:appendix_github}. Below is an example of 
-    importing and using the mendeleev library to get atomic weights.
+    importing and using the $mendeleev$ library to get atomic weights.
 
 \begin{python}
 import mendeleev as md
@@ -70,7 +70,7 @@ O = md.element("Oxygen")
 water_molecule_mass = 2*H.atomic_weight+O.atomic_weight
 \end{python}
 
-Other physical constants can be found in scipy's constants library.
+Other physical constants can be found in $scipy$'s constants library.
 
 \begin{python}
 from scipy.constants import physical_constants
@@ -85,12 +85,12 @@ neutron_mass=physical_constants["neutron mass in u"][0]
 
 \end{tcolorbox}
 
-The second and third questions, both in Assignment \ref{nuclear_assignment_2}, are taken 
-from Homework 20 and deal with photon interactions. 
-These questions make use of the physdata library to get attenuation coefficients for different
-molecules (water, in this example). Similar to mendeleev, this library does not have an easy, 
+The second question, shown in Assignment \ref{nuclear_assignment_2}, is taken 
+from Homework 20 and deals with photon interactions. 
+These questions make use of the $physdata$ library to get attenuation coefficients for different
+molecules (water, in this example). Similar to $mendeleev$, this library does not have an easy, 
 built-in method for getting this coefficient values at non-standard energy values. To get around
-this, students are encouraged to use numpy.interp to find the desired value.
+this, students are encouraged to use $numpy.interp$ to find the desired value.
 
 \assignments{NE 495: Assignment 2}
 \label{nuclear_assignment_2}
@@ -101,8 +101,7 @@ this, students are encouraged to use numpy.interp to find the desired value.
     \textbf{Problem Statement}
     \parindent15pt
 
-    What fraction (not percent) of 2.5 MeV photons interact within 1 foot of water? What fraction 
-    (not percent) of 2.5 MeV photons are absorbed by 1 foot of water?
+    What fraction (not percent) of 2.5 MeV photons interact within 1 foot of water?
 
     \tcblower
     \textbf{Problem Solution}
@@ -111,8 +110,8 @@ this, students are encouraged to use numpy.interp to find the desired value.
     For the full solution, see Appendix \ref{appendix:appendix_github}. Below is a walkthrough
     of the solution to the first question.
 
-    First, get the table of attenuation coefficients using physdata. The list is converted to 
-    a numpy array for easier handling in the next step.
+    First, get the table of attenuation coefficients using $physdata$. The list is converted to 
+    a $numpy$ array for easier handling in the next step.
 
 \begin{python}
 # cm-1
@@ -120,7 +119,7 @@ water_table = np.array(
     xray.fetch_coefficients("water", 1))
 \end{python}
 
-Next, interpolate using `numpy`'s `interp` function to get the correct coefficient. Here column 
+Next, interpolate using $numpy$'s `interp' function to get the correct coefficient. Here column 
 0 is the energy levels and column 1 is the interaction coefficient.
 
 \begin{python}
@@ -173,6 +172,6 @@ the previous section. The folder also contains a README that details what is in 
 what software is needed to complete the assignments. 
 
 For these projects to be added to the class, the instructor would simply need to give the 
-skeleton files to students as a problem statement. It may be beneficial to use one of the questions 
+starting code to students as a problem statement. It may be beneficial to use one of the questions 
 as an in-class example both to serve as a reminder of how to use Python with Jupyter Notebooks 
 as well as a demonstration of how to use the data libraries to access material properties.

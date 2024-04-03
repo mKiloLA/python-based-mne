@@ -6,7 +6,7 @@ the methods for solving problems certainly do. Consider the process of creating 
 drawings. Engineers needed a way to communicate the size, shape, and finish of parts to 
 other engineers, so they hand drew and dimensioned parts. But in the modern day, 
 hand drafting a detail drawing is the last resort. And education has adjusted in
-kind. While students are taught to draw straight lines (which all lines are) and visualize
+kind. While students are taught to draw straight lines and visualize
 without the aid of CAD, no class spends time teaching students how to use a drafting table
 or create detail drawings by hand. Rather, they are taught the basics of visualization
 and then taught how to use a CAD program, like SOLIDWORKS.
@@ -31,12 +31,12 @@ of the Mechanical and Nuclear Engineering department.
 
 The first introduction to programming in MNE curriculum is DEN 161: Engineering Problem Solving,
 the first-semester introduction-to-engineering class. The class spends a few weeks introducing
-Python and then a week introducing the Arduino Uno. After this, no programming is used in the
+Python and then a week introducing the Arduino Uno. After this, no programming is formally used in the
 curriculum until first semester Junior year, as seen in Figure \ref{fig:mne_flowchart}
 \cite{flowchart2022}. 
 
-\begin{figure}[h]
-    \includegraphics[width=\textwidth]{mne-flowchart}
+\begin{figure}[!htbp]
+    \includegraphics[angle=90, scale=0.6]{mne-flowchart}
     \begin{tabular}{l@{ : }l}
         Red & Teaches Programming \\
         Purple & Uses Programming \\
@@ -51,19 +51,19 @@ curriculum until first semester Junior year, as seen in Figure \ref{fig:mne_flow
 The next class to use programming is also the only class dedicated to teaching programming.
 ME 400: Computer Applications in Mechanical Engineering begins with an introduction to C++
 but then quickly moves to teaching embedded C++ for use on an ESP32. While the class
-contains phenomenal material as it relates to embedded programming, its fast-paced nature
-often leaves students confused on the fundamentals of programming. 
+contains useful material as it relates to embedded programming, students often comment on
+the fast-paced nature of the course.
 
 The next class to utilize programming is ME 570: Control of Mechanical Systems 1. This class
 uses MATLAB for system analysis and controller design. For the first lab, students complete the
 MATLAB Onramp, MATLAB's own introductory course to the language. This Onramp, however, does
-not cover the basics of the control package that the course relies on. Due to the inadequate 
+not cover the basics of the control package that the course relies on. Due to their inadequate 
 foundations in programming, many students struggle with the new language, making it difficult 
 to understand the new concepts being taught, such as a PID controller.
 
 The final class that utilizes programming is ME 574: Interdisciplinary Design Project 1, 
 better known as Senior Design 1. This class revolves around the completion and fabrication
-of a single product. This product always has some electromechanical aspects that need to
+of a single product. This product is designed to always have some electromechanical aspects that need to
 be controlled by a microcontroller. Neither the device nor language used is moderated by
 the class instructors. Since this is a project based class where each team is responsible
 for its own decisions and the project changes every semester, it will not receive a dedicated
@@ -81,14 +81,14 @@ substantial time with property tables, iterative design, or numerical methods
 showcase the power of programming in the field of mechanical engineering. 
 
 Based on experience as an instructor of ME 570 and ME 574 for the better part of 
-four years, the majority of students struggle with using MATLAB and C++. This makes it 
+four years, the author notes that the majority of students struggle with using MATLAB and C++. This makes it 
 difficult for students to learn engineering principles because they do not understand 
 the tool being used to teach it. But, at the same time, it is important to use modern
 techniques to solve problems.
 
 \section{Scope of Work}
 
-While the motivation for this work relies on the idea that a more consistent approach to
+While the motivation for this work is centered on the idea that a more consistent approach to
 learning and applying programming would benefit students and improve their problem-solving
 abilities, this project does not seek to prove or verify this claim. Neither does this
 work set out to prove that the proposed solution is the best solution for the assumed
@@ -112,17 +112,13 @@ Subsequent chapters will each be dedicated to a class in the MNE curriculum. The
 will give a course overview, describe the new or altered assignments, give a list
 of deliverables for that course, and provide recommendations for implementation. Complete 
 assignment descriptions and implementations
-are not contained within the chapters themselves, only representative portions are included.
+are not contained within the chapters themselves; only representative portions are included.
 The assignments are contained in a repository on GitHub, which can be found in Appendix 
 \ref{appendix:appendix_github}. Each chapter will have a folder of the same name dedicated 
 to it in the repository. This folder will contain everything an instructor would need to assign 
 and grade the new assignments.
 
 \section{Curriculum Design}
-
-Discuss how curriculum design was considered across all the classes and how the use of it
-should progress as we go through classes. Create graphic to show this. Mention how each 
-class will discuss the recommendation in a section.
 
 When designing assignments and their implementations, the fundamentals of curriculum design
 help guide both the progression and weighting of assignments. As such, considerations were
@@ -166,5 +162,5 @@ motivation for students that find themselves particularly adept at coding.
 Beginning with DEN 161: Engineering Problem Solving, each course chapter will contain
 a brief section dedicated to recommendations for course integration based on these
 principles of curriculum design. These recommendations are intended to provide insight
-of the investment level needed by both the instructor and the students to effectively 
-implement the proposed changes into the course.
+of the investment level needed by instructors and the students to effectively 
+implement the proposed changes.

@@ -20,7 +20,7 @@ The project assignment, shown in Assignment \ref{heat_transfer_assignment_1}, de
 with the design of a shell and tube heat exchanger. The solution to the problem requires
 table data, iteration, and plotting, making it a prime example of the practical benefits
 of programming in the field. A library that fully implements the IF-97 standard called
-`pyXSteam' is used for steam and water properties \cite{pyxsteam2020}.
+$pyXSteam$ is used for steam and water properties \cite{pyxsteam2020}.
 
 \assignments{ME 573: Assignment 1}
 \label{heat_transfer_assignment_1}
@@ -46,7 +46,7 @@ of programming in the field. A library that fully implements the IF-97 standard 
     \parindent15pt
 
     For the full solution, see Appendix \ref{appendix:appendix_github}. The following code shows
-    how to access and use the steam tables using pyXSteam.
+    how to access and use the steam tables using $pyXSteam$.
 
 \begin{python}
 from pyXSteam.XSteam import XSteam
@@ -61,9 +61,9 @@ kwater = steam_table.tcL_t(323) # W/(m*K)
 \end{python}
 
 Unfortunately, no Python library with engine oil data currently exists, so values 
-will have to come from a textbook. The following function was made using scipy.optimize.curve\_fit 
-and a fourth order polynomial with the data from Appendix A: Table A.5 from *Fundamentals of Heat 
-and Mass Transfer* by Bergman, Lavine, Incropera, and Dewitt.
+will have to come from a textbook. The following function was made using $scipy.optimize.curve\_fit$ 
+and a fourth order polynomial with the data from Appendix A: Table A.5 from \textit{Fundamentals of Heat 
+and Mass Transfer} by Bergman, Lavine, Incropera, and Dewitt \cite{heat-transfer}.
 
 \begin{python}
 def oil_specific_heat(x):
@@ -103,6 +103,6 @@ the previous section. The folder also contains a README that details what is in 
 what software is needed to complete the assignments. 
 
 For these projects to be added to the class, the instructor would simply need to give the 
-skeleton files to students as a problem statement. Giving an example of how to set the units
-and pull data from the pyXSteam library would be a useful addition to the in-class presentation
+starting code to students as a problem statement. Giving an example of how to set the units
+and pull data from the $pyXSteam$ library would be a useful addition to the in-class presentation
 of the project.

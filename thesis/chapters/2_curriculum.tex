@@ -4,10 +4,11 @@ The primary concerns addressed in Chapter 1 are as follows:
 
 \begin{enumerate}
     \item Students lack a solid foundation in the fundamentals of programming.
-    \item Programming is an under utilized problem-solving technique.
+    \item Programming is an under utilized problem-solving technique in the Department of Mechanical
+    Engineering at K-State.
 \end{enumerate}
-To address the first issue, this paper would like to make two proposals: the adoption of a single programming 
-language and the restructuring of electronics classes in the department. First, the goal of adopting a single 
+To address the first issue, two proposals are made: the adoption of a single programming 
+language and the restructuring of programming classes in the department. First, the goal of adopting a single 
 programming language is to give students a more thorough understanding in a single language rather than 
 a shallow understanding of four languages. The language chosen in this project is Python. In conjunction with 
 Python, a consistent environment should be used as well. A consistent environment will prevent unnecessary 
@@ -16,7 +17,7 @@ Visual Studio Code. To replace the work done on the Arduino Uno and ESP32, a Ras
 thanks to its seamless integration with both Python and Visual Studio Code. For more details regarding these 
 choices, see Sections 2.2-2.5.
 
-Second, the goal of restructuring electronics classes is to give students a dedicated ``fundamentals of 
+Second, the goal of restructuring programming classes is to give students a dedicated ``fundamentals of 
 programming'' class rather than a microcontroller class that teaches programming out of necessity. This
 change, however, will not be addressed for the bulk of this work. Significant changes to the courses
 required in the curriculum are difficult to pass, and always come with trade-offs. As such, discussion of 
@@ -42,11 +43,11 @@ students a more consistent approach to programming, as well as more use cases fo
 students will become more confident and more capable as problem solvers and engineers.
 
 Through the course of this project, many Python packages and Visual Studio Code extensions will
-be utilized. Thankfully, the installation and usage steps are simple, and can be combined into a single 
-step in both cases. The Visual Studio Code extensions can all by downloaded at once using an
+be used. Thankfully, the installation and usage steps are simple and can be combined into a single 
+step. The Visual Studio Code extensions can all by downloaded at once using an
 extension pack called KSU Mechanical Engineering Extension Pack. The necessary Python packages can also
 all be installed at once from a requirements file. In some cases, it may be preferable to use Anaconda,
-a Python distribution that comes many standard packages, to prevent the need for students to install
+a Python distribution that comes with many standard packages, to eliminate the need for students to install
 packages on their own. To see a full list of the applications, packages, and extensions and their versions, 
 see Appendix \ref{appendix:appendix_versions}. For installation instructions, see the GitHub repository linked 
 in Appendix \ref{appendix:appendix_github}. 
@@ -67,7 +68,7 @@ comes with the following benefits:
     \item Python is designed to be human-readable. This means that the syntax of the language closely
     matches the structure of the plain English. This emphasis on readability greatly reduces the
     burden on new users and bolsters code comprehension, even in more experienced coders. Consider 
-    a program that prints the phrase "Hello world!"  to the terminal. In C++, this would be done with 
+    a program that prints the phrase ``Hello world!''  to the terminal. In C++, this would be done with 
     the following code:
 
     \begin{lstlisting}[language=C++]
@@ -79,8 +80,9 @@ comes with the following benefits:
     }
     \end{lstlisting}
 
-    Not only is this code not human-readable, but it requires the use of imports, functions, return
-    values, namespaces, and non-obvious syntax. In Python, however, only one line of code is needed:
+    This requires the use of imports, functions, return values, namespaces, and non-obvious syntax. 
+    Each of these items reduces the ease of understanding for a new user. In Python, however, only one line 
+    of code is needed:
 
     \-\hspace{1cm} \pyth{print("Hello world!")}
 
@@ -88,10 +90,9 @@ comes with the following benefits:
     data science to building a website to powering a microcontroller (using MicroPython). With such 
     a wide breadth of use cases, learning the language opens the door to countless different applications 
     and projects.
-    \item Python is open-source and currently one of the most used languages. Thanks to its popularity,
-    many tools exist to make programming with Python easier, more powerful, and more accessible such
-    as integrations with Jupyter Notebooks and Visual Studio Code. However, this can potentially be 
-    two-edged sword, as will be discussed later.
+    \item Python is open-source and currently one of the most used languages on GitHub \cite{github-stats}. Thanks 
+    to its popularity, many tools exist to make programming with Python easier, more powerful, and more 
+    accessible such as integrations with Jupyter Notebooks and Visual Studio Code.
     \item Python has an easy to use package manager called pip, which is a recursive acronym for pip
     installs packages. This package manager makes it incredibly easy to both install and use non-standard
     libraries in Python.
@@ -99,8 +100,9 @@ comes with the following benefits:
 
 Python provides a solid starting point for new programmers while also being fully capable of high-level,
 advanced programming making it a good language for users of all skill levels. However, it does not come 
-without concerns of its own, most notably version controlling. This will be addressed at
-length in a future chapter.
+without concerns of its own. Perhaps the most notable concern is the burden of maintaining a version compatible
+stack of Python and its third-party libraries. This will be addressed at length in Chapter 11.1: 
+Issues and Concerns.
 
 \section{MicroPython}
 
@@ -111,9 +113,12 @@ microcontroller, which Python would normally not interact with.
 
 While MicroPython comes with all the benefits of Python, it also comes with one of the drawbacks
 of Python: speed. Unlike traditional low level languages like C/C++, MicroPython is not compiled,
-making it significantly slower than comparable languages. In some applications, the difference in
+making it significantly slower than comparable languages. In some applications, like controlling LEDs
+or periodically taking data measurements, the difference in
 speed has no effect on the application. Others, like a control system, heavily depend on fast loop
-times and are greatly impacted by speed.
+times and are greatly impacted by speed. A 2023 paper comparing the speed of programming languages
+on an ESP32 showed that MicroPython often performed hundreds of times slower than C++
+\cite{language-speed}.
 
 \section{Raspberry Pi Pico}
 
@@ -122,7 +127,7 @@ is an electronic input-output device capable of running uploaded code. It is dif
 from a microprocessor, such as a Raspberry Pi 5 or a desktop computer, by the fact that it does not run 
 an operating system. 
 
-The using a Pico, as a newer competitor in the saturated microcontroller market, begs the question of 
+As a newer competitor in the saturated microcontroller market, the use of the Pico begs the question of 
 ``why not use the Arduino Uno or ESP32?'' While all three devices support ADC, SPI, I2C, and have 
 around 40 GPIO pins, only the ESP32 and Pico support MicroPython, as well as built in wireless and 
 Bluetooth connectivity.
@@ -151,9 +156,10 @@ microcontroller or processor and in nearly any language.
 For the purposes of the Mechanical Engineering Department, extensions for Python, MicroPython and
 the Pico, and Jupyter Notebooks (a type of interactive programming environment that will be utilized
 later) will be used. The extensions are both easy to use and install, but share a downside with
-Python: version control. Since these extensions are always in active development and get updated
-to work with the newest version of Python and Visual Studio Code, which may not always be desirable.
-This issue will be discussed in greater detail in a later chapter.
+Python: version control. Since these extensions are perpetually in active development and get updated
+to work with the newest version of Python and Visual Studio Code regularly, older versions are deprecated 
+relatively quickly. This regular upgrade cycle, often referred to as ``agile development,'' makes it 
+difficult to control the versions being used by students.
 
 \subsection{Jupyter Notebooks}
 

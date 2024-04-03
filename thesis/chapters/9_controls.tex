@@ -9,15 +9,6 @@ along with the motorlab, a graphical user interface for controlling the motorlab
 shown in Figure \ref{fig:motorlab}. This GUI runs as an application through MATLAB and allows the students to both send 
 commands to the motor and collect runtime data from the motor.
 
-% \begin{figure}[h]
-%     \begin{center}
-%         \includegraphics[width=\textwidth]{motorlab.jpg}
-%         \caption{The motorlab design by Dr. Dale Schinstock}
-%         \centering
-%         \label{fig:motorlab}
-%     \end{center}
-% \end{figure}
-
 \begin{figure}
     \centering
     \begin{subfigure}{.5\textwidth}
@@ -53,15 +44,15 @@ spend more time trying to understand MATLAB than they do learning controls.
 Since ME 570 already fully utilizes programming in the course, no new assignments are being created. Instead, three pre-existing
 labs have been translated from MATLAB to Python. While MATLAB is the industry standard when it comes to control systems, the
 license is expensive, students do not have a solid understanding of it, and we do not make use of its most powerful feature,
-Simulink. In addition to this, Python has a library, aptly named "control," which has a MATLAB module that imitates the Control
+Simulink. In addition to this, a third-party Python library, aptly named $control$, has a MATLAB module that imitates the Control
 Toolbox, both in form and functionality, from MATLAB. In combination with Jupyter Notebooks and a few custom plotting modifications,
 using Python will give a very similar experience to MATLAB, and will give students that pursue the field of controls any easy
 transition to MATLAB. 
 
 All three translated labs make use of the motorlab, which has had its GUI turned into an application, courtesy of the MATLAB
 Compiler. This allows the application to be run from an app icon or from the terminal. These labs also make use of a custom plot
-command. The plot command hijacks the standard matplotlib \cite{Hunter_Matplotlib_A_2D_2007} plot command and adds the ability to 
-create data tips. The direction of the data tip changes based on which mouse click is used, and a double click in the plot window 
+command. The plot command builds on the standard $matplotlib$ \cite{Hunter_Matplotlib_A_2D_2007} plot command and adds the ability to 
+create data tips. A right mouse click will add a data tip at the click location, and a double left click in the plot window 
 will remove all data tips. More custom functions could be added later to imitate MATLAB functionality as needed, but this was the 
 only one required for completing these labs.
 
@@ -116,7 +107,7 @@ envelope_TF = tf(Kdc * real_part, [1, real_part])
 
 The following code assumes that the motorlabGUI data was collected
 and saved with the name ``stepdata.csv.'' Here, `read\_csv' and
-`iloc' from the `pandas' library are used for clean file reading.
+`iloc' from the $pandas$ library are used for clean file reading.
 
 \begin{python}
 # Extract data from the generated step response
@@ -152,9 +143,10 @@ show()
 
 \end{tcolorbox}
 
-The second lab, Lab 10 \cite{controls-10}, builds on Lab 4 by adding root locus plots and sisotool. While the
-sisotool command in Python is not as powerful as the full designer in MATLAB, it does allow 
-for interactive plots where moving poles updates the graphs automatically. 
+The second lab, Lab 10 \cite{controls-10}, builds on Lab 4 by adding root locus plots through 
+a tool called sisotool. Sisotool outputs four interactive plots that allow the user to move pole 
+locations to see how the system responds. While the sisotool command in Python is not as powerful 
+as the full designer in MATLAB, it does provide the full functionality used in ME 570.
 
 \assignments{ME 570: Assignment 2}
 \label{control_assignment_2}
@@ -213,14 +205,14 @@ The third lab, Lab 13, focuses on frequency response design methods and utilizes
     \parindent15pt
 
     For the full problem statement, please see Appendix \ref{appendix:appendix_github}. Given the 
-    natural frequency and dc gain derived from the table (not shown here), construct a new transfer 
+    natural frequency and DC gain derived from the table (not shown here), construct a new transfer 
     function, that will hopefully better match the data.
     
     \tcblower
     \textbf{Problem Solution}
     \parindent15pt
 
-    For the full solution, see Appendix \ref{appendix:appendix_github}. The followign code is an
+    For the full solution, see Appendix \ref{appendix:appendix_github}. The following code is an
     example of using Bode in Python to do frequency analysis.
 
 \begin{python}
@@ -260,7 +252,7 @@ show()
 
 The labs chosen aim to showcase how the major features used in MATLAB can be emulated in Python. Some features, like Simulink, have
 no direct correlation. However, Simulink is only used in one lab, and students only need to make two small changes. Python also
-requires more library imports, but these can all be handled by the skeleton and do not pose much concern.
+requires more library imports, but these can all be handled by the starting code and do not pose much concern.
 
 Since no new assignments are being added to the class, the learning objectives for the class do not change.
 
@@ -278,7 +270,7 @@ students how to program in the required curriculum.
 \section{Project Deliverables}
 
 In the GitHub repository associated with this paper, which can be found in Appendix \ref{appendix:appendix_github},
-the folder titled ``9-control-of-mechanical-systems'' contains the lab assignments, code skeletons, and solutions for the three
+the folder titled ``9-control-of-mechanical-systems'' contains the lab assignments, starting code files, and solutions for the three
 lab assignments explained above. The folder also contains a README that details what is in each file and what software is needed 
 to complete the assignments. 
 
