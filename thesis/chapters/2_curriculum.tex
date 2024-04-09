@@ -130,7 +130,10 @@ an operating system.
 As a newer competitor in the saturated microcontroller market, the use of the Pico begs the question of 
 ``why not use the Arduino Uno or ESP32?'' While all three devices support ADC, SPI, I2C, and have 
 around 40 GPIO pins, only the ESP32 and Pico support MicroPython, as well as built in wireless and 
-Bluetooth connectivity.
+Bluetooth connectivity. At the time of writing, the Raspberry Pi Pico comes in several variants ranging
+from \$4 for the standard Pico without Wi-Fi to \$7 for the Pico with Wi-Fi and pre-soldered headers \cite{pico-price},
+while the ESP32 ranges from \$10 to \$20 depending on the amount of memory \cite{esp32-price},
+and the Arduino Mega costs a steep \$50 \cite{arduino-price}.
 
 A case could be made for using the ESP32 over the Pico, given its rise in popularity in the home
 automation space. However, the ESP32 comes with greater restrictions in GPIO usage and the majority
@@ -146,7 +149,7 @@ to do unguided projects.
 
 \section{Visual Studio Code}
 
-Visual Studio Code is a cross-platform, highly customizable development environment created by
+Visual Studio Code (VSCode) is a cross-platform, highly customizable development environment created by
 Microsoft. It is one of the most used and most accessible development environments available, 
 and supports use with any language. VSCode can almost be thought of as a Word processor where 
 spell check looks for syntax errors and keywords instead of grammatical mistakes. By installing
@@ -156,7 +159,7 @@ microcontroller or processor and in nearly any language.
 For the purposes of the Mechanical Engineering Department, extensions for Python, MicroPython and
 the Pico, and Jupyter Notebooks (a type of interactive programming environment that will be utilized
 later) will be used. The extensions are both easy to use and install, but share a downside with
-Python: version control. Since these extensions are perpetually in active development and get updated
+Python: version compatibility. Since these extensions are perpetually in active development and get updated
 to work with the newest version of Python and Visual Studio Code regularly, older versions are deprecated 
 relatively quickly. This regular upgrade cycle, often referred to as ``agile development,'' makes it 
 difficult to control the versions being used by students.
@@ -164,8 +167,8 @@ difficult to control the versions being used by students.
 \subsection{Jupyter Notebooks}
 
 Jupyter is an open-source interactive programming environment that allows text and code to 
-seamlessly integrate. With more than 40 supported languages, Jupyter gives educators the ability
-to place formatted text (through the use of markdown) next to linted code. For an example
+seamlessly integrate \cite{jupyter}. With more than 40 supported languages, Jupyter gives educators the ability
+to place formatted text (through the use of markdown) next to error-checked code. For an example
 of a Jupyter Notebook in VSCode, see Figure \ref{fig:jupyter_example}.
 
 \begin{figure}[h]

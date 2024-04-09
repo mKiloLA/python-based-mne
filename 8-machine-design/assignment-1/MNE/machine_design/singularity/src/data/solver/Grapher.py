@@ -41,8 +41,9 @@ class Grapher:
         moment = lambdify(x, moment, 'numpy')
         slope = lambdify(x, slope, 'numpy')
         defl = lambdify(x, defl, 'numpy')
-
-        fig, axs = plt.subplots(2, 2, figsize=(11, 7), dpi=90)
+        
+        plt.style.use("dark_background")
+        fig, axs = plt.subplots(2, 2, figsize=(11, 7), dpi=90)  
         axs[0, 0].plot(a, shear(a), label=rod.str_shear())
         axs[0, 1].plot(a, moment(a), 'tab:orange', label=rod.str_moment())
         axs[1, 0].plot(a, slope(a), 'tab:green', label=rod.str_slope())
