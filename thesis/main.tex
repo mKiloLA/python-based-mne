@@ -1,0 +1,148 @@
+\documentclass[12pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{pythonhighlight}
+\AtBeginEnvironment{pythonhighlight}{\huge}
+
+\usepackage{listings}
+\lstset{upquote=true}
+\lstset{showstringspaces=false}
+\usepackage[utf8]{inputenc}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{tikzcodeblocks}
+\usepackage[many]{tcolorbox}
+\AtBeginEnvironment{tcolorbox}{\footnotesize}
+\definecolor{ksu-purple}{HTML}{512888}
+\definecolor{ksu-gray}{HTML}{D1D1D1}
+
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
+\setcounter{tocdepth}{1}
+\usepackage[english]{babel}
+\hypersetup{colorlinks=false}
+
+\newcommand{\listassignmentname}{List of Assignments}
+\newlistof[chapter]{assignments}{assign}{\listassignmentname}
+
+% Reset section numbering between unnumbered chapters
+% https://tex.stackexchange.com/questions/71162/reset-section-numbering-between
+\newcommand{\assignments}[1]
+{%
+    \refstepcounter{assignments}
+    \addcontentsline{assign}{assignments}{\protect\numberline{\theassignments}  #1}\par
+}
+
+
+\begin{document}
+
+    \input{bookends/titlepage}
+
+    \input{bookends/abstract}
+    
+    \input{bookends/acknowledgements}
+
+    \pagenumbering{roman}
+
+    \clearpage
+    \setcounter{page}{1}
+    \tableofcontents
+
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures
+
+    % \clearpage
+    % \listoftables
+
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Assignments}
+    \listofassignments
+
+    % \clearpage
+    % \chapter*{List of Symbols}
+    % \input{bookends/list_of_symbols.tex}
+
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{List of Abbreviations}
+    \chapter*{List of Abbreviations}
+    \input{bookends/list_of_abbreviations.tex}
+    
+    \clearpage
+    \setcounter{page}{1}
+    \pagenumbering{arabic}
+    \chapter{Introduction and Background}
+    \input{chapters/1_intro_and_back}
+
+    \clearpage
+    \chapter{A Cohesive Programming Curriculum}
+    \input{chapters/2_curriculum}
+    
+    \clearpage
+    \chapter{DEN 161: Engineering Problem Solving}
+    \input{chapters/3_engg_prob_solve}
+
+    \clearpage
+    \chapter{ME 513: Thermodynamics}
+    \input{chapters/4_thermodynamics}
+
+    \clearpage
+    \chapter{NE 495: Elements of Nuclear Engineering}
+    \input{chapters/5_elem_of_ne}
+    
+    \clearpage
+    \chapter{ME 400: Computer Applications in Mechanical Engineering}
+    \input{chapters/6_comp_app_in_me}
+    
+    \clearpage
+    \chapter{ME 571: Fluid Mechanics}
+    \input{chapters/7_fluid_mechanics}
+
+    \clearpage
+    \chapter{ME 533: Machine Design}
+    \input{chapters/8_machine_design}
+
+    \clearpage
+    \chapter{ME 570: Control of Mechanical Systems I}
+    \input{chapters/9_controls}
+
+    \clearpage
+    \chapter{ME 573: Heat Transfer}
+    \input{chapters/10_heat_transfer}
+    
+    \clearpage
+    \chapter{Discussion}
+    \input{chapters/11_discussion}
+
+    \clearpage
+    \chapter{Conclusion}
+    \input{chapters/12_conclusion}
+
+    \clearpage
+    \nocite{*}
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \bibliographystyle{plain} % We choose the "plain" reference style
+    \bibliography{bookends/refs} % Entries are in the refs.bib file
+
+    \clearpage
+    \appendix
+    \chapter{Project Repository}
+    \label{appendix:appendix_github}
+    \input{bookends/appendix_github}
+
+    \clearpage
+    \chapter{Software Versions}
+    \label{appendix:appendix_versions}
+    \input{bookends/appendix_versions}
+
+    \chapter{ABET Student Outcomes (2022-2023)}
+    \label{appendix:appendix_abet}
+    \input{bookends/appendix_abet}
+
+
+\end{document}

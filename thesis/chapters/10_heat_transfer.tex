@@ -1,0 +1,108 @@
+\section{Course Overview}
+
+ME 573: Heat Transfer is lecture based class that focuses on analyzing systems using
+the three modes of heat transfer: conduction, convection, and radiation. The study of
+heat transfer is dense with equations, analysis methods, and tables, most of which
+provide opportunities for programming to be used for solving problems, whether that
+be Excel calculators or Python. Of these, perhaps the most practical application 
+is the design of heat exchangers. Accordingly, the only project in the class is an 
+iterative heat exchanger design problem, which requires the use of Excel or Python.
+
+\section{Project Modifications}
+
+Since a project that makes use of programming already exists for Heat Transfer, no
+changes have been made to the assignment. The problem statement comes from 
+\textit{Fundamentals of Heat and Mass Transfer, 7th Edition} \cite{heat-transfer} and 
+can be found unchanged in the 10-heat-transfer repository along with a solution made 
+using Python in a Jupyter Notebook.
+
+The project assignment, shown in Assignment \ref{heat_transfer_assignment_1}, deals 
+with the design of a shell and tube heat exchanger. The solution to the problem requires
+table data, iteration, and plotting, making it a prime example of the practical benefits
+of programming in the field. A library that fully implements the IF-97 standard called
+$pyXSteam$ is used for steam and water properties \cite{pyxsteam2020}.
+
+\assignments{ME 573: Assignment 1}
+\label{heat_transfer_assignment_1}
+
+\begin{tcolorbox}[breakable, enhanced jigsaw, title=ME 573: Assignment \ref{heat_transfer_assignment_1}, 
+    colframe=ksu-purple, colback=ksu-gray]
+
+    \textbf{Problem Statement}
+    \parindent15pt
+
+    A heat exchanger manufacturing firm has hired your team to design a shell and tube 
+    heat exchanger. The heat exchanger is expected to heat 10,000 $\frac{kg}{h}$ of water flowing 
+    through the tubes from 16 to 84 °C. The hot engine oil flowing through the shell is
+    used for heating the water. The oil makes a single shell pass, entering at 160 °C and 
+    leaving at 94 °C, with an average overall heat transfer coefficient $U_h = 400 \frac{W}{m^2K}$. The water
+    flows through 11 brass tubes (k = 137 $\frac{W}{m K}$) of 22.9 mm inside diameter and 25.4 mm outside
+    diameter, with each tube making four passes through the shell, as shown below.
+    
+    Declare known variables, make necessary imports, and interpolate for property values.
+
+    \tcblower
+    \textbf{Problem Solution}
+    \parindent15pt
+
+    For the full solution, see Appendix \ref{appendix:appendix_github}. The following code shows
+    how to access and use the steam tables using $pyXSteam$.
+
+\begin{python}
+from pyXSteam.XSteam import XSteam
+
+# m/kg/sec/K/MPa/W
+steam_table = XSteam(XSteam.UNIT_SYSTEM_BARE)
+
+v = steam_table.vL_t(323) # m^3/kg
+Cpc = 1000*steam_table.CpL_t(323) # J/(kg*K)
+mew = steam_table.my_pt(0.1, 323) # N*s/m^2
+kwater = steam_table.tcL_t(323) # W/(m*K)
+\end{python}
+
+Unfortunately, no Python library with engine oil data currently exists, so values 
+will have to come from a textbook. The following function was made using $scipy.optimize.curve\_fit$ 
+and a fourth order polynomial with the data from Appendix A: Table A.5 from \textit{Fundamentals of Heat 
+and Mass Transfer} by Bergman, Lavine, Incropera, and Dewitt \cite{heat-transfer}.
+
+\begin{python}
+def oil_specific_heat(x):
+    a,b,c,d,e = 7.57640461e-07, -1.16948468e-03,  6.76308996e-01, -1.69259798e+02, 1.72835141e+04
+    return (a*x**4+b*x**3+c*x**2+d*x+e)
+
+Cph = oil_specific_heat(400) # J/(kg*K)
+\end{python}
+\end{tcolorbox}
+
+Since no new assignments or requirements are being added, the learning objectives
+for the class do not change. 
+
+\section{Recommendations for Course Integration}
+
+After completing ME 573, students should be able to organize code in a structured manner, 
+argue about the functionality of written code, and produce high quality code with no prompting
+or examples.
+
+To accomplish this, ME 573 should continue assigning a heat exchanger design project that 
+requires the use of programming to complete. This serves as a suitable wrapper to the skills
+taught in previous classes by requiring additional libraries, graphing, iteration, and design.
+Optionally, adding smaller programming questions onto regular assignments would help solidify
+student understanding. 
+
+Little should be done by the instructor to teach students how to program or how to use any
+particular libraries, though a general suggestion of which libraries to use would be appropriate.
+This is to encourage students to apply the skills they have learned up to this point rather than
+providing an example to copy from. 
+
+\section{Project Deliverables}
+
+In the GitHub repository associated with this paper, which can be found in 
+Appendix \ref{appendix:appendix_github}, the folder titled ``10-heat-trasnfer''
+contains both the problem statement and solution guide for the project introduced in 
+the previous section. The folder also contains a README that details what is in each file and 
+what software is needed to complete the assignments. 
+
+For these projects to be added to the class, the instructor would simply need to give the 
+starting code to students as a problem statement. Giving an example of how to set the units
+and pull data from the $pyXSteam$ library would be a useful addition to the in-class presentation
+of the project.
